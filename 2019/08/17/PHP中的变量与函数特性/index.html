@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.0.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>PHP中的变量与函数特性 - FaithSinan-Web安全架构路上的探索者、追梦人</title>
+
+
+    <meta name="description" content="PHP中的两种变量定义方法 定义一个变量有两种方法：$这个符号在定义初始化，或者使用的时候都是必须要有的。 示例： 12345678910$name = &quot;php&quot;;  &#x2F;&#x2F;一般变量的定义class Phpgood&amp;#123;var $talk = &quot;真好&quot;;   &#x2F;&#x2F;只能在类里用&amp;#125;$phpgood = new Phpgood();echo $name;echo $phpgood-&amp;g">
+<meta name="keywords" content="Web全栈架构,编程语言,PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP中的变量与函数特性">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;17&#x2F;PHP%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E7%89%B9%E6%80%A7&#x2F;index.html">
+<meta property="og:site_name" content="FaithSinan-Web安全架构路上的探索者、追梦人">
+<meta property="og:description" content="PHP中的两种变量定义方法 定义一个变量有两种方法：$这个符号在定义初始化，或者使用的时候都是必须要有的。 示例： 12345678910$name = &quot;php&quot;;  &#x2F;&#x2F;一般变量的定义class Phpgood&amp;#123;var $talk = &quot;真好&quot;;   &#x2F;&#x2F;只能在类里用&amp;#125;$phpgood = new Phpgood();echo $name;echo $phpgood-&amp;g">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
+<meta property="og:updated_time" content="2019-08-23T19:05:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="PHP中的变量与函数特性" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">档案</a>
+                
+                <a class="navbar-item"
+                href="/categories">类别</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="GitHub" href="https://github.com/FaithSinan">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;" target="_blank" rel="noopener">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;" target="_blank" rel="noopener">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-17T14:01:00.000Z">2019-08-17</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 分钟 读完 (大约 1178 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                PHP中的变量与函数特性
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<h4 id="PHP中的两种变量定义方法"><a href="#PHP中的两种变量定义方法" class="headerlink" title="PHP中的两种变量定义方法"></a><strong>PHP中的两种变量定义方法</strong></h4></blockquote>
+<p>定义一个变量有两种方法：$这个符号在定义初始化，或者使用的时候都是必须要有的。</p>
+<p>示例：</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$name = <span class="hljs-string">"php"</span>;  <span class="hljs-comment">//一般变量的定义</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Phpgood</span></span>&#123;</span><br><span class="line"><span class="hljs-keyword">var</span> $talk = <span class="hljs-string">"真好"</span>;   <span class="hljs-comment">//只能在类里用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$phpgood = <span class="hljs-keyword">new</span> Phpgood();</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $name;</span><br><span class="line"><span class="hljs-keyword">echo</span> $phpgood-&gt;talk;</span><br></pre></td></tr></table></figure>
+
+<p>第一种方法，可以定义一般变量和类的属性变量，在类里定义属性变量时，需加访问控制关键字，不携带默认访问权限。</p>
+<p>第二种方法，只能定义类的属性变量，用var定义，在类里定义属性变量的时，可以不加访问控制关键字，默认携带”公有”访问权限，不常用的写法。</p>
+<blockquote>
+<h4 id="PHP中的函数"><a href="#PHP中的函数" class="headerlink" title="PHP中的函数"></a><strong>PHP中的函数</strong></h4></blockquote>
+<p>PHP中的函数就是用于完成某些功能的代码段，分为系统函数和自定义函数。</p>
+<p>系统函数是指PHP中原生内置的函数，无需开发者封装，使用函数名调用即可。例如：echo、var_dump。<br>示例：</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">"你好"</span>;  <span class="hljs-comment">//echo加不加括号都可以。</span></span><br><span class="line"></span><br><span class="line">var_dump(<span class="hljs-string">"PHP"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>自定义函数是指按照具体需求，由开发者封装的函数。<br>示例：</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">outPut</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    var_dump(<span class="hljs-string">"我是函数输出的内容"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outPut();</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<h4 id="函数的传值与传引用"><a href="#函数的传值与传引用" class="headerlink" title="函数的传值与传引用"></a><strong>函数的传值与传引用</strong></h4></blockquote>
+<p>传值:默认情况下，函数参数通过值传递，所以即使在函数内部改变参数的值也不会改变函数外部的值。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span><span class="hljs-params">($i)</span></span>&#123;</span><br><span class="line">    $i+=<span class="hljs-number">10</span>;</span><br><span class="line">    var_dump($i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$i=<span class="hljs-number">2</span>;</span><br><span class="line">test($i);  <span class="hljs-comment">//传值进去，输出12</span></span><br><span class="line">var_dump($i);  <span class="hljs-comment">//输出2</span></span><br></pre></td></tr></table></figure>
+
+<p>传引用：可以通过在参数前添加取地址符&amp;，代表通过引用传递参数，在函数内部对其所做操作影响其本身。</p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span><span class="hljs-params">(&amp;$i)</span></span>&#123;</span><br><span class="line">    $i+=<span class="hljs-number">10</span>;</span><br><span class="line">    var_dump($i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$m=<span class="hljs-number">2</span>;</span><br><span class="line">test($m);  <span class="hljs-comment">//传变量地址进去，输出12</span></span><br><span class="line">var_dump($m);  <span class="hljs-comment">//输出12</span></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<h4 id="自定义函数的包含"><a href="#自定义函数的包含" class="headerlink" title="自定义函数的包含"></a><strong>自定义函数的包含</strong></h4></blockquote>
+<p>对于想在多处使用已封装好的自定义函数，可以使用包含函数文件的方式，可以避免多处重写相同函数。</p>
+<p>两种包含方式：<br><strong>require/require_once</strong></p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">require</span> <span class="hljs-string">'xxxx.php'</span>;  <span class="hljs-comment">//同文件多次包含，多次生效</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">require_once</span> <span class="hljs-string">'xxxx.php'</span>;  <span class="hljs-comment">//同文件多次包含，只生效一次</span></span><br></pre></td></tr></table></figure>
+<p>通过require/require_once包含的文件不存在时，会产生一个致命错误和一个警告，程序终止执行。</p>
+<p><strong>include/include_once</strong></p>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">include</span> <span class="hljs-string">'xxxx.php'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">include_once</span> <span class="hljs-string">'xxxx.php'</span>;</span><br></pre></td></tr></table></figure>
+<p>通过include/include_once包含的文件不存在时，会产生两个警告，程序继续执行。</p>
+<p>require是一个预置行为，无条件的包含。这个函式通常放在PHP程式的最前面，PHP程式在执行前，就会先包含require所指定文件，即使可能不执行。</p>
+<p>include是一个过程行为，有条件的包含。这个函式通常放在流程控制的处理区段中，PHP程式网页在读到include的档案时，才将它读进来，引入是有条件的，发生在程序执行时，只有条件成立时才导入，可简化编译生成的代码。</p>
+<blockquote>
+<h4 id="PHP中echo与var-dump函数的区别"><a href="#PHP中echo与var-dump函数的区别" class="headerlink" title="PHP中echo与var_dump函数的区别"></a><strong>PHP中echo与var_dump函数的区别</strong></h4></blockquote>
+<p>echo与var_dump的核心功能同样是没有区别的，皆为“输出变量的值”，echo只能输出变量的值，var_dump能将变量的值与类型同时输出。</p>
+<p>var_dump对于变量、数组、类的输出，有着很好的表现，通过var_dump能够轻易地观察出变量、数组、类此时的值为多少。而echo则报错成狗，当然，在普通网页的输出，我们也不希望软件产品客户看到var_dump输出的信息，所以echo还是最基础的东西。</p>
+<p>echo偏向于产品，给客户看的，调试人员、编程人员更适合使用var_dump来输出变量，</p>
+<blockquote>
+<h4 id="函数or方法有什么区别"><a href="#函数or方法有什么区别" class="headerlink" title="函数or方法有什么区别"></a><strong>函数or方法有什么区别</strong></h4></blockquote>
+<ul>
+<li>function函数：函数，是一个面向过程的算法的实现，是独立存在的，也就是指全局作用域里的函数，可以在任何地方调用。</li>
+<li>function方法：方法，是一个面向对象的业务逻辑的实现，对象里依赖于类存在的，即类的方法。</li>
+</ul>
+<hr>
+<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/PHP/" rel="tag">PHP</a>, <a class="has-link-grey -link" href="/tags/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/" rel="tag">Web全栈架构</a>, <a class="has-link-grey -link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/favicon.png" alt="支付宝"></div>
+</a>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">PHP中的类与对象特性</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/13/PHP%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/">
+                <span class="level-item">PHP基本介绍及知识体系</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="司南道长">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        司南道长
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        普通的Web领域开发者
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        20
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        20
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/FaithSinan">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Dribbble" href="https://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#PHP中的两种变量定义方法">
+        <span class="has-mr-6">1</span>
+        <span>PHP中的两种变量定义方法</span>
+        </a></li><li>
+        <a class="is-flex" href="#PHP中的函数">
+        <span class="has-mr-6">2</span>
+        <span>PHP中的函数</span>
+        </a></li><li>
+        <a class="is-flex" href="#函数的传值与传引用">
+        <span class="has-mr-6">3</span>
+        <span>函数的传值与传引用</span>
+        </a></li><li>
+        <a class="is-flex" href="#自定义函数的包含">
+        <span class="has-mr-6">4</span>
+        <span>自定义函数的包含</span>
+        </a></li><li>
+        <a class="is-flex" href="#PHP中echo与var-dump函数的区别">
+        <span class="has-mr-6">5</span>
+        <span>PHP中echo与var_dump函数的区别</span>
+        </a></li><li>
+        <a class="is-flex" href="#函数or方法有什么区别">
+        <span class="has-mr-6">6</span>
+        <span>函数or方法有什么区别</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://gitee.com/FaithSinan" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Gitee</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">gitee.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">
+            <span class="level-start">
+                <span class="level-item">Web全栈架构</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">13</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">
+            <span class="level-start">
+                <span class="level-item">PHP</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">9</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">
+            <span class="level-start">
+                <span class="level-item">网站搭建</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">
+            <span class="level-start">
+                <span class="level-item">综合技术栈</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+            <span class="level-start">
+                <span class="level-item">版本管理</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
+            <span class="level-start">
+                <span class="level-item">网络技术</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">
+            <span class="level-start">
+                <span class="level-item">Web安全</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">
+            <span class="level-start">
+                <span class="level-item">数通</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">
+            <span class="level-start">
+                <span class="level-item">运维技术</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">
+            <span class="level-start">
+                <span class="level-item">Linux系统配置</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" style="font-size: 16px;">Linux系统运维</a> <a href="/tags/PHP/" style="font-size: 18px;">PHP</a> <a href="/tags/RedHat%E7%B3%BB/" style="font-size: 10px;">RedHat系</a> <a href="/tags/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/" style="font-size: 20px;">Web全栈架构</a> <a href="/tags/Web%E5%AE%89%E5%85%A8/" style="font-size: 10px;">Web安全</a> <a href="/tags/debian%E7%B3%BB/" style="font-size: 10px;">debian系</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" style="font-size: 10px;">命令详解</a> <a href="/tags/%E6%95%B0%E9%80%9A/" style="font-size: 10px;">数通</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E7%BA%A2%E5%B8%BD%E7%B3%BB/" style="font-size: 12px;">红帽系</a> <a href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/" style="font-size: 10px;">综合技术栈</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 18px;">编程语言</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 12px;">网络技术</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的字符串处理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-27T14:58:00.000Z">2019-08-27</time></div>
+                    <a href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的字符串处理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的特殊函数形式">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-24T15:59:00.000Z">2019-08-24</time></div>
+                    <a href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的特殊函数形式</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/18/%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用SSH登陆Linux常见问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-18T09:20:04.000Z">2019-08-18</time></div>
+                    <a href="/2019/08/18/%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用SSH登陆Linux常见问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a> / <a class="has-link-grey -link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">Linux系统配置</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的数据库操作扩展">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-17T14:27:00.000Z">2019-08-17</time></div>
+                    <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的数据库操作扩展</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的异常处理机制">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-17T14:23:00.000Z">2019-08-17</time></div>
+                    <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的异常处理机制</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">
+                        <span class="tag">Linux系统运维</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PHP/">
+                        <span class="tag">PHP</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RedHat%E7%B3%BB/">
+                        <span class="tag">RedHat系</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">
+                        <span class="tag">Web全栈架构</span>
+                        <span class="tag is-grey">13</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web%E5%AE%89%E5%85%A8/">
+                        <span class="tag">Web安全</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/debian%E7%B3%BB/">
+                        <span class="tag">debian系</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="tag">博客</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">
+                        <span class="tag">命令详解</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%95%B0%E9%80%9A/">
+                        <span class="tag">数通</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+                        <span class="tag">版本管理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%AB%AF%E5%8F%A3/">
+                        <span class="tag">端口</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%BA%A2%E5%B8%BD%E7%B3%BB/">
+                        <span class="tag">红帽系</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">
+                        <span class="tag">综合技术栈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="tag">编程语言</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
+                        <span class="tag">网络技术</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="tag">虚拟机</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="tag">读书笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的字符串处理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-27T14:58:00.000Z">2019-08-27</time></div>
+                    <a href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的字符串处理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的特殊函数形式">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-24T15:59:00.000Z">2019-08-24</time></div>
+                    <a href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的特殊函数形式</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/18/%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用SSH登陆Linux常见问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-18T09:20:04.000Z">2019-08-18</time></div>
+                    <a href="/2019/08/18/%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用SSH登陆Linux常见问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a> / <a class="has-link-grey -link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">Linux系统配置</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的数据库操作扩展">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-17T14:27:00.000Z">2019-08-17</time></div>
+                    <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的数据库操作扩展</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的异常处理机制">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-17T14:23:00.000Z">2019-08-17</time></div>
+                    <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的异常处理机制</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">
+                        <span class="tag">Linux系统运维</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/PHP/">
+                        <span class="tag">PHP</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RedHat%E7%B3%BB/">
+                        <span class="tag">RedHat系</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">
+                        <span class="tag">Web全栈架构</span>
+                        <span class="tag is-grey">13</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web%E5%AE%89%E5%85%A8/">
+                        <span class="tag">Web安全</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/debian%E7%B3%BB/">
+                        <span class="tag">debian系</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="tag">博客</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">
+                        <span class="tag">命令详解</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%95%B0%E9%80%9A/">
+                        <span class="tag">数通</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
+                        <span class="tag">版本管理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%AB%AF%E5%8F%A3/">
+                        <span class="tag">端口</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%BA%A2%E5%B8%BD%E7%B3%BB/">
+                        <span class="tag">红帽系</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">
+                        <span class="tag">综合技术栈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="tag">编程语言</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
+                        <span class="tag">网络技术</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="tag">虚拟机</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="tag">读书笔记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="PHP中的变量与函数特性" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Faith Sinan&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="GitHub" href="https://github.com/FaithSinan">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;" target="_blank" rel="noopener">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
