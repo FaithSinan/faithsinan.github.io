@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>PHP之正则表达式简介与会话控制 | FaithSinan-Web安全架构路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="什么叫正则表达式 正则表达式是对字符串进行操作的一种逻辑公式，就是用一些特定的字符组合成一个规则字符串，称之为正则匹配模式。定义一个正则表达式，它用来匹配源字符串中是否存在是否与该正则表达式对应的字符串。 12345$p = &amp;apos;&#x2F;苹果&#x2F;&amp;apos;;$str = &quot;苹果 香蕉&quot;;if (preg_match($p, $str)) &amp;#123;    echo &amp;apos;匹配成功&amp;apos;;&amp;#125;">
+<meta name="keywords" content="Web,PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP之正则表达式简介与会话控制">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;17&#x2F;14.PHP%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E4%BB%8B%E4%B8%8E%E4%BC%9A%E8%AF%9D%E6%8E%A7%E5%88%B6&#x2F;index.html">
+<meta property="og:site_name" content="FaithSinan-Web安全架构路上的探索者、追梦人">
+<meta property="og:description" content="什么叫正则表达式 正则表达式是对字符串进行操作的一种逻辑公式，就是用一些特定的字符组合成一个规则字符串，称之为正则匹配模式。定义一个正则表达式，它用来匹配源字符串中是否存在是否与该正则表达式对应的字符串。 12345$p = &amp;apos;&#x2F;苹果&#x2F;&amp;apos;;$str = &quot;苹果 香蕉&quot;;if (preg_match($p, $str)) &amp;#123;    echo &amp;apos;匹配成功&amp;apos;;&amp;#125;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-09T10:02:30.896Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="FaithSinan-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main"><article id="post-14.PHP之正则表达式简介与会话控制" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      PHP之正则表达式简介与会话控制
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/17/14.PHP%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E4%BB%8B%E4%B8%8E%E4%BC%9A%E8%AF%9D%E6%8E%A7%E5%88%B6/" class="article-date">
+  <time datetime="2019-08-17T14:16:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="什么叫正则表达式"><a href="#什么叫正则表达式" class="headerlink" title="什么叫正则表达式"></a><strong>什么叫正则表达式</strong></h4><p> 正则表达式是对字符串进行操作的一种逻辑公式，就是用一些特定的字符组合成一个规则字符串，称之为正则匹配模式。定义一个正则表达式，它用来匹配源字符串中是否存在是否与该正则表达式对应的字符串。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$p = <span class="string">'/苹果/'</span>;</span><br><span class="line">$str = <span class="string">"苹果 香蕉"</span>;</span><br><span class="line"><span class="keyword">if</span> (preg_match($p, $str)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'匹配成功'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<a id="more"></a>
+
+<h4 id="存储在客户端的Cookie"><a href="#存储在客户端的Cookie" class="headerlink" title="存储在客户端的Cookie"></a><strong>存储在客户端的Cookie</strong></h4><p>cookie常用于识别用户。cookie是服务器留在用户计算机中的小文件。每当相同的计算机通过浏览器请求页面时，它同时会发送cookie。<br>通过PHP，能够创建并取回cookie的值。任何从浏览器发回的Cookie，PHP都会自动的将他存储在$_COOKIE的全局变量之中，因此我们可以通过$_COOKIE[‘key’]的形式来读取某个Cookie值。</p>
+<h4 id="PHP中的三种cookie设置方法"><a href="#PHP中的三种cookie设置方法" class="headerlink" title="PHP中的三种cookie设置方法"></a><strong>PHP中的三种cookie设置方法</strong></h4><p>PHP设置Cookie最常用的方法就是使用setcookie函数，setcookie具有7个可选参数，我们常用到的为前5个：</p>
+<ul>
+<li>name（ Cookie名）可以通过$_COOKIE[‘name’] 进行访问</li>
+<li>value（Cookie的值）</li>
+<li>expire（过期时间）Unix时间戳格式，默认为0，表示浏览器关闭即失效</li>
+<li>path（有效路径）如果路径设置为’/‘，则整个网站都有效</li>
+<li>domain（有效域）默认整个域名都有效，如果设置了&lt;<a href="http://www.imooc.com&gt;,则只在www子域中有效" target="_blank" rel="noopener">www.imooc.com&gt;,则只在www子域中有效</a></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法：setcookie(name, value, expire, path, domain);</span></span><br><span class="line"></span><br><span class="line">$value = <span class="string">'test'</span>;</span><br><span class="line">setcookie(<span class="string">"TestCookie"</span>, $value);<span class="comment">//设置cookie的名，传入的值</span></span><br><span class="line">setcookie(<span class="string">"TestCookie"</span>, $value, time()+<span class="number">3600</span>);  <span class="comment">//设置有效期一小时</span></span><br><span class="line">setcookie(<span class="string">"TestCookie"</span>, $value, time()+<span class="number">3600</span>, <span class="string">"/path/"</span>, <span class="string">"imooc.com"</span>); <span class="comment">//设置路径与域</span></span><br></pre></td></tr></table></figure></div>
+
+<p>PHP中还有一个设置Cookie的函数setrawcookie，setrawcookie跟setcookie基本一样，唯一的不同就是value值不会自动的进行urlencode，因此在需要的时候要手动的进行urlencode。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setrawcookie(<span class="string">'cookie_name'</span>, rawurlencode($value), time()+<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>*<span class="number">365</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">"Set-Cookie:cookie_name=value"</span>);</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="cookie的删除与过期时间"><a href="#cookie的删除与过期时间" class="headerlink" title="cookie的删除与过期时间"></a><strong>cookie的删除与过期时间</strong></h4><p>当我们在PHP中用setcookie函数设置了cookie后，需要删除cookie时，也是采用setcookie函数来实现。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加需要删除的cookie名，value项置空，过期时间定负数</span></span><br><span class="line">setcookie(<span class="string">'test'</span>, <span class="string">''</span>, time()<span class="number">-1</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>上面的例子将cookie的过期时间设置到当前时间之前，则该cookie会自动失效，也就达到了删除cookie的目的。<br>之所以这么设计是因为cookie是通过HTTP的标头来传递的，客户端根据服务端返回的Set-Cookie段来进行cookie的设置，如果删除cookie需要使用新的Del-Cookie来实现，则HTTP头就会变得复杂，实际上仅通过Set-Cookie就可以简单明了的实现Cookie的设置、更新与删除。</p>
+<p>根据原理，我们也可以直接通过header来删除cookie。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置cookie名为test的值为1393832059，然后再设置过期时间。</span></span><br><span class="line">header(<span class="string">"Set-Cookie:test=1393832059; </span></span><br><span class="line"><span class="string">    expires="</span>.gmdate(<span class="string">'D, d M Y H:i:s \G\M\T'</span>, time()<span class="number">-1</span>));</span><br><span class="line"><span class="comment">//这里用到了gmdate，用来生成格林威治标准时间，以便排除时差的影响。</span></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="cookie的有效路径"><a href="#cookie的有效路径" class="headerlink" title="cookie的有效路径"></a><strong>cookie的有效路径</strong></h4><p>cookie中的路径用来控制设置的cookie在哪个路径下有效，默认为’/‘，在所有路径下都有效，当设定了其他路径之后，则只在设定的路径以及子路径下有效。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置cookie名为：test，值为：1，过期时间0，即浏览器关闭即失效，有效路径为/path</span></span><br><span class="line">setcookie(<span class="string">'test'</span>, <span class="string">'1'</span>, <span class="number">0</span>,<span class="string">'/path'</span>); </span><br><span class="line">var_dump($_COOKIE[<span class="string">'test'</span>]); <span class="comment">//使用var_dump函数打印cookie值</span></span><br></pre></td></tr></table></figure></div>
+
+<p>上面的设置会使test在/path以及子路径/path/abc下都有效，但是在根目录下就读取不到test的cookie值。</p>
+<p>一般情况下，大多是使用所有路径的，只有在极少数有特殊需求的时候，会设置路径，这种情况下只在指定的路径中才会传递cookie值，可以节省数据的传输，增强安全性以及提高性能。</p>
+<p>cookie将数据存储在客户端，建立起用户与服务器之间的联系，通常可以解决很多问题，但是cookie仍然具有一些局限：</p>
+<ul>
+<li>cookie相对不是太安全，容易被盗用导致cookie欺骗</li>
+<li>单个cookie的值最大只能存储4k</li>
+<li>每次请求都要进行网络传输，占用带宽</li>
+</ul>
+<h4 id="存储在服务端的Session"><a href="#存储在服务端的Session" class="headerlink" title="存储在服务端的Session"></a><strong>存储在服务端的Session</strong></h4><p>session是将用户的会话数据存储在服务端，没有大小限制，通过一个session_id进行用户识别。</p>
+<p>默认情况下，session是以文件形式存储在服务器上的，因此当一个页面开启了session之后，会独占这个session文件，这样会导致当前用户的其他并发访问无法执行而等待。可以采用缓存或者数据库的形式存储来解决这个问题。</p>
+<h4 id="设置Session"><a href="#设置Session" class="headerlink" title="设置Session"></a><strong>设置Session</strong></h4><p>在PHP中使用session非常简单，先执行session_start方法开启session，然后通过全局变量$_SESSION进行session的读写。</p>
+<p>session会自动的对要设置的值进行encode（编码）与decode（译码），因此session可以支持任意数据类型，包括数据与对象等。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">session_start();    <span class="comment">////调用session_start方法来启用session</span></span><br><span class="line"></span><br><span class="line">$_SESSION[<span class="string">'string'</span>] = <span class="string">'jobs'</span>;   <span class="comment">//名为name，值为jobs</span></span><br><span class="line">$_SESSION[<span class="string">'ary'</span>] = <span class="keyword">array</span>(<span class="string">'name'</span>,<span class="string">"age"</span>,<span class="string">'uid'</span> =&gt; <span class="string">"1250123"</span>);  <span class="comment">//一个名为ary的数组</span></span><br><span class="line">$_SESSION[<span class="string">'obj'</span>] = <span class="keyword">new</span> stdClass();  <span class="comment">//一个名为obj的对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//输出三个session</span></span><br><span class="line">var_dump($_SESSION[<span class="string">'string'</span>]);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;    <span class="comment">//空一行显示</span></span><br><span class="line">var_dump($_SESSION[<span class="string">'ary'</span>]);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">var_dump($_SESSION[<span class="string">'obj'</span>]);</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="删除与销毁session"><a href="#删除与销毁session" class="headerlink" title="删除与销毁session"></a><strong>删除与销毁session</strong></h4><p>删除某个session值可以使用PHP的unset函数，删除后就会从全局变量$_SESSION中去除，无法访问。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">session_start();</span><br><span class="line"></span><br><span class="line">$_SESSION[<span class="string">'name'</span>] = <span class="string">'jobs'</span>;</span><br><span class="line"><span class="keyword">unset</span>($_SESSION[<span class="string">'name'</span>]);   <span class="comment">//删除指定session</span></span><br><span class="line"><span class="keyword">echo</span> $_SESSION[<span class="string">'name'</span>]; <span class="comment">//提示name不存在</span></span><br></pre></td></tr></table></figure></div>
+
+<p>如果要删除所有的session，可以使用session_destroy函数销毁当前session，session_destroy会删除所有数据，但是session_id仍然存在。<br>如果需要同时销毁cookie中的session_id，通常在用户退出的时候可能会用到，则还需要显式的调用setcookie方法删除session_id的cookie值。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">session_start();</span><br><span class="line"></span><br><span class="line">$_SESSION[<span class="string">'name'</span>] = <span class="string">'jobs'</span>;</span><br><span class="line">$_SESSION[<span class="string">'time'</span>] = time();</span><br><span class="line">session_destroy();  <span class="comment">//删除所有</span></span><br></pre></td></tr></table></figure></div>
+
+<p>值得注意的是，session_destroy并不会立即的销毁全局变量$_SESSION中的值，只有当下次再访问的时候，$_SESSION才为空，因此如果需要立即销毁$_SESSION，可以使用unset函数。</p>
+<h4 id="session与cookie的异同"><a href="#session与cookie的异同" class="headerlink" title="session与cookie的异同"></a><strong>session与cookie的异同</strong></h4><p>PHP默认情况下session id是通过cookie来保存的，因此从某种程度上来说，seesion依赖于cookie。但这不是绝对的，session id也可以通过参数来实现，只要能将session id传递到服务端进行识别的机制都可以使用session。</p>
+<h4 id="使用session来存储用户的登录信息"><a href="#使用session来存储用户的登录信息" class="headerlink" title="使用session来存储用户的登录信息"></a><strong>使用session来存储用户的登录信息</strong></h4><p>session可以用来存储多种类型的数据，因此具有很多的用途，常用来存储用户的登录信息，购物车数据，或者一些临时使用的暂存数据等。</p>
+<p>用户在登录成功以后，通常可以将用户的信息存储在session中，一般的会单独的将一些重要的字段单独存储，然后所有的用户信息独立存储。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$_SESSION[<span class="string">'uid'</span>] = $userinfo[<span class="string">'uid'</span>];</span><br><span class="line">$_SESSION[<span class="string">'userinfo'</span>] = $userinfo;</span><br></pre></td></tr></table></figure></div>
+
+<p>一般来说，登录信息既可以存储在sessioin中，也可以存储在cookie中，他们之间的差别在于session可以方便的存取多种数据类型，而cookie只支持字符串类型，同时对于一些安全性比较高的数据，cookie需要进行格式化与加密存储，而session存储在服务端则安全性较高。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">session_start();</span><br><span class="line"><span class="comment">//假设用户登录成功获得了以下用户数据</span></span><br><span class="line">$userinfo = <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'uid'</span>  =&gt; <span class="number">10000</span>,</span><br><span class="line">    <span class="string">'name'</span> =&gt; <span class="string">'spark'</span>,</span><br><span class="line">    <span class="string">'email'</span> =&gt; <span class="string">'spark@imooc.com'</span>,</span><br><span class="line">    <span class="string">'sex'</span>  =&gt; <span class="string">'man'</span>,</span><br><span class="line">    <span class="string">'age'</span>  =&gt; <span class="string">'18'</span></span><br><span class="line">);</span><br><span class="line">header(<span class="string">"content-type:text/html; charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 将用户信息保存到session中 */</span></span><br><span class="line">$_SESSION[<span class="string">'uid'</span>] = $userinfo[<span class="string">'uid'</span>];</span><br><span class="line">$_SESSION[<span class="string">'name'</span>] = $userinfo[<span class="string">'name'</span>];</span><br><span class="line">$_SESSION[<span class="string">'userinfo'</span>] = $userinfo;</span><br><span class="line"></span><br><span class="line"><span class="comment">//* 将用户数据保存到cookie中的一个简单方法 */</span></span><br><span class="line">$secureKey = <span class="string">'imooc'</span>; <span class="comment">//加密密钥</span></span><br><span class="line">$str = serialize($userinfo); <span class="comment">//将用户信息序列化</span></span><br><span class="line"><span class="comment">//用户信息加密前</span></span><br><span class="line">$str = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), $str, MCRYPT_MODE_ECB));</span><br><span class="line"><span class="comment">//用户信息加密后</span></span><br><span class="line"><span class="comment">//将加密后的用户数据存储到cookie中</span></span><br><span class="line">setcookie(<span class="string">'userinfo'</span>, $str);</span><br><span class="line"></span><br><span class="line"><span class="comment">//当需要使用时进行解密</span></span><br><span class="line">$str = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), base64_decode($str), MCRYPT_MODE_ECB);</span><br><span class="line">$uinfo = unserialize($str);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"解密后的用户信息：&lt;br&gt;"</span>;</span><br><span class="line">print_r($uinfo);</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/17/15.PHP%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E4%B8%8E%E5%8C%85%E5%90%AB/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            PHP中的文件处理函数
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/17/13.PHP%E4%B8%AD%E7%9A%84%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">PHP中的类与对象特性</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        司南道长
+      
+    </h3>
+    <p class="avatar-slogan">
+      所谓技术，不过是熟练度的问题。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Centos/" style="font-size: 14px;">Centos</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/PHP/" style="font-size: 18px;">PHP</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a> <a href="/tags/Web%E5%AE%89%E5%85%A8/" style="font-size: 10px;">Web安全</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" style="font-size: 10px;">命令详解</a> <a href="/tags/%E6%95%B0%E9%80%9A/" style="font-size: 10px;">数通</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px;">端口安全</a> <a href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/" style="font-size: 10px;">综合技术栈</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/01/22.MySQL%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E3%80%81%E5%B9%B6%E5%88%86%E9%85%8D%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/">MySQL创建新用户、并分配访问权限</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/12/21.MySQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">MySQL增删改查</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/27/20.PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">PHP中的字符串处理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/">PHP中的特殊函数形式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">使用SSH登陆Linux常见问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Faith Sinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>PHP中的数据库操作扩展 | FaithSinan-Web安全架构路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="PHP数据库扩展PHP通过安装相应的扩展来实现数据库操作，PHP中一个数据库可能有一个或者多个扩展，其中既有官方的，也有第三方提供的。像Mysql常用的扩展有原生的mysql库，也可以使用增强版的mysqli扩展，还可以使用PDO进行连接与操作。 不同的扩展提供基本相近的操作方法，不同的是可能具备一些新特性，以及操作性能可能会有所不同。 mysql扩展进行数据库连接的方法： 1$link = my">
+<meta name="keywords" content="Web,PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP中的数据库操作扩展">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;17&#x2F;17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95&#x2F;index.html">
+<meta property="og:site_name" content="FaithSinan-Web安全架构路上的探索者、追梦人">
+<meta property="og:description" content="PHP数据库扩展PHP通过安装相应的扩展来实现数据库操作，PHP中一个数据库可能有一个或者多个扩展，其中既有官方的，也有第三方提供的。像Mysql常用的扩展有原生的mysql库，也可以使用增强版的mysqli扩展，还可以使用PDO进行连接与操作。 不同的扩展提供基本相近的操作方法，不同的是可能具备一些新特性，以及操作性能可能会有所不同。 mysql扩展进行数据库连接的方法： 1$link = my">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-09T10:02:30.896Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="FaithSinan-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main"><article id="post-17.PHP中的数据库操作扩展" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      PHP中的数据库操作扩展
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="article-date">
+  <time datetime="2019-08-17T14:27:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="PHP数据库扩展"><a href="#PHP数据库扩展" class="headerlink" title="PHP数据库扩展"></a><strong>PHP数据库扩展</strong></h4><p>PHP通过安装相应的扩展来实现数据库操作，PHP中一个数据库可能有一个或者多个扩展，其中既有官方的，也有第三方提供的。像Mysql常用的扩展有原生的mysql库，也可以使用增强版的mysqli扩展，还可以使用PDO进行连接与操作。</p>
+<p>不同的扩展提供基本相近的操作方法，不同的是可能具备一些新特性，以及操作性能可能会有所不同。</p>
+<p>mysql扩展进行数据库连接的方法：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$link = mysql_connect(<span class="string">'mysql_host'</span>, <span class="string">'mysql_user'</span>, <span class="string">'mysql_password'</span>);</span><br></pre></td></tr></table></figure></div>
+
+<a id="more"></a>
+
+<p>mysqli扩展：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$link = mysqli_connect(<span class="string">'mysql_host'</span>, <span class="string">'mysql_user'</span>, <span class="string">'mysql_password'</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>PDO扩展：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$dsn = <span class="string">'mysql:dbname=testdb;host=127.0.0.1'</span>;</span><br><span class="line">$user = <span class="string">'dbuser'</span>;</span><br><span class="line">$password = <span class="string">'dbpass'</span>;</span><br><span class="line">$dbh = <span class="keyword">new</span> PDO($dsn, $user, $password);</span><br></pre></td></tr></table></figure></div>
+
+<p>如果PHP中没有对应扩展可以通过包管理器安装，再在PHP配置文件‘php.ini’添加‘extension=扩展名.so’开启扩展：<br>例如：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt install php7.0-mysqli</span><br><span class="line"></span><br><span class="line">php.ini:</span><br><span class="line">extension=mysqli.so</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="PHP数据库操作之连接MySQL数据库"><a href="#PHP数据库操作之连接MySQL数据库" class="headerlink" title="PHP数据库操作之连接MySQL数据库"></a><strong>PHP数据库操作之连接MySQL数据库</strong></h4><p>PHP要对数据库进行操作，首先要做的是与数据库建立连接，通常我们使用mysql_connect函数进行数据库连接，该函数需要指定数据库的地址，用户名及密码。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$host = <span class="string">'127.0.0.1'</span>;</span><br><span class="line">$user = <span class="string">'code1'</span>;</span><br><span class="line">$pass = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">$link = mysql_connect($host,$user,$pass);  <span class="comment">//在这里编写数据库连接代码</span></span><br><span class="line">mysql_select_db(<span class="string">'code1'</span>);  <span class="comment">//选择需要操作的数据库</span></span><br><span class="line">mysql_query(<span class="string">"set names 'utf8'"</span>);  <span class="comment">//设置当前连接使用的字符编码</span></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="PHP数据库操作之执行MySQL查询"><a href="#PHP数据库操作之执行MySQL查询" class="headerlink" title="PHP数据库操作之执行MySQL查询"></a><strong>PHP数据库操作之执行MySQL查询</strong></h4><p>在数据库建立连接以后就可以进行查询，采用mysql_query加sql语句的形式向数据库发送查询指令。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$res = mysql_query(<span class="string">'select * from user'</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>对于查询类的语句会返回一个资源句柄（resource），可以通过该资源获取查询结果集中的数据。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$row = mysql_fetch_array($res);</span><br></pre></td></tr></table></figure></div>
+
+<p>默认的，PHP使用最近的数据库连接执行查询，但如果存在多个连接的情况，则可以通过参数指令从那个连接中进行查询。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$link1 = mysql_connect(<span class="string">'127.0.0.1'</span>, <span class="string">'code1'</span>, <span class="string">''</span>);</span><br><span class="line">$link2 = mysql_connect(<span class="string">'127.0.0.1'</span>, <span class="string">'code1'</span>, <span class="string">''</span>, <span class="keyword">true</span>); <span class="comment">//开启一个新的连接</span></span><br><span class="line">$res = mysql_query(<span class="string">'select * from user limit 1'</span>, $link1); <span class="comment">//从第一个连接中查询数据</span></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="PHP数据库操作之插入新数据到MySQL中"><a href="#PHP数据库操作之插入新数据到MySQL中" class="headerlink" title="PHP数据库操作之插入新数据到MySQL中"></a><strong>PHP数据库操作之插入新数据到MySQL中</strong></h4><p>和数据查询一样，插入数据其实也是通过执行一个sql语句来实现。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name = <span class="string">'李四'</span>;</span><br><span class="line">$age = <span class="number">18</span>;</span><br><span class="line">$class = <span class="string">'高三一班'</span>;</span><br><span class="line">$sql = <span class="string">"insert into user(name, age, class) values('$name', '$age', '$class')"</span>;</span><br><span class="line">mysql_query($sql); <span class="comment">//执行插入语句</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在mysql中，执行插入语句以后，可以得到自增的主键id,通过PHP的mysql_insert_id函数可以获取该id。这个id的作用非常大，通常可以用来判断是否插入成功，或者作为关联ID进行其他的数据操作。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$uid = mysql_insert_id();</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="PHP数据库操作之查询分页数据"><a href="#PHP数据库操作之查询分页数据" class="headerlink" title="PHP数据库操作之查询分页数据"></a><strong>PHP数据库操作之查询分页数据</strong></h4><p>通过循环可以获取一个查询的所有数据，在实际应用中，我们并不希望一次性获取数据表中的所有数据，那样性能会非常的低，因此会使用翻页功能，每页仅显示10条或者20条数据。</p>
+<p>通过mysql的limit可以很容易的实现分页，limit m,n表示从m行后取n行数据，在PHP中我们需要构造m与n来实现获取某一页的所有数据。</p>
+<p>假定当前页为$page，每页显示$n条数据，那么m为当前页前面所有的数据，既$m = ($page-1) * $n，在知道了翻页原理以后，那么我们很容易通过构造SQL语句在PHP中实现数据翻页。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//连接数据库</span></span><br><span class="line">mysql_connect(<span class="string">'127.0.0.1'</span>, <span class="string">'code1'</span>, <span class="string">''</span>);</span><br><span class="line">mysql_select_db(<span class="string">'code1'</span>);</span><br><span class="line">mysql_query(<span class="string">"set names 'utf8'"</span>);</span><br><span class="line"><span class="comment">//预设翻页参数</span></span><br><span class="line">$page = <span class="number">2</span>;</span><br><span class="line">$pagesize = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//在这里构建分页查询</span></span><br><span class="line">$m = ($page <span class="number">-1</span>)*$pagesize;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取翻页数据</span></span><br><span class="line">$result = mysql_query($sql);</span><br><span class="line">$data = <span class="keyword">array</span>();</span><br><span class="line"><span class="keyword">while</span> ($row = mysql_fetch_array($result, MYSQL_ASSOC)) &#123;</span><br><span class="line">    $data[] = $row;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;pre&gt;'</span>;</span><br><span class="line">print_r($data);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;/pre&gt;'</span>;</span><br></pre></td></tr></table></figure></div>
+
+<p>在上面的例子中，我们使用了$m与$n变量来表示偏移量与每页数据条数，但我们推荐使用更有意义的变量名来表示，比如$pagesize, $start, $offset等，这样更容易理解，有助于团队协作开发。</p>
+<h4 id="PHP数据库操作之更新与删除数据"><a href="#PHP数据库操作之更新与删除数据" class="headerlink" title="PHP数据库操作之更新与删除数据"></a><strong>PHP数据库操作之更新与删除数据</strong></h4><p>数据的更新与删除相对比较简单，只需要构建好相应的sql语句，然后调用mysql_query执行就能完成相应的更新与删除操作。</p>
+<p>更新：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="string">"update user set name = '曹操' where id=2 limit 1"</span>;</span><br><span class="line"><span class="keyword">if</span> (mysql_query($sql)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'更新成功'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>删除：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="string">"delete from user where id=2 limit 1"</span>;</span><br><span class="line"><span class="keyword">if</span> (mysql_query($sql)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'删除成功'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>对于删除与更新操作，可以通过mysql_affected_rows函数来获取更新过的数据行数，如果数据没有变化，则结果为0。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="string">"update user set name = '曹操' where id=2 limit 1"</span>;</span><br><span class="line"><span class="keyword">if</span> (mysql_query($sql)) &#123;</span><br><span class="line">    <span class="keyword">echo</span> mysql_affected_rows();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="PHP数据库操作之关闭MySQL连接"><a href="#PHP数据库操作之关闭MySQL连接" class="headerlink" title="PHP数据库操作之关闭MySQL连接"></a><strong>PHP数据库操作之关闭MySQL连接</strong></h4><p>当数据库操作完成以后，可以使用mysql_close关闭数据库连接，默认的，当PHP执行完毕以后，会自动的关闭数据库连接。</p>
+<p>自动关闭数据库连接：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_closer();</span><br></pre></td></tr></table></figure></div>
+
+<p>在存在多个数据库连接，对性能要求比较高的情况下，可以设定连接资源参数来关闭指定的数据库连接，有利于在进行完数据库操作之后尽快关闭数据库连接，以节省资源，提高性能。</p>
+<p>关闭指定数据库连接：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$link = mysql_connect($host, $user, $pass);</span><br><span class="line">mysql_close($link);</span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            使用SSH登陆Linux常见问题
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/17/16.PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">PHP中的异常处理机制</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        司南道长
+      
+    </h3>
+    <p class="avatar-slogan">
+      所谓技术，不过是熟练度的问题。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Centos/" style="font-size: 14px;">Centos</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/PHP/" style="font-size: 18px;">PHP</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a> <a href="/tags/Web%E5%AE%89%E5%85%A8/" style="font-size: 10px;">Web安全</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" style="font-size: 10px;">命令详解</a> <a href="/tags/%E6%95%B0%E9%80%9A/" style="font-size: 10px;">数通</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px;">端口安全</a> <a href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/" style="font-size: 10px;">综合技术栈</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/01/22.MySQL%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E3%80%81%E5%B9%B6%E5%88%86%E9%85%8D%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/">MySQL创建新用户、并分配访问权限</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/12/21.MySQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">MySQL增删改查</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/27/20.PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">PHP中的字符串处理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/">PHP中的特殊函数形式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">使用SSH登陆Linux常见问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Faith Sinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

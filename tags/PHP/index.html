@@ -1,2173 +1,462 @@
 <!DOCTYPE html>
-<html  lang="zh">
+<html>
 <head>
-    <meta charset="utf-8" />
+  <meta charset="utf-8">
+  
 
-<meta name="generator" content="Hexo 4.0.0" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<title>标签: PHP - FaithSinan-Web安全架构路上的探索者、追梦人</title>
-
-
-    <meta property="og:type" content="website">
+  
+  <title>标签: PHP | FaithSinan-Web安全架构路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta property="og:type" content="website">
 <meta property="og:title" content="FaithSinan-Web安全架构路上的探索者、追梦人">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;PHP&#x2F;index.html">
 <meta property="og:site_name" content="FaithSinan-Web安全架构路上的探索者、追梦人">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
-
-
-
-
-
-
-
-<link rel="icon" href="/images/favicon.svg">
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
-    
-    
-<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-
-    
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-
-    
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-    
-    
-    
-    
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-    
-    
-    
-    
-    
-    
-    
-    <link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-    
-    
-    
-
-
-<link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="alternate" href="/atom.xml" title="FaithSinan-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
 </head>
-<body class="is-3-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.svg" alt="FaithSinan-Web安全架构路上的探索者、追梦人" height="28">
-            
-            </a>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main">
+  
+  
+    
+    
+      
+      
+      <section class="global-container archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
         </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">主页</a>
-                
-                <a class="navbar-item"
-                href="/archives">档案</a>
-                
-                <a class="navbar-item"
-                href="/categories">类别</a>
-                
-                <a class="navbar-item"
-                href="/tags">标签</a>
-                
-                <a class="navbar-item"
-                href="/about">关于</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    <a class="navbar-item" target="_blank" title="GitHub" href="https://github.com/FaithSinan">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                    
-                
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;" target="_blank" rel="noopener">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</nav>
+        <div class="archives">
     
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">PHP</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-27T14:58:00.000Z">2019-08-27</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 分钟 读完 (大约 1000 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">PHP中的字符串处理</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="字符串简介"><a href="#字符串简介" class="headerlink" title="字符串简介"></a><strong>字符串简介</strong></h4></blockquote>
-<p>字符串是PHP中重要的数据类型之一，属于标准变量类型。一个字符串(string)就是由一些列字符组成，每个字符等同于一个字节，字符串需要书写到定界符中。</p>
-<blockquote>
-<h4 id="定界符的使用"><a href="#定界符的使用" class="headerlink" title="定界符的使用"></a><strong>定界符的使用</strong></h4></blockquote>
-<p>常用定界符：</p>
-<ul>
-<li>单引号</li>
-<li>双引号</li>
-<li>heredoc结构</li>
-<li>nowdoc结构</li>
-</ul>
-<h5 id="单引号和双引号"><a href="#单引号和双引号" class="headerlink" title="单引号和双引号"></a><strong>单引号和双引号</strong></h5><ul>
-<li>单引号不解析变量和特殊符号，定界符中的字符会以纯字符输出。</li>
-<li>双引号会解析变量和特殊符号，定界符中的字符会先解析再输出。<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">'string\n'</span>;  <span class="hljs-comment">//输出string\n</span></span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">"string\n"</span>;  <span class="hljs-comment">//输出sting后换行</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="heredoc结构和nowdoc结构"><a href="#heredoc结构和nowdoc结构" class="headerlink" title="heredoc结构和nowdoc结构"></a><strong>heredoc结构和nowdoc结构</strong></h5><ul>
-<li><p>heredoc结构：通过heredoc结构定界符来写字符串，相当于双引号的作用。与直接用双引号不同的是，在heredoc结构中包含有双引号时，不需要使用转义符转义。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//开始标记名后不能出现空格或多余的字符。</span></span><br><span class="line">&lt;&lt;&lt;标识名  </span><br><span class="line">	内容……</span><br><span class="line">标识名;</span><br><span class="line"><span class="hljs-comment">//结束标记名前不能有任何内容，像制表符和空格都不可以</span></span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$str=<span class="hljs-string">&lt;&lt;&lt;EOH</span></span><br><span class="line"><span class="hljs-string">&lt;h1 style="color:blue"&gt;</span></span><br><span class="line"><span class="hljs-string">    "php",贼厉害。</span></span><br><span class="line"><span class="hljs-string">&lt;/h1&gt;</span></span><br><span class="line"><span class="hljs-string">EOH;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $str;  <span class="hljs-comment">//输出蓝色字体，h1格式的："php",贼厉害。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>nowdoc结构：通过nowdoc结构定界符来写，相当于单引号的作用。但不同的是单引号无需转义，省去了多次转义单引号的工作量。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//开始标记名后不能出现空格或多余的字符,标识名需要用单引号扩起来</span></span><br><span class="line">&lt;&lt;&lt;<span class="hljs-string">'标识名'</span>  </span><br><span class="line">	内容……</span><br><span class="line">标识名;</span><br><span class="line"><span class="hljs-comment">//结束标记名前不能有任何内容，像制表符和空格都不可以</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$str=<span class="hljs-string">&lt;&lt;&lt;'EON'</span></span><br><span class="line"><span class="hljs-string">hello nowdoc结构&lt;br/&gt;</span></span><br><span class="line"><span class="hljs-string"><span class="hljs-subst">&#123;$user&#125;</span></span></span><br><span class="line"><span class="hljs-string">EON;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $str;  <span class="hljs-comment">//输出：hello nowdoc结构 &#123;$user&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>heredoc结构和nowdoc结构，作用类似于双/单引号，但当内容中出现多处引号时，无需像直接用引号定界符一样，每个引号前都加转义符，提高了工作效率。</p>
-<blockquote>
-<h4 id="特殊字符的转义"><a href="#特殊字符的转义" class="headerlink" title="特殊字符的转义"></a><strong>特殊字符的转义</strong></h4></blockquote>
-<p>在定界符中的字符串内容如果包含引号，与定界符冲突需要使用\转义，才不会被错误解析。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">'this is \'string\''</span>;</span><br></pre></td></tr></table></figure>
-
-<p>常用转义符：</p>
-<ul>
-<li>\n  换行</li>
-<li>\r  回车</li>
-<li>\t  水平制表符(Tab)</li>
-<li>$  美元标记</li>
-<li>&#39;  单引号</li>
-<li>&quot;  双引号</li>
-</ul>
-<blockquote>
-<h4 id="将字符串中的变量扩成一个整体"><a href="#将字符串中的变量扩成一个整体" class="headerlink" title="将字符串中的变量扩成一个整体"></a><strong>将字符串中的变量扩成一个整体</strong></h4></blockquote>
-<p>在输出一个包含变量的字符串，变量后面如果还有字母等字符串，就会影响到变量的解析，这时，我们就需要用{}在字符串中将变量名单独扩起来。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$str=<span class="hljs-string">'Sinan'</span>;</span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">"MyNameIs&#123;$str&#125;Y"</span>;  <span class="hljs-comment">//输出MyNameIsSinanY</span></span><br></pre></td></tr></table></figure>
-
-<p>通过{}可以对字符串中的字符做增删改查操作，通过字符数组的形式，字符串下标从0开始。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$str=<span class="hljs-string">'abcfef'</span>;</span><br><span class="line"><span class="hljs-keyword">echo</span> $str;  <span class="hljs-comment">//输出未修改之前的字符串：abcfef</span></span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;br&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $str&#123;<span class="hljs-number">3</span>&#125;;  <span class="hljs-comment">//输出下标为3的字符：f</span></span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;br&gt;'</span>;</span><br><span class="line"></span><br><span class="line">$str&#123;<span class="hljs-number">3</span>&#125;=<span class="hljs-string">'d'</span>;  <span class="hljs-comment">//修改下标为3的字符为：d</span></span><br><span class="line"><span class="hljs-keyword">echo</span> $str;  <span class="hljs-comment">//输出修改后的字符串：abcdef</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//删除：将需要删除的字符下标赋值null或者空即表示删除。</span></span><br><span class="line">$str&#123;<span class="hljs-number">5</span>&#125;=<span class="hljs-keyword">null</span>;  <span class="hljs-comment">//或者$str&#123;5&#125;=''，删除下标为5的字符f</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//增加：给指定下标赋值即可</span></span><br><span class="line">$str&#123;<span class="hljs-number">6</span>&#125;=<span class="hljs-string">'g'</span>;  <span class="hljs-comment">//在下标为5的位置，增加一个g</span></span><br></pre></td></tr></table></figure>
-
-<p>输出字符串中的一个中文：如果使用utf-8编码，1个文字占用3位下标，所以想用下标的形式输出1个文字，需要输出3位下标。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$str=<span class="hljs-string">'你好'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//依次输出下标0~2，成功输出一个中文字符：你</span></span><br><span class="line"><span class="hljs-keyword">echo</span> $str&#123;<span class="hljs-number">0</span>&#125;;</span><br><span class="line"><span class="hljs-keyword">echo</span> $str&#123;<span class="hljs-number">1</span>&#125;;</span><br><span class="line"><span class="hljs-keyword">echo</span> $str&#123;<span class="hljs-number">2</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-24T15:59:00.000Z">2019-08-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 498 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/">PHP中的特殊函数形式</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="可变函数的使用"><a href="#可变函数的使用" class="headerlink" title="可变函数的使用"></a><strong>可变函数的使用</strong></h4></blockquote>
-<p>在PHP中如果将”函数名称”赋予字符串类型的变量，但是在使用该变量时，如果带有小括号，那么PHP引擎将解析为函数，可变函数需要自己封装之后实现。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//封装一个函数</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span><span class="hljs-params">($s)</span></span>&#123;</span><br><span class="line">    var_dump($s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$funcName=<span class="hljs-string">'test'</span>;  <span class="hljs-comment">//将函数名赋给变量</span></span><br><span class="line"><span class="hljs-comment">//函数名=&gt;变量名，以变量名调用</span></span><br><span class="line">$funcName(<span class="hljs-string">'吃饭了'</span>);  <span class="hljs-comment">//输出吃饭了</span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="回调函数的使用"><a href="#回调函数的使用" class="headerlink" title="回调函数的使用"></a><strong>回调函数的使用</strong></h4></blockquote>
-<p>回调函数就是调用函数的时候将另一个函数的名称当作参数传递进去(可变函数)，并且在函数体中进行调用。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">study</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">'学习中'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doWhat</span><span class="hljs-params">($state)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">'你正在'</span>;</span><br><span class="line">    <span class="hljs-comment">//通过可变函数的形式进行调用</span></span><br><span class="line">    $state();</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//将study函数传递进去</span></span><br><span class="line">doWhat(<span class="hljs-string">'study'</span>);  <span class="hljs-comment">//输出"你正在学习中"</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h4 id="匿名函数的使用"><a href="#匿名函数的使用" class="headerlink" title="匿名函数的使用"></a><strong>匿名函数的使用</strong></h4></blockquote>
-<p>匿名函数，也叫闭包函数，指临时创建一个没有指定名称的函数，最经常用作回调函数参数的值，也可以作为变量的值来使用。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$func=<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>&#123;  <span class="hljs-comment">//无函数名</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">"匿名函数的输出……"</span>;</span><br><span class="line">&#125;;  <span class="hljs-comment">//因为赋给了变量，所以要加;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $func();  <span class="hljs-comment">//输出"匿名函数的输出……"</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h4 id="递归函数的使用"><a href="#递归函数的使用" class="headerlink" title="递归函数的使用"></a><strong>递归函数的使用</strong></h4></blockquote>
-<p>如果函数A需要调用函数B，而发现函数B的代码实现与函数A完全相同，依次类推，此时就需要封装为递归函数。通俗的讲，就是自己调用自己的函数，通过特定条件结束执行。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">text</span><span class="hljs-params">($i)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">echo</span> $i;</span><br><span class="line">    --$i;</span><br><span class="line">    <span class="hljs-keyword">if</span>($i&gt;=<span class="hljs-number">0</span>)&#123;  <span class="hljs-comment">//结束执行条件</span></span><br><span class="line">        <span class="hljs-keyword">echo</span> <span class="hljs-string">"-&gt;"</span>;</span><br><span class="line">        text($i);  <span class="hljs-comment">//不满足结束条件再次调用——递归</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">text(<span class="hljs-number">20</span>);  <span class="hljs-comment">//逆序输出20至0</span></span><br></pre></td></tr></table></figure>
-
-<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-17T14:27:00.000Z">2019-08-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    10 分钟 读完 (大约 1455 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/">PHP中的数据库操作扩展</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="PHP数据库扩展"><a href="#PHP数据库扩展" class="headerlink" title="PHP数据库扩展"></a><strong>PHP数据库扩展</strong></h4></blockquote>
-<p>PHP通过安装相应的扩展来实现数据库操作，PHP中一个数据库可能有一个或者多个扩展，其中既有官方的，也有第三方提供的。像Mysql常用的扩展有原生的mysql库，也可以使用增强版的mysqli扩展，还可以使用PDO进行连接与操作。</p>
-<p>不同的扩展提供基本相近的操作方法，不同的是可能具备一些新特性，以及操作性能可能会有所不同。</p>
-<p>mysql扩展进行数据库连接的方法：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$link = mysql_connect(<span class="hljs-string">'mysql_host'</span>, <span class="hljs-string">'mysql_user'</span>, <span class="hljs-string">'mysql_password'</span>);</span><br></pre></td></tr></table></figure>
-
-<p>mysqli扩展：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$link = mysqli_connect(<span class="hljs-string">'mysql_host'</span>, <span class="hljs-string">'mysql_user'</span>, <span class="hljs-string">'mysql_password'</span>);</span><br></pre></td></tr></table></figure>
-
-<p>PDO扩展：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$dsn = <span class="hljs-string">'mysql:dbname=testdb;host=127.0.0.1'</span>;</span><br><span class="line">$user = <span class="hljs-string">'dbuser'</span>;</span><br><span class="line">$password = <span class="hljs-string">'dbpass'</span>;</span><br><span class="line">$dbh = <span class="hljs-keyword">new</span> PDO($dsn, $user, $password);</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP数据库操作之连接MySQL数据库"><a href="#PHP数据库操作之连接MySQL数据库" class="headerlink" title="PHP数据库操作之连接MySQL数据库"></a><strong>PHP数据库操作之连接MySQL数据库</strong></h4></blockquote>
-<p>PHP要对数据库进行操作，首先要做的是与数据库建立连接，通常我们使用mysql_connect函数进行数据库连接，该函数需要指定数据库的地址，用户名及密码。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$host = <span class="hljs-string">'127.0.0.1'</span>;</span><br><span class="line">$user = <span class="hljs-string">'code1'</span>;</span><br><span class="line">$pass = <span class="hljs-string">''</span>;</span><br><span class="line"></span><br><span class="line">$link = mysql_connect($host,$user,$pass);  <span class="hljs-comment">//在这里编写数据库连接代码</span></span><br><span class="line">mysql_select_db(<span class="hljs-string">'code1'</span>);  <span class="hljs-comment">//选择需要操作的数据库</span></span><br><span class="line">mysql_query(<span class="hljs-string">"set names 'utf8'"</span>);  <span class="hljs-comment">//设置当前连接使用的字符编码</span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP数据库操作之执行MySQL查询"><a href="#PHP数据库操作之执行MySQL查询" class="headerlink" title="PHP数据库操作之执行MySQL查询"></a><strong>PHP数据库操作之执行MySQL查询</strong></h4></blockquote>
-<p>在数据库建立连接以后就可以进行查询，采用mysql_query加sql语句的形式向数据库发送查询指令。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$res = mysql_query(<span class="hljs-string">'select * from user'</span>);</span><br></pre></td></tr></table></figure>
-
-<p>对于查询类的语句会返回一个资源句柄（resource），可以通过该资源获取查询结果集中的数据。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$row = mysql_fetch_array($res);</span><br></pre></td></tr></table></figure>
-
-<p>默认的，PHP使用最近的数据库连接执行查询，但如果存在多个连接的情况，则可以通过参数指令从那个连接中进行查询。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$link1 = mysql_connect(<span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-string">'code1'</span>, <span class="hljs-string">''</span>);</span><br><span class="line">$link2 = mysql_connect(<span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-string">'code1'</span>, <span class="hljs-string">''</span>, <span class="hljs-keyword">true</span>); <span class="hljs-comment">//开启一个新的连接</span></span><br><span class="line">$res = mysql_query(<span class="hljs-string">'select * from user limit 1'</span>, $link1); <span class="hljs-comment">//从第一个连接中查询数据</span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP数据库操作之插入新数据到MySQL中"><a href="#PHP数据库操作之插入新数据到MySQL中" class="headerlink" title="PHP数据库操作之插入新数据到MySQL中"></a><strong>PHP数据库操作之插入新数据到MySQL中</strong></h4></blockquote>
-<p>和数据查询一样，插入数据其实也是通过执行一个sql语句来实现。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$name = <span class="hljs-string">'李四'</span>;</span><br><span class="line">$age = <span class="hljs-number">18</span>;</span><br><span class="line">$class = <span class="hljs-string">'高三一班'</span>;</span><br><span class="line">$sql = <span class="hljs-string">"insert into user(name, age, class) values('$name', '$age', '$class')"</span>;</span><br><span class="line">mysql_query($sql); <span class="hljs-comment">//执行插入语句</span></span><br></pre></td></tr></table></figure>
-
-<p>在mysql中，执行插入语句以后，可以得到自增的主键id,通过PHP的mysql_insert_id函数可以获取该id。这个id的作用非常大，通常可以用来判断是否插入成功，或者作为关联ID进行其他的数据操作。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$uid = mysql_insert_id();</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP数据库操作之查询分页数据"><a href="#PHP数据库操作之查询分页数据" class="headerlink" title="PHP数据库操作之查询分页数据"></a><strong>PHP数据库操作之查询分页数据</strong></h4></blockquote>
-<p>通过循环可以获取一个查询的所有数据，在实际应用中，我们并不希望一次性获取数据表中的所有数据，那样性能会非常的低，因此会使用翻页功能，每页仅显示10条或者20条数据。</p>
-<p>通过mysql的limit可以很容易的实现分页，limit m,n表示从m行后取n行数据，在PHP中我们需要构造m与n来实现获取某一页的所有数据。</p>
-<p>假定当前页为$page，每页显示$n条数据，那么m为当前页前面所有的数据，既$m = ($page-1) * $n，在知道了翻页原理以后，那么我们很容易通过构造SQL语句在PHP中实现数据翻页。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//连接数据库</span></span><br><span class="line">mysql_connect(<span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-string">'code1'</span>, <span class="hljs-string">''</span>);</span><br><span class="line">mysql_select_db(<span class="hljs-string">'code1'</span>);</span><br><span class="line">mysql_query(<span class="hljs-string">"set names 'utf8'"</span>);</span><br><span class="line"><span class="hljs-comment">//预设翻页参数</span></span><br><span class="line">$page = <span class="hljs-number">2</span>;</span><br><span class="line">$pagesize = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-comment">//在这里构建分页查询</span></span><br><span class="line">$m = ($page <span class="hljs-number">-1</span>)*$pagesize;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//获取翻页数据</span></span><br><span class="line">$result = mysql_query($sql);</span><br><span class="line">$data = <span class="hljs-keyword">array</span>();</span><br><span class="line"><span class="hljs-keyword">while</span> ($row = mysql_fetch_array($result, MYSQL_ASSOC)) &#123;</span><br><span class="line">    $data[] = $row;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;pre&gt;'</span>;</span><br><span class="line">print_r($data);</span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">'&lt;/pre&gt;'</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在上面的例子中，我们使用了$m与$n变量来表示偏移量与每页数据条数，但我们推荐使用更有意义的变量名来表示，比如$pagesize, $start, $offset等，这样更容易理解，有助于团队协作开发。</p>
-<blockquote>
-<h4 id="PHP数据库操作之更新与删除数据"><a href="#PHP数据库操作之更新与删除数据" class="headerlink" title="PHP数据库操作之更新与删除数据"></a><strong>PHP数据库操作之更新与删除数据</strong></h4></blockquote>
-<p>数据的更新与删除相对比较简单，只需要构建好相应的sql语句，然后调用mysql_query执行就能完成相应的更新与删除操作。</p>
-<p>更新：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="hljs-string">"update user set name = '曹操' where id=2 limit 1"</span>;</span><br><span class="line"><span class="hljs-keyword">if</span> (mysql_query($sql)) &#123;</span><br><span class="line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">'更新成功'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>删除：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="hljs-string">"delete from user where id=2 limit 1"</span>;</span><br><span class="line"><span class="hljs-keyword">if</span> (mysql_query($sql)) &#123;</span><br><span class="line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">'删除成功'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>对于删除与更新操作，可以通过mysql_affected_rows函数来获取更新过的数据行数，如果数据没有变化，则结果为0。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="hljs-string">"update user set name = '曹操' where id=2 limit 1"</span>;</span><br><span class="line"><span class="hljs-keyword">if</span> (mysql_query($sql)) &#123;</span><br><span class="line">    <span class="hljs-keyword">echo</span> mysql_affected_rows();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h4 id="PHP数据库操作之关闭MySQL连接"><a href="#PHP数据库操作之关闭MySQL连接" class="headerlink" title="PHP数据库操作之关闭MySQL连接"></a><strong>PHP数据库操作之关闭MySQL连接</strong></h4></blockquote>
-<p>当数据库操作完成以后，可以使用mysql_close关闭数据库连接，默认的，当PHP执行完毕以后，会自动的关闭数据库连接。</p>
-<p>自动关闭数据库连接：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_closer();</span><br></pre></td></tr></table></figure>
-
-<p>在存在多个数据库连接，对性能要求比较高的情况下，可以设定连接资源参数来关闭指定的数据库连接，有利于在进行完数据库操作之后尽快关闭数据库连接，以节省资源，提高性能。</p>
-<p>关闭指定数据库连接：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$link = mysql_connect($host, $user, $pass);</span><br><span class="line">mysql_close($link);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-17T14:23:00.000Z">2019-08-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 分钟 读完 (大约 506 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/">PHP中的异常处理机制</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="PHP异常处理之异常处理"><a href="#PHP异常处理之异常处理" class="headerlink" title="PHP异常处理之异常处理"></a><strong>PHP异常处理之异常处理</strong></h4></blockquote>
-<p>PHP具有很多异常处理类，其中Exception是所有异常处理的基类。</p>
-<p>Exception具有几个基本属性与方法，其中包括了：</p>
-<ul>
-<li>message 异常消息内容</li>
-<li>code 异常代码</li>
-<li>file 抛出异常的文件名</li>
-<li>line 抛出异常在该文件的行数</li>
-</ul>
-<p>其中常用的方法有：</p>
-<ul>
-<li>getTrace 获取异常追踪信息</li>
-<li>getTraceAsString 获取异常追踪信息的字符串</li>
-<li>getMessage 获取出错信息</li>
-</ul>
-<p>如果必要的话，可以通过继承Exception类来建立自定义的异常处理类。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//自定义的异常类，继承了PHP的异常基类Exception</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Exception</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInfo</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-string">'请输入小于或等于1的数&lt;br&gt;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkNum</span><span class="hljs-params">($number)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>($number&gt;<span class="hljs-number">1</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MyException(<span class="hljs-string">'异常提示-数字必须小于等于1'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">try</span> &#123;</span><br><span class="line">    checkNum(<span class="hljs-number">2</span>);  </span><br><span class="line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">"无错误"</span>;</span><br><span class="line">&#125; <span class="hljs-keyword">catch</span>(<span class="hljs-keyword">Exception</span> $e) &#123;<span class="hljs-comment">//"catch" 代码块会捕获异常，并创建一个包含异常信息的对象</span></span><br><span class="line">    <span class="hljs-keyword">echo</span> $e-&gt;getInfo();<span class="hljs-comment">//输出自定义的异常信息："请输入小于或等于1的数"</span></span><br><span class="line">    <span class="hljs-keyword">echo</span> $e-&gt;getMessage();<span class="hljs-comment">//输出继承自基类的getMessage信息："异常提示-数字必须小于等于1"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<h4 id="PHP异常处理之获取错误发生的所在行"><a href="#PHP异常处理之获取错误发生的所在行" class="headerlink" title="PHP异常处理之获取错误发生的所在行"></a><strong>PHP异常处理之获取错误发生的所在行</strong></h4></blockquote>
-<p>为了获取到足够多的异常信息，我们需要将报错的文件名、行号、错误信息、异常追踪信息等记录到日志中，以便调试与修复问题。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkNum</span><span class="hljs-params">($number)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>($number&gt;<span class="hljs-number">1</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">"异常提示-数字必须小于等于1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//在 "try" 代码块中触发异常</span></span><br><span class="line"><span class="hljs-keyword">try</span>&#123;</span><br><span class="line">    checkNum(<span class="hljs-number">2</span>);</span><br><span class="line">&#125; <span class="hljs-keyword">catch</span>(<span class="hljs-keyword">Exception</span> $ex) &#123;</span><br><span class="line">   $msg = <span class="hljs-string">'Error:'</span>.$ex-&gt;getMessage().<span class="hljs-string">"\n"</span>;</span><br><span class="line">   $msg.= $ex-&gt;getTraceAsString().<span class="hljs-string">"\n"</span>;</span><br><span class="line">   $msg.= <span class="hljs-string">'异常行号：'</span>.$ex-&gt;getLine().<span class="hljs-string">"\n"</span>;</span><br><span class="line">   $msg.= <span class="hljs-string">'所在文件：'</span>.$ex-&gt;getFile().<span class="hljs-string">"\n"</span>;</span><br><span class="line">   <span class="hljs-comment">//将异常信息记录到日志中</span></span><br><span class="line">   file_put_contents(<span class="hljs-string">'error.log'</span>, $msg);</span><br><span class="line"></span><br><span class="line">   <span class="hljs-keyword">echo</span> $msg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-17T14:19:00.000Z">2019-08-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 分钟 读完 (大约 1383 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">PHP中的文件处理函数</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="PHP文件系统之读取文件内容"><a href="#PHP文件系统之读取文件内容" class="headerlink" title="PHP文件系统之读取文件内容"></a><strong>PHP文件系统之读取文件内容</strong></h4></blockquote>
-<p>PHP具有丰富的文件操作函数，最简单的读取文件的函数为file_get_contents，可以将整个文件全部读取到一个字符串中,也可以通过参数控制读取内容的开始点以及长度。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$content = file_get_contents(<span class="hljs-string">'./test.txt'</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-number">100</span>, <span class="hljs-number">500</span>);</span><br></pre></td></tr></table></figure>
-
-<p>PHP也提供类似于C语言操作文件的方法，使用fopen，fgets，fread等方法，fgets可以从文件指针中读取一行，freads可以读取指定长度的字符串。使用fopen打开的文件，最好使用fclose关闭文件指针，以避免文件句柄被占用。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$fp = fopen(<span class="hljs-string">'./text.txt'</span>, <span class="hljs-string">'rb'</span>);</span><br><span class="line">$contents = <span class="hljs-string">''</span>;</span><br><span class="line"><span class="hljs-keyword">while</span>(!feof($fp)) &#123;</span><br><span class="line">    $content01 .= fgets($fp);  <span class="hljs-comment">//读取一行</span></span><br><span class="line">    $content02 .= fread($fp, <span class="hljs-number">4096</span>);  <span class="hljs-comment">//一次读取4096个字符</span></span><br><span class="line">&#125;</span><br><span class="line">fclose($fp);</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP文件系统之判断文件是否存在"><a href="#PHP文件系统之判断文件是否存在" class="headerlink" title="PHP文件系统之判断文件是否存在"></a><strong>PHP文件系统之判断文件是否存在</strong></h4></blockquote>
-<p>一般情况下在对文件进行操作的时候需要先判断文件是否存在，PHP中常用来判断文件存在的函数有两个is_file与file_exists。<br>file_exists不仅可以判断文件是否存在，同时也可以判断目录是否存在，从函数名可以看出，is_file是确切的判断给定的路径是否是一个文件。<br>更加精确的可以使用is_readable与is_writeable在文件是否存在的基础上，判断文件是否可读与可写。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$filename = <span class="hljs-string">'/date/test.txt'</span>;</span><br><span class="line"><span class="hljs-comment">//判断如果$filename文件存在的话 就输出文件内容</span></span><br><span class="line"><span class="hljs-keyword">if</span> (file_exists($filename)) &#123;</span><br><span class="line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">'文件存在'</span>;</span><br><span class="line">&#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">   <span class="hljs-keyword">echo</span> <span class="hljs-string">'文件不存在'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP文件系统之取得文件的修改时间"><a href="#PHP文件系统之取得文件的修改时间" class="headerlink" title="PHP文件系统之取得文件的修改时间"></a><strong>PHP文件系统之取得文件的修改时间</strong></h4></blockquote>
-<p>文件有很多元属性，包括：文件的所有者、创建时间、修改时间、最后的访问时间等。</p>
-<ul>
-<li>fileowner：获得文件的所有者</li>
-<li>filectime：获取文件的创建时间</li>
-<li>filemtime：获取文件的修改时间</li>
-<li>fileatime：获取文件的访问时间</li>
-</ul>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$mtime = filemtime($filename);</span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">'修改时间：'</span>.date(<span class="hljs-string">'Y-m-d H:i:s'</span>, filemtime($filename));</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP文件系统之取得文件的大小"><a href="#PHP文件系统之取得文件的大小" class="headerlink" title="PHP文件系统之取得文件的大小"></a><strong>PHP文件系统之取得文件的大小</strong></h4></blockquote>
-<p>通过filesize函数可以取得文件的大小，文件大小是以字节数表示的。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$filename = <span class="hljs-string">'/date/test.txt'</span>;</span><br><span class="line"></span><br><span class="line">$size = filesize($filename);</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP文件系统之写入内容到文件"><a href="#PHP文件系统之写入内容到文件" class="headerlink" title="PHP文件系统之写入内容到文件"></a><strong>PHP文件系统之写入内容到文件</strong></h4></blockquote>
-<p>与读取文件对应，PHP写文件也具有两种方式，最简单的方式是采用file_put_contents。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$filename = <span class="hljs-string">'./test.txt'</span>;</span><br><span class="line">$data = <span class="hljs-string">'test'</span>;</span><br><span class="line">file_put_contents($filename, $data);</span><br></pre></td></tr></table></figure>
-
-<p>同样的，PHP也支持类似C语言风格的操作方式，采用fwrite进行文件写入。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$fp = fopen(<span class="hljs-string">'./test.txt'</span>, <span class="hljs-string">'w'</span>);</span><br><span class="line">fwrite($fp, <span class="hljs-string">'hello'</span>);</span><br><span class="line">fwrite($fp, <span class="hljs-string">'world'</span>);</span><br><span class="line">fclose($fp);</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP文件系统之删除文件"><a href="#PHP文件系统之删除文件" class="headerlink" title="PHP文件系统之删除文件"></a><strong>PHP文件系统之删除文件</strong></h4></blockquote>
-<p>跟Unix系统命令类似，PHP使用unlink函数进行文件删除。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$filename = <span class="hljs-string">'./test.txt'</span>;</span><br><span class="line"></span><br><span class="line">unlink($filename);</span><br></pre></td></tr></table></figure>
-
-<p>删除文件夹使用rmdir函数，文件夹必须为空，如果不为空或者没有权限则会提示失败。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$filename = <span class="hljs-string">'./test.txt'</span>;</span><br><span class="line"></span><br><span class="line">rmdir($dir);</span><br></pre></td></tr></table></figure>
-
-<p>如果文件夹中存在文件，可以先循环删除目录中的所有文件，然后再删除该目录，循环删除可以使用glob函数遍历所有文件。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$filename = <span class="hljs-string">'./test.txt'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">foreach</span> (glob(<span class="hljs-string">"*"</span>) <span class="hljs-keyword">as</span> $filename) &#123;</span><br><span class="line">   unlink($filename);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP异常处理之抛出一个异常"><a href="#PHP异常处理之抛出一个异常" class="headerlink" title="PHP异常处理之抛出一个异常"></a><strong>PHP异常处理之抛出一个异常</strong></h4></blockquote>
-<p>从PHP5开始，PHP支持异常处理，异常处理是面向对象一个重要特性，PHP代码中的异常通过throw抛出，异常抛出之后，后面的代码将不会再被执行。</p>
-<p>既然抛出异常会中断程序执行，那么为什么还需要使用异常处理？</p>
-<p>异常抛出被用于在遇到未知错误，或者不符合预先设定的条件时，通知客户程序，以便进行其他相关处理，不至于使程序直接报错中断。</p>
-<p>当代码中使用了try catch的时候，抛出的异常会在catch中捕获，否则会直接中断。</p>
-<p>1、基本语法<br>        try{<br>            //可能出现错误或异常的代码<br>            //catch表示捕获，Exception是php已定义好的异常类<br>        } catch(Exception $e){<br>            //对异常处理，方法：<br>                //1、自己处理<br>                //2、不处理，将其再次抛出<br>        }</p>
-<p>2、处理处理程序应当包括：<br>Try - 使用异常的函数应该位于 “try”  代码块内。如果没有触发异常，则代码将照常继续执行。但是如果异常被触发，会抛出一个异常。<br>Throw - 这里规定如何触发异常。注意：每一个 “throw” 必须对应至少一个 “catch”，当然可以对应多个”catch”<br>Catch - “catch” 代码块会捕获异常，并创建一个包含异常信息的对象。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//创建可抛出一个异常的函数</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkNum</span><span class="hljs-params">($number)</span></span>&#123;</span><br><span class="line">     <span class="hljs-keyword">if</span>($number&gt;<span class="hljs-number">1</span>)&#123;</span><br><span class="line">         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">"异常提示-数字必须小于等于1"</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">//在 "try" 代码块中触发异常</span></span><br><span class="line"> <span class="hljs-keyword">try</span>&#123;</span><br><span class="line">     checkNum(<span class="hljs-number">2</span>);</span><br><span class="line">     <span class="hljs-comment">//如果异常被抛出，那么下面一行代码将不会被输出</span></span><br><span class="line">     <span class="hljs-keyword">echo</span> <span class="hljs-string">'如果能看到这个提示，说明你的数字小于等于1'</span>;</span><br><span class="line"> &#125;<span class="hljs-keyword">catch</span>(<span class="hljs-keyword">Exception</span> $e)&#123;</span><br><span class="line">     <span class="hljs-comment">//捕获异常</span></span><br><span class="line">     <span class="hljs-keyword">echo</span> <span class="hljs-string">'捕获异常: '</span> .$e-&gt;getMessage();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-17T14:16:00.000Z">2019-08-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    15 分钟 读完 (大约 2309 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/17/PHP%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E4%BB%8B%E4%B8%8E%E4%BC%9A%E8%AF%9D%E6%8E%A7%E5%88%B6/">PHP之正则表达式简介与会话控制</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="什么叫正则表达式"><a href="#什么叫正则表达式" class="headerlink" title="什么叫正则表达式"></a><strong>什么叫正则表达式</strong></h4></blockquote>
-<p> 正则表达式是对字符串进行操作的一种逻辑公式，就是用一些特定的字符组合成一个规则字符串，称之为正则匹配模式。定义一个正则表达式，它用来匹配源字符串中是否存在是否与该正则表达式对应的字符串。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$p = <span class="hljs-string">'/苹果/'</span>;</span><br><span class="line">$str = <span class="hljs-string">"苹果 香蕉"</span>;</span><br><span class="line"><span class="hljs-keyword">if</span> (preg_match($p, $str)) &#123;</span><br><span class="line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">'匹配成功'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="存储在客户端的Cookie"><a href="#存储在客户端的Cookie" class="headerlink" title="存储在客户端的Cookie"></a><strong>存储在客户端的Cookie</strong></h4></blockquote>
-<p>cookie常用于识别用户。cookie是服务器留在用户计算机中的小文件。每当相同的计算机通过浏览器请求页面时，它同时会发送cookie。<br>通过PHP，能够创建并取回cookie的值。任何从浏览器发回的Cookie，PHP都会自动的将他存储在$_COOKIE的全局变量之中，因此我们可以通过$_COOKIE[‘key’]的形式来读取某个Cookie值。</p>
-<blockquote>
-<h4 id="PHP中的三种cookie设置方法"><a href="#PHP中的三种cookie设置方法" class="headerlink" title="PHP中的三种cookie设置方法"></a><strong>PHP中的三种cookie设置方法</strong></h4></blockquote>
-<p>PHP设置Cookie最常用的方法就是使用setcookie函数，setcookie具有7个可选参数，我们常用到的为前5个：</p>
-<ul>
-<li>name（ Cookie名）可以通过$_COOKIE[‘name’] 进行访问</li>
-<li>value（Cookie的值）</li>
-<li>expire（过期时间）Unix时间戳格式，默认为0，表示浏览器关闭即失效</li>
-<li>path（有效路径）如果路径设置为’/‘，则整个网站都有效</li>
-<li>domain（有效域）默认整个域名都有效，如果设置了&lt;<a href="http://www.imooc.com&gt;,则只在www子域中有效" target="_blank" rel="noopener">www.imooc.com&gt;,则只在www子域中有效</a></li>
-</ul>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//语法：setcookie(name, value, expire, path, domain);</span></span><br><span class="line"></span><br><span class="line">$value = <span class="hljs-string">'test'</span>;</span><br><span class="line">setcookie(<span class="hljs-string">"TestCookie"</span>, $value);<span class="hljs-comment">//设置cookie的名，传入的值</span></span><br><span class="line">setcookie(<span class="hljs-string">"TestCookie"</span>, $value, time()+<span class="hljs-number">3600</span>);  <span class="hljs-comment">//设置有效期一小时</span></span><br><span class="line">setcookie(<span class="hljs-string">"TestCookie"</span>, $value, time()+<span class="hljs-number">3600</span>, <span class="hljs-string">"/path/"</span>, <span class="hljs-string">"imooc.com"</span>); <span class="hljs-comment">//设置路径与域</span></span><br></pre></td></tr></table></figure>
-
-<p>PHP中还有一个设置Cookie的函数setrawcookie，setrawcookie跟setcookie基本一样，唯一的不同就是value值不会自动的进行urlencode，因此在需要的时候要手动的进行urlencode。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setrawcookie(<span class="hljs-string">'cookie_name'</span>, rawurlencode($value), time()+<span class="hljs-number">60</span>*<span class="hljs-number">60</span>*<span class="hljs-number">24</span>*<span class="hljs-number">365</span>);</span><br></pre></td></tr></table></figure>
-
-<p>因为Cookie是通过HTTP标头进行设置的，所以也可以直接使用header方法进行设置。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="hljs-string">"Set-Cookie:cookie_name=value"</span>);</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="cookie的删除与过期时间"><a href="#cookie的删除与过期时间" class="headerlink" title="cookie的删除与过期时间"></a><strong>cookie的删除与过期时间</strong></h4></blockquote>
-<p>当我们在PHP中用setcookie函数设置了cookie后，需要删除cookie时，也是采用setcookie函数来实现。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//添加需要删除的cookie名，value项置空，过期时间定负数</span></span><br><span class="line">setcookie(<span class="hljs-string">'test'</span>, <span class="hljs-string">''</span>, time()<span class="hljs-number">-1</span>);</span><br></pre></td></tr></table></figure>
-
-<p>上面的例子将cookie的过期时间设置到当前时间之前，则该cookie会自动失效，也就达到了删除cookie的目的。<br>之所以这么设计是因为cookie是通过HTTP的标头来传递的，客户端根据服务端返回的Set-Cookie段来进行cookie的设置，如果删除cookie需要使用新的Del-Cookie来实现，则HTTP头就会变得复杂，实际上仅通过Set-Cookie就可以简单明了的实现Cookie的设置、更新与删除。</p>
-<p>根据原理，我们也可以直接通过header来删除cookie。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//设置cookie名为test的值为1393832059，然后再设置过期时间。</span></span><br><span class="line">header(<span class="hljs-string">"Set-Cookie:test=1393832059; </span></span><br><span class="line"><span class="hljs-string">    expires="</span>.gmdate(<span class="hljs-string">'D, d M Y H:i:s \G\M\T'</span>, time()<span class="hljs-number">-1</span>));</span><br><span class="line"><span class="hljs-comment">//这里用到了gmdate，用来生成格林威治标准时间，以便排除时差的影响。</span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="cookie的有效路径"><a href="#cookie的有效路径" class="headerlink" title="cookie的有效路径"></a><strong>cookie的有效路径</strong></h4></blockquote>
-<p>cookie中的路径用来控制设置的cookie在哪个路径下有效，默认为’/‘，在所有路径下都有效，当设定了其他路径之后，则只在设定的路径以及子路径下有效。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//设置cookie名为：test，值为：1，过期时间0，即浏览器关闭即失效，有效路径为/path</span></span><br><span class="line">setcookie(<span class="hljs-string">'test'</span>, <span class="hljs-string">'1'</span>, <span class="hljs-number">0</span>,<span class="hljs-string">'/path'</span>); </span><br><span class="line">var_dump($_COOKIE[<span class="hljs-string">'test'</span>]); <span class="hljs-comment">//使用var_dump函数打印cookie值</span></span><br></pre></td></tr></table></figure>
-
-<p>上面的设置会使test在/path以及子路径/path/abc下都有效，但是在根目录下就读取不到test的cookie值。</p>
-<p>一般情况下，大多是使用所有路径的，只有在极少数有特殊需求的时候，会设置路径，这种情况下只在指定的路径中才会传递cookie值，可以节省数据的传输，增强安全性以及提高性能。</p>
-<p>cookie将数据存储在客户端，建立起用户与服务器之间的联系，通常可以解决很多问题，但是cookie仍然具有一些局限：</p>
-<ul>
-<li>cookie相对不是太安全，容易被盗用导致cookie欺骗</li>
-<li>单个cookie的值最大只能存储4k</li>
-<li>每次请求都要进行网络传输，占用带宽</li>
-</ul>
-<blockquote>
-<h4 id="存储在服务端的Session"><a href="#存储在服务端的Session" class="headerlink" title="存储在服务端的Session"></a><strong>存储在服务端的Session</strong></h4></blockquote>
-<p>session是将用户的会话数据存储在服务端，没有大小限制，通过一个session_id进行用户识别。</p>
-<p>默认情况下，session是以文件形式存储在服务器上的，因此当一个页面开启了session之后，会独占这个session文件，这样会导致当前用户的其他并发访问无法执行而等待。可以采用缓存或者数据库的形式存储来解决这个问题。</p>
-<blockquote>
-<h4 id="设置Session"><a href="#设置Session" class="headerlink" title="设置Session"></a><strong>设置Session</strong></h4></blockquote>
-<p>在PHP中使用session非常简单，先执行session_start方法开启session，然后通过全局变量$_SESSION进行session的读写。</p>
-<p>session会自动的对要设置的值进行encode（编码）与decode（译码），因此session可以支持任意数据类型，包括数据与对象等。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">session_start();    <span class="hljs-comment">////调用session_start方法来启用session</span></span><br><span class="line"></span><br><span class="line">$_SESSION[<span class="hljs-string">'string'</span>] = <span class="hljs-string">'jobs'</span>;   <span class="hljs-comment">//名为name，值为jobs</span></span><br><span class="line">$_SESSION[<span class="hljs-string">'ary'</span>] = <span class="hljs-keyword">array</span>(<span class="hljs-string">'name'</span>,<span class="hljs-string">"age"</span>,<span class="hljs-string">'uid'</span> =&gt; <span class="hljs-string">"1250123"</span>);  <span class="hljs-comment">//一个名为ary的数组</span></span><br><span class="line">$_SESSION[<span class="hljs-string">'obj'</span>] = <span class="hljs-keyword">new</span> stdClass();  <span class="hljs-comment">//一个名为obj的对象</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//输出三个session</span></span><br><span class="line">var_dump($_SESSION[<span class="hljs-string">'string'</span>]);</span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;    <span class="hljs-comment">//空一行显示</span></span><br><span class="line">var_dump($_SESSION[<span class="hljs-string">'ary'</span>]);</span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;br&gt;"</span>;</span><br><span class="line">var_dump($_SESSION[<span class="hljs-string">'obj'</span>]);</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="删除与销毁session"><a href="#删除与销毁session" class="headerlink" title="删除与销毁session"></a><strong>删除与销毁session</strong></h4></blockquote>
-<p>删除某个session值可以使用PHP的unset函数，删除后就会从全局变量$_SESSION中去除，无法访问。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">session_start();</span><br><span class="line"></span><br><span class="line">$_SESSION[<span class="hljs-string">'name'</span>] = <span class="hljs-string">'jobs'</span>;</span><br><span class="line"><span class="hljs-keyword">unset</span>($_SESSION[<span class="hljs-string">'name'</span>]);   <span class="hljs-comment">//删除指定session</span></span><br><span class="line"><span class="hljs-keyword">echo</span> $_SESSION[<span class="hljs-string">'name'</span>]; <span class="hljs-comment">//提示name不存在</span></span><br></pre></td></tr></table></figure>
-
-<p>如果要删除所有的session，可以使用session_destroy函数销毁当前session，session_destroy会删除所有数据，但是session_id仍然存在。<br>如果需要同时销毁cookie中的session_id，通常在用户退出的时候可能会用到，则还需要显式的调用setcookie方法删除session_id的cookie值。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">session_start();</span><br><span class="line"></span><br><span class="line">$_SESSION[<span class="hljs-string">'name'</span>] = <span class="hljs-string">'jobs'</span>;</span><br><span class="line">$_SESSION[<span class="hljs-string">'time'</span>] = time();</span><br><span class="line">session_destroy();  <span class="hljs-comment">//删除所有</span></span><br></pre></td></tr></table></figure>
-
-<p>值得注意的是，session_destroy并不会立即的销毁全局变量$_SESSION中的值，只有当下次再访问的时候，$_SESSION才为空，因此如果需要立即销毁$_SESSION，可以使用unset函数。</p>
-<blockquote>
-<h4 id="session与cookie的异同"><a href="#session与cookie的异同" class="headerlink" title="session与cookie的异同"></a><strong>session与cookie的异同</strong></h4></blockquote>
-<p>PHP默认情况下session id是通过cookie来保存的，因此从某种程度上来说，seesion依赖于cookie。但这不是绝对的，session id也可以通过参数来实现，只要能将session id传递到服务端进行识别的机制都可以使用session。</p>
-<blockquote>
-<h4 id="使用session来存储用户的登录信息"><a href="#使用session来存储用户的登录信息" class="headerlink" title="使用session来存储用户的登录信息"></a><strong>使用session来存储用户的登录信息</strong></h4></blockquote>
-<p>session可以用来存储多种类型的数据，因此具有很多的用途，常用来存储用户的登录信息，购物车数据，或者一些临时使用的暂存数据等。</p>
-<p>用户在登录成功以后，通常可以将用户的信息存储在session中，一般的会单独的将一些重要的字段单独存储，然后所有的用户信息独立存储。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$_SESSION[<span class="hljs-string">'uid'</span>] = $userinfo[<span class="hljs-string">'uid'</span>];</span><br><span class="line">$_SESSION[<span class="hljs-string">'userinfo'</span>] = $userinfo;</span><br></pre></td></tr></table></figure>
-
-<p>一般来说，登录信息既可以存储在sessioin中，也可以存储在cookie中，他们之间的差别在于session可以方便的存取多种数据类型，而cookie只支持字符串类型，同时对于一些安全性比较高的数据，cookie需要进行格式化与加密存储，而session存储在服务端则安全性较高。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">session_start();</span><br><span class="line"><span class="hljs-comment">//假设用户登录成功获得了以下用户数据</span></span><br><span class="line">$userinfo = <span class="hljs-keyword">array</span>(</span><br><span class="line">    <span class="hljs-string">'uid'</span>  =&gt; <span class="hljs-number">10000</span>,</span><br><span class="line">    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'spark'</span>,</span><br><span class="line">    <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'spark@imooc.com'</span>,</span><br><span class="line">    <span class="hljs-string">'sex'</span>  =&gt; <span class="hljs-string">'man'</span>,</span><br><span class="line">    <span class="hljs-string">'age'</span>  =&gt; <span class="hljs-string">'18'</span></span><br><span class="line">);</span><br><span class="line">header(<span class="hljs-string">"content-type:text/html; charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/* 将用户信息保存到session中 */</span></span><br><span class="line">$_SESSION[<span class="hljs-string">'uid'</span>] = $userinfo[<span class="hljs-string">'uid'</span>];</span><br><span class="line">$_SESSION[<span class="hljs-string">'name'</span>] = $userinfo[<span class="hljs-string">'name'</span>];</span><br><span class="line">$_SESSION[<span class="hljs-string">'userinfo'</span>] = $userinfo;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//* 将用户数据保存到cookie中的一个简单方法 */</span></span><br><span class="line">$secureKey = <span class="hljs-string">'imooc'</span>; <span class="hljs-comment">//加密密钥</span></span><br><span class="line">$str = serialize($userinfo); <span class="hljs-comment">//将用户信息序列化</span></span><br><span class="line"><span class="hljs-comment">//用户信息加密前</span></span><br><span class="line">$str = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), $str, MCRYPT_MODE_ECB));</span><br><span class="line"><span class="hljs-comment">//用户信息加密后</span></span><br><span class="line"><span class="hljs-comment">//将加密后的用户数据存储到cookie中</span></span><br><span class="line">setcookie(<span class="hljs-string">'userinfo'</span>, $str);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//当需要使用时进行解密</span></span><br><span class="line">$str = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($secureKey), base64_decode($str), MCRYPT_MODE_ECB);</span><br><span class="line">$uinfo = unserialize($str);</span><br><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">"解密后的用户信息：&lt;br&gt;"</span>;</span><br><span class="line">print_r($uinfo);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-17T14:07:00.000Z">2019-08-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 分钟 读完 (大约 1225 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/">PHP中的类与对象特性</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="PHP类和对象"><a href="#PHP类和对象" class="headerlink" title="PHP类和对象"></a><strong>PHP类和对象</strong></h4></blockquote>
-<p>类是一类东西的结构描述，而对象则是一类东西的一个具体实例。创建一个对象，通常需要写一个类，再将类通过new关键字进行实例化。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//定义类</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>&#123;</span><br><span class="line">    $name = <span class="hljs-string">'汽车'</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$car = <span class="hljs-keyword">new</span> Car();	<span class="hljs-comment">//实例化类为对象</span></span><br><span class="line"><span class="hljs-keyword">echo</span> $car-&gt;getName();</span><br></pre></td></tr></table></figure>
-
-<p>类与对象看起来比较相似，但实际上有本质的区别，类是抽象的概念，对象是具体的实例。类可以使程序具有可重用性。</p>
-<blockquote>
-<h4 id="PHP类和对象的访问控制"><a href="#PHP类和对象的访问控制" class="headerlink" title="PHP类和对象的访问控制"></a><strong>PHP类和对象的访问控制</strong></h4></blockquote>
-<p>什么是类和对象的访问控制？顾名思义，就是指类或对象来自外部访问的权限控制。</p>
-<p>类或对象的访问控制关键字有：</p>
-<ul>
-<li>public：公有的</li>
-<li>protected：受保护的</li>
-<li>private：私有的</li>
-</ul>
-<p>PHP语法规定，类属性必须定义为公有、受保护、私有之一，若是类的属性不加上访问控制的前缀将会报错。为兼容PHP5以前的版本，如果采用 var 定义，则被视为公有。</p>
-<p>类的方法也可以定义访问权限，默认为公有。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//定义一个方法</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Room</span></span>&#123;	</span><br><span class="line">	$name01 = <span class="hljs-string">"卧室、"</span>;	<span class="hljs-comment">//属性未定义访问控制，会调用失败并报错</span></span><br><span class="line">	<span class="hljs-keyword">public</span> $name02 = <span class="hljs-string">"客房"</span>;	<span class="hljs-comment">//定义访问控制为公有，调用成功</span></span><br><span class="line">&#125;</span><br><span class="line">$room = <span class="hljs-keyword">new</span> Room();	<span class="hljs-comment">//实例化方法为对象</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $room-&gt;name01;	<span class="hljs-comment">//输入对象的name01,因未定义访问控制，无法输出。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $room-&gt;name02; <span class="hljs-comment">//输出对象的name02，成功输出“客房”</span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP中Static静态关键字的作用"><a href="#PHP中Static静态关键字的作用" class="headerlink" title="PHP中Static静态关键字的作用"></a><strong>PHP中Static静态关键字的作用</strong></h4></blockquote>
-<p>静态属性与方法可以在不实例化类的情况下调用，直接使用类名::方法名的方式进行调用。静态属性不允许对象使用-&gt;操作符调用。</p>
-<p>静态方法中，$this伪变量不允许使用。可以使用self，static，parent在内部调用静态方法与属性。<br>self和static都是调用变量用的，parent用于调用方法。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> $speed = <span class="hljs-number">10</span>;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> $setout = <span class="hljs-string">" 时速，出发！"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSpeed</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>::$speed;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">speedUp</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>::$speed+=<span class="hljs-number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BigCar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span> </span>&#123;	<span class="hljs-comment">//BigCar继承Car</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">start</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">parent</span>::speedUp();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setout</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">static</span>::$setout;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BigCar::start(); <span class="hljs-comment">//调用静态方法加10</span></span><br><span class="line"><span class="hljs-keyword">echo</span> Car::getSpeed(); <span class="hljs-comment">//输出静态方法里的值</span></span><br><span class="line"><span class="hljs-keyword">echo</span> BigCar::setout();</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP类和对象之对象继承"><a href="#PHP类和对象之对象继承" class="headerlink" title="PHP类和对象之对象继承"></a><strong>PHP类和对象之对象继承</strong></h4></blockquote>
-<p>继承是面对对象程序设计中常用的一个特性，同一父类的子类具有很多相同的属性和方法，可以采用继承的特性，来让子类来共享父类的属性和方法，实现代码的复用。</p>
-<p>例如汽车就是一个比较大的类，我们也可以称之为基类或父类。汽车这个大类中还分为轿车、货车、越野车等，他们都有一些相同的特性。例如：同样都有轮子、方向盘、刹车、离合。这些相同的特性我们就可以写一个父类，让不同的子类来继承，从而提高代码的复用率。</p>
-<p>示例：上面”Static静态关键字的作用”示例中已经有对象继承的内容，下面重点提一下语法。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span></span>&#123;	<span class="hljs-comment">//定义一个类Car</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BigCar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span></span>&#123;	<span class="hljs-comment">//新类BigCar继承类Car的属性方法。</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="PHP类和对象之重载"><a href="#PHP类和对象之重载" class="headerlink" title="PHP类和对象之重载"></a><strong>PHP类和对象之重载</strong></h4></blockquote>
-<p>PHP中的重载指的是动态的创建属性与方法，是通过魔术方法来实现的。属性的重载通过_set，__get，__isset，__unset来分别实现对不存在属性的赋值、读取、判断属性是否设置、销毁属性。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> $ary = <span class="hljs-keyword">array</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">($key, $val)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">$this</span>-&gt;ary[$key] = $val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">($key)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;ary[$key])) &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;ary[$key];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__isset</span><span class="hljs-params">($key)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-keyword">$this</span>-&gt;ary[$key])) &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__unset</span><span class="hljs-params">($key)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">unset</span>(<span class="hljs-keyword">$this</span>-&gt;ary[$key]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$car = <span class="hljs-keyword">new</span> Car();</span><br><span class="line">$car-&gt;name = <span class="hljs-string">'汽车'</span>;  <span class="hljs-comment">//name属性动态创建并赋值</span></span><br><span class="line"><span class="hljs-keyword">echo</span> $car-&gt;name;</span><br></pre></td></tr></table></figure>
-
-<p>方法的重载通过__call来实现，当调用不存在的方法的时候，将会转为参数调用__call方法，当调用不存在的静态方法时会使用__callStatic重载。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> $speed = <span class="hljs-number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span><span class="hljs-params">($name, $args)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> ($name == <span class="hljs-string">'speedUp'</span>) &#123;</span><br><span class="line">            <span class="hljs-keyword">$this</span>-&gt;speed += <span class="hljs-number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$car = <span class="hljs-keyword">new</span> Car();</span><br><span class="line">$car-&gt;speedUp(); <span class="hljs-comment">//调用不存在的方法会使用重载</span></span><br><span class="line"><span class="hljs-keyword">echo</span> $car-&gt;speed;</span><br></pre></td></tr></table></figure>
-
-<p>当调用当前环境下未定义或不可见的类属性或方法时，重载方法会被调用。</p>
-<hr>
-<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-17T14:01:00.000Z">2019-08-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 分钟 读完 (大约 1178 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E7%89%B9%E6%80%A7/">PHP中的变量与函数特性</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="PHP中的两种变量定义方法"><a href="#PHP中的两种变量定义方法" class="headerlink" title="PHP中的两种变量定义方法"></a><strong>PHP中的两种变量定义方法</strong></h4></blockquote>
-<p>定义一个变量有两种方法：$这个符号在定义初始化，或者使用的时候都是必须要有的。</p>
-<p>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$name = <span class="hljs-string">"php"</span>;  <span class="hljs-comment">//一般变量的定义</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Phpgood</span></span>&#123;</span><br><span class="line"><span class="hljs-keyword">var</span> $talk = <span class="hljs-string">"真好"</span>;   <span class="hljs-comment">//只能在类里用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$phpgood = <span class="hljs-keyword">new</span> Phpgood();</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">echo</span> $name;</span><br><span class="line"><span class="hljs-keyword">echo</span> $phpgood-&gt;talk;</span><br></pre></td></tr></table></figure>
-
-<p>第一种方法，可以定义一般变量和类的属性变量，在类里定义属性变量时，需加访问控制关键字，不携带默认访问权限。</p>
-<p>第二种方法，只能定义类的属性变量，用var定义，在类里定义属性变量的时，可以不加访问控制关键字，默认携带”公有”访问权限，不常用的写法。</p>
-<blockquote>
-<h4 id="PHP中的函数"><a href="#PHP中的函数" class="headerlink" title="PHP中的函数"></a><strong>PHP中的函数</strong></h4></blockquote>
-<p>PHP中的函数就是用于完成某些功能的代码段，分为系统函数和自定义函数。</p>
-<p>系统函数是指PHP中原生内置的函数，无需开发者封装，使用函数名调用即可。例如：echo、var_dump。<br>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">echo</span> <span class="hljs-string">"你好"</span>;  <span class="hljs-comment">//echo加不加括号都可以。</span></span><br><span class="line"></span><br><span class="line">var_dump(<span class="hljs-string">"PHP"</span>);</span><br></pre></td></tr></table></figure>
-
-<p>自定义函数是指按照具体需求，由开发者封装的函数。<br>示例：</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">outPut</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    var_dump(<span class="hljs-string">"我是函数输出的内容"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outPut();</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="函数的传值与传引用"><a href="#函数的传值与传引用" class="headerlink" title="函数的传值与传引用"></a><strong>函数的传值与传引用</strong></h4></blockquote>
-<p>传值:默认情况下，函数参数通过值传递，所以即使在函数内部改变参数的值也不会改变函数外部的值。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span><span class="hljs-params">($i)</span></span>&#123;</span><br><span class="line">    $i+=<span class="hljs-number">10</span>;</span><br><span class="line">    var_dump($i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$i=<span class="hljs-number">2</span>;</span><br><span class="line">test($i);  <span class="hljs-comment">//传值进去，输出12</span></span><br><span class="line">var_dump($i);  <span class="hljs-comment">//输出2</span></span><br></pre></td></tr></table></figure>
-
-<p>传引用：可以通过在参数前添加取地址符&amp;，代表通过引用传递参数，在函数内部对其所做操作影响其本身。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span><span class="hljs-params">(&amp;$i)</span></span>&#123;</span><br><span class="line">    $i+=<span class="hljs-number">10</span>;</span><br><span class="line">    var_dump($i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$m=<span class="hljs-number">2</span>;</span><br><span class="line">test($m);  <span class="hljs-comment">//传变量地址进去，输出12</span></span><br><span class="line">var_dump($m);  <span class="hljs-comment">//输出12</span></span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<h4 id="自定义函数的包含"><a href="#自定义函数的包含" class="headerlink" title="自定义函数的包含"></a><strong>自定义函数的包含</strong></h4></blockquote>
-<p>对于想在多处使用已封装好的自定义函数，可以使用包含函数文件的方式，可以避免多处重写相同函数。</p>
-<p>两种包含方式：<br><strong>require/require_once</strong></p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">require</span> <span class="hljs-string">'xxxx.php'</span>;  <span class="hljs-comment">//同文件多次包含，多次生效</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">require_once</span> <span class="hljs-string">'xxxx.php'</span>;  <span class="hljs-comment">//同文件多次包含，只生效一次</span></span><br></pre></td></tr></table></figure>
-<p>通过require/require_once包含的文件不存在时，会产生一个致命错误和一个警告，程序终止执行。</p>
-<p><strong>include/include_once</strong></p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">include</span> <span class="hljs-string">'xxxx.php'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">include_once</span> <span class="hljs-string">'xxxx.php'</span>;</span><br></pre></td></tr></table></figure>
-<p>通过include/include_once包含的文件不存在时，会产生两个警告，程序继续执行。</p>
-<p>require是一个预置行为，无条件的包含。这个函式通常放在PHP程式的最前面，PHP程式在执行前，就会先包含require所指定文件，即使可能不执行。</p>
-<p>include是一个过程行为，有条件的包含。这个函式通常放在流程控制的处理区段中，PHP程式网页在读到include的档案时，才将它读进来，引入是有条件的，发生在程序执行时，只有条件成立时才导入，可简化编译生成的代码。</p>
-<blockquote>
-<h4 id="PHP中echo与var-dump函数的区别"><a href="#PHP中echo与var-dump函数的区别" class="headerlink" title="PHP中echo与var_dump函数的区别"></a><strong>PHP中echo与var_dump函数的区别</strong></h4></blockquote>
-<p>echo与var_dump的核心功能同样是没有区别的，皆为“输出变量的值”，echo只能输出变量的值，var_dump能将变量的值与类型同时输出。</p>
-<p>var_dump对于变量、数组、类的输出，有着很好的表现，通过var_dump能够轻易地观察出变量、数组、类此时的值为多少。而echo则报错成狗，当然，在普通网页的输出，我们也不希望软件产品客户看到var_dump输出的信息，所以echo还是最基础的东西。</p>
-<p>echo偏向于产品，给客户看的，调试人员、编程人员更适合使用var_dump来输出变量，</p>
-<blockquote>
-<h4 id="函数or方法有什么区别"><a href="#函数or方法有什么区别" class="headerlink" title="函数or方法有什么区别"></a><strong>函数or方法有什么区别</strong></h4></blockquote>
-<ul>
-<li>function函数：函数，是一个面向过程的算法的实现，是独立存在的，也就是指全局作用域里的函数，可以在任何地方调用。</li>
-<li>function方法：方法，是一个面向对象的业务逻辑的实现，对象里依赖于类存在的，即类的方法。</li>
-</ul>
-<hr>
-<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/08/13/PHP%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/" class="image is-7by1">
-            <img class="thumbnail" src="/images/chart/2019-08-13-23.jpg" alt="PHP基本介绍及知识体系">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-13T15:30:00.000Z">2019-08-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 分钟 读完 (大约 656 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/13/PHP%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/">PHP基本介绍及知识体系</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<h4 id="关于PHP"><a href="#关于PHP" class="headerlink" title="关于PHP"></a><strong>关于PHP</strong></h4></blockquote>
-<p>PHP的中文名是超文本预处理器，是一种广泛使用在Web开发领域的跨平台后端脚本语言，面向对象编程，特点是：使用成本低，开发速度快。</p>
-<p>PHP后端工程师技术栈主要包括以下内容：</p>
-<ul>
-<li>Web前端技术与PHP语言</li>
-<li>Linux操作系统</li>
-<li>MySQL数据库</li>
-<li>各种PHP开发框架</li>
-<li>缓存技术和海量数据优化技术</li>
-<li>系统调优和负载均衡技术</li>
-</ul>
-<p>PHP后端工程师应以PHP为主要语言，搭建Web技术栈，全面提升综合素质。</p>
-<blockquote>
-<h4 id="PHP知识体系进阶路线"><a href="#PHP知识体系进阶路线" class="headerlink" title="PHP知识体系进阶路线"></a><strong>PHP知识体系进阶路线</strong></h4></blockquote>
-<p>阶段目标：可以独立完成PHP开发工作</p>
-<ul>
-<li>HTML+CSS+JavaScript语言基础</li>
-<li>PHP语法基础与高级开发技术</li>
-<li>MySQL数据库</li>
-<li>API接口开发</li>
-<li>熟悉常用PHP开发框架</li>
-<li>源码管理工具</li>
-<li>PHP测试工具</li>
-</ul>
-<p>阶段目标：深入理解PHP开发环境，能够胜任核心代码的编写工作</p>
-<ul>
-<li>深入学习HTTP协议</li>
-<li>PHP环境高级配置</li>
-<li>MySQL数据库优化技术</li>
-<li>静态化和缓存技术</li>
-<li>网站安全技术</li>
-</ul>
-<p>阶段目标：可以根据需求改善技术框架，轻松实现核心组件，攻克技术难关</p>
-<ul>
-<li>深入分析PHP框架源代码</li>
-<li>深入学习PHP内核</li>
-<li>NoSQL型数据库</li>
-<li>集群与负载均衡技术</li>
-</ul>
-<p>阶段目标：能够对整体需求方案做出精确描述，灵活运用PHP和相关技术进行项目设计</p>
-<ul>
-<li>深入学习Linux操作系统</li>
-<li>多级缓存技术</li>
-<li>海量数据优化技术</li>
-<li>容灾技术</li>
-<li>大型系统框架设计方法</li>
-</ul>
-<blockquote>
-<h4 id="资深PHP工程师应具备的素养"><a href="#资深PHP工程师应具备的素养" class="headerlink" title="资深PHP工程师应具备的素养"></a><strong>资深PHP工程师应具备的素养</strong></h4></blockquote>
-<ul>
-<li>具备高级PHP工程师的技能和经验</li>
-<li>掌握Web服务器相关的核心技术</li>
-<li>掌握面向对象的思维方式</li>
-<li>能够熟练使用企业应用中常见的开发框架</li>
-<li>具备良好的编程习惯并使用高效的方法构建代码</li>
-<li>具备独立解决问题的能力</li>
-</ul>
-<p>一名IT工程师的进阶，需要不断的学习新的知识，完善技术栈。总结日常踩过的坑，锻炼独立解决问题的能力，才能高效且轻松的完成工作任务。</p>
-<hr>
-<p>源自：本篇文章总结自网上前辈的分享、社招的标准、加以作者心得体会而成。<br>声明：不足之处欢迎指正、转载请注明出处！</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-</div>
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <nav class="level">
-            <div class="level-item has-text-centered" style="flex-shrink: 1">
-                <div>
-                    
-                    <figure class="image is-128x128 has-mb-6">
-                        <img class="" src="/images/avatar.png" alt="司南道长">
-                    </figure>
-                    
-                    <p class="is-size-4 is-block">
-                        司南道长
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-block">
-                        普通的Web领域开发者
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
-                        <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>中国</span>
-                    </p>
-                    
-                </div>
-            </div>
-        </nav>
-        <nav class="level is-mobile">
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        文章
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        20
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        分类
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        11
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        标签
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        20
-                    </p>
-                </div>
-            </div>
-        </nav>
-        
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
-                关注我</a>
-        </div>
-        
-        
-        
-        <div class="level is-mobile">
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="https://github.com/FaithSinan">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Facebook" href="https://facebook.com">
-                
-                <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Twitter" href="https://twitter.com">
-                
-                <i class="fab fa-twitter"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Dribbble" href="https://dribbble.com">
-                
-                <i class="fab fa-dribbble"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="RSS" href="/">
-                
-                <i class="fas fa-rss"></i>
-                
-            </a>
-            
-        </div>
-        
-    </div>
-</div>
-    
-        
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            链接
-        </h3>
-        <ul class="menu-list">
-        
-            <li>
-                <a class="level is-mobile" href="https://hexo.io" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">Hexo</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">hexo.io</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="https://gitee.com/FaithSinan" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">Gitee</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">gitee.com</span>
-                    </span>
-                </a>
-            </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">
-            <span class="level-start">
-                <span class="level-item">Web全栈架构</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">13</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">
-            <span class="level-start">
-                <span class="level-item">JavaScript</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">3</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">
-            <span class="level-start">
-                <span class="level-item">PHP</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">9</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">
-            <span class="level-start">
-                <span class="level-item">网站搭建</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">
-            <span class="level-start">
-                <span class="level-item">综合技术栈</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
-            <span class="level-start">
-                <span class="level-item">版本管理</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
-            <span class="level-start">
-                <span class="level-item">网络技术</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">
-            <span class="level-start">
-                <span class="level-item">Web安全</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">
-            <span class="level-start">
-                <span class="level-item">数通</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">
-            <span class="level-start">
-                <span class="level-item">运维技术</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">4</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">
-            <span class="level-start">
-                <span class="level-item">Linux系统配置</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">4</span>
-            </span>
-        </a></li></ul></li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            标签云
-        </h3>
-        <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" style="font-size: 16px;">Linux系统运维</a> <a href="/tags/PHP/" style="font-size: 18px;">PHP</a> <a href="/tags/RedHat%E7%B3%BB/" style="font-size: 10px;">RedHat系</a> <a href="/tags/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/" style="font-size: 20px;">Web全栈架构</a> <a href="/tags/Web%E5%AE%89%E5%85%A8/" style="font-size: 10px;">Web安全</a> <a href="/tags/debian%E7%B3%BB/" style="font-size: 10px;">debian系</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" style="font-size: 10px;">命令详解</a> <a href="/tags/%E6%95%B0%E9%80%9A/" style="font-size: 10px;">数通</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E7%BA%A2%E5%B8%BD%E7%B3%BB/" style="font-size: 12px;">红帽系</a> <a href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/" style="font-size: 10px;">综合技术栈</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 18px;">编程语言</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 12px;">网络技术</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
-    </div>
-</div>
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-            <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的字符串处理">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-27T14:58:00.000Z">2019-08-27</time></div>
-                    <a href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的字符串处理</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的特殊函数形式">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-24T15:59:00.000Z">2019-08-24</time></div>
-                    <a href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的特殊函数形式</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/18/%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用SSH登陆Linux常见问题">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-18T09:20:04.000Z">2019-08-18</time></div>
-                    <a href="/2019/08/18/%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用SSH登陆Linux常见问题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a> / <a class="has-link-grey -link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">Linux系统配置</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的数据库操作扩展">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-17T14:27:00.000Z">2019-08-17</time></div>
-                    <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的数据库操作扩展</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的异常处理机制">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-17T14:23:00.000Z">2019-08-17</time></div>
-                    <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的异常处理机制</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/08/">
-                <span class="level-start">
-                    <span class="level-item">八月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">10</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/07/">
-                <span class="level-start">
-                    <span class="level-item">七月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/06/">
-                <span class="level-start">
-                    <span class="level-item">六月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/05/">
-                <span class="level-start">
-                    <span class="level-item">五月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">4</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Github/">
-                        <span class="tag">Github</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/JavaScript/">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">3</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">
-                        <span class="tag">Linux系统运维</span>
-                        <span class="tag is-grey">4</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/PHP/">
-                        <span class="tag">PHP</span>
-                        <span class="tag is-grey">9</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/RedHat%E7%B3%BB/">
-                        <span class="tag">RedHat系</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">
-                        <span class="tag">Web全栈架构</span>
-                        <span class="tag is-grey">13</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Web%E5%AE%89%E5%85%A8/">
-                        <span class="tag">Web安全</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/debian%E7%B3%BB/">
-                        <span class="tag">debian系</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/hexo/">
-                        <span class="tag">hexo</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="tag">博客</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">
-                        <span class="tag">命令详解</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E6%95%B0%E9%80%9A/">
-                        <span class="tag">数通</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
-                        <span class="tag">版本管理</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%AB%AF%E5%8F%A3/">
-                        <span class="tag">端口</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%BA%A2%E5%B8%BD%E7%B3%BB/">
-                        <span class="tag">红帽系</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">
-                        <span class="tag">综合技术栈</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
-                        <span class="tag">编程语言</span>
-                        <span class="tag is-grey">9</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
-                        <span class="tag">网络技术</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="tag">虚拟机</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
-                        <span class="tag">读书笔记</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-        
-        </div>
-    
-</div>
-
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
-        <div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的字符串处理">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-27T14:58:00.000Z">2019-08-27</time></div>
-                    <a href="/2019/08/27/PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的字符串处理</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的特殊函数形式">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-24T15:59:00.000Z">2019-08-24</time></div>
-                    <a href="/2019/08/24/PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的特殊函数形式</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/18/%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="使用SSH登陆Linux常见问题">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-18T09:20:04.000Z">2019-08-18</time></div>
-                    <a href="/2019/08/18/%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">使用SSH登陆Linux常见问题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a> / <a class="has-link-grey -link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">Linux系统配置</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的数据库操作扩展">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-17T14:27:00.000Z">2019-08-17</time></div>
-                    <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的数据库操作扩展</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="PHP中的异常处理机制">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-17T14:23:00.000Z">2019-08-17</time></div>
-                    <a href="/2019/08/17/PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PHP中的异常处理机制</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a> / <a class="has-link-grey -link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/08/">
-                <span class="level-start">
-                    <span class="level-item">八月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">10</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/07/">
-                <span class="level-start">
-                    <span class="level-item">七月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/06/">
-                <span class="level-start">
-                    <span class="level-item">六月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/05/">
-                <span class="level-start">
-                    <span class="level-item">五月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">4</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Github/">
-                        <span class="tag">Github</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/JavaScript/">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">3</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">
-                        <span class="tag">Linux系统运维</span>
-                        <span class="tag is-grey">4</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/PHP/">
-                        <span class="tag">PHP</span>
-                        <span class="tag is-grey">9</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/RedHat%E7%B3%BB/">
-                        <span class="tag">RedHat系</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">
-                        <span class="tag">Web全栈架构</span>
-                        <span class="tag is-grey">13</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Web%E5%AE%89%E5%85%A8/">
-                        <span class="tag">Web安全</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/debian%E7%B3%BB/">
-                        <span class="tag">debian系</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/hexo/">
-                        <span class="tag">hexo</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="tag">博客</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">
-                        <span class="tag">命令详解</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E6%95%B0%E9%80%9A/">
-                        <span class="tag">数通</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">
-                        <span class="tag">版本管理</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%AB%AF%E5%8F%A3/">
-                        <span class="tag">端口</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%BA%A2%E5%B8%BD%E7%B3%BB/">
-                        <span class="tag">红帽系</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">
-                        <span class="tag">综合技术栈</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
-                        <span class="tag">编程语言</span>
-                        <span class="tag is-grey">9</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
-                        <span class="tag">网络技术</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="tag">虚拟机</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
-                        <span class="tag">读书笔记</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-</div>
-    
-    
-</div>
-
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
-                
-                    <img src="/images/logo.svg" alt="FaithSinan-Web安全架构路上的探索者、追梦人" height="28">
-                
-                </a>
-                <p class="is-size-7">
-                &copy; 2019 Faith Sinan&nbsp;
-                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                
-                </p>
-            </div>
-            <div class="level-end">
-            
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="GitHub" href="https://github.com/FaithSinan">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
-                </div>
-            
-            </div>
-        </div>
-    </div>
-</footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
-
-<script>
-var IcarusThemeSettings = {
-    article: {
-        highlight: {
-            clipboard: true,
-            fold: 'unfolded'
-        }
-    }
-};
-</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-
-
-
-    
-    
-<script src="/js/animation.js"></script>
-
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-<script src="/js/gallery.js" defer></script>
-
-    
-    
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
-</script>
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
-        }
-    });
-});
-</script>
-    
-    
-<a id="back-to-top" title="回到顶端" href="javascript:;" target="_blank" rel="noopener">
-    <i class="fas fa-chevron-up"></i>
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/27/20.PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">PHP中的字符串处理</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/27/20.PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="article-date">
+  <time datetime="2019-08-27T14:58:00.000Z" itemprop="datePublished">2019-08-27</time>
 </a>
-<script src="/js/back-to-top.js" defer></script>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
 
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
     </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
+  </div>
+</article>
+  
     
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/">PHP中的特殊函数形式</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="article-date">
+  <time datetime="2019-08-24T15:59:00.000Z" itemprop="datePublished">2019-08-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+    </div>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/">PHP中的数据库操作扩展</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="article-date">
+  <time datetime="2019-08-17T14:27:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+    </div>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/17/16.PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/">PHP中的异常处理机制</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/17/16.PHP%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="article-date">
+  <time datetime="2019-08-17T14:23:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+    </div>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/17/15.PHP%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E4%B8%8E%E5%8C%85%E5%90%AB/">PHP中的文件处理函数</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/17/15.PHP%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E4%B8%8E%E5%8C%85%E5%90%AB/" class="article-date">
+  <time datetime="2019-08-17T14:19:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+    </div>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/17/14.PHP%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E4%BB%8B%E4%B8%8E%E4%BC%9A%E8%AF%9D%E6%8E%A7%E5%88%B6/">PHP之正则表达式简介与会话控制</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/17/14.PHP%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E4%BB%8B%E4%B8%8E%E4%BC%9A%E8%AF%9D%E6%8E%A7%E5%88%B6/" class="article-date">
+  <time datetime="2019-08-17T14:16:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+    </div>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/17/13.PHP%E4%B8%AD%E7%9A%84%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/">PHP中的类与对象特性</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/17/13.PHP%E4%B8%AD%E7%9A%84%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/" class="article-date">
+  <time datetime="2019-08-17T14:07:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+    </div>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/17/12.PHP%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E7%89%B9%E6%80%A7/">PHP中的变量与函数特性</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/17/12.PHP%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E7%89%B9%E6%80%A7/" class="article-date">
+  <time datetime="2019-08-17T14:01:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+    </div>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/08/13/11.PHP%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/">PHP基本介绍及知识体系</a>
+    </h1>
+  
+      
+    </header>
+    <div class="article-meta archive-article-meta">
+      <a href="/2019/08/13/11.PHP%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/" class="article-date">
+  <time datetime="2019-08-13T15:30:00.000Z" itemprop="datePublished">2019-08-13</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/" rel="tag">Web</a></li></ul>
+
+    </div>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        司南道长
+      
+    </h3>
+    <p class="avatar-slogan">
+      所谓技术，不过是熟练度的问题。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Centos/" style="font-size: 14px;">Centos</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/PHP/" style="font-size: 18px;">PHP</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a> <a href="/tags/Web%E5%AE%89%E5%85%A8/" style="font-size: 10px;">Web安全</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" style="font-size: 10px;">命令详解</a> <a href="/tags/%E6%95%B0%E9%80%9A/" style="font-size: 10px;">数通</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%AE%89%E5%85%A8/" style="font-size: 10px;">端口安全</a> <a href="/tags/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/" style="font-size: 10px;">综合技术栈</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/01/22.MySQL%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E3%80%81%E5%B9%B6%E5%88%86%E9%85%8D%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/">MySQL创建新用户、并分配访问权限</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/12/21.MySQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">MySQL增删改查</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/27/20.PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">PHP中的字符串处理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/">PHP中的特殊函数形式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">使用SSH登陆Linux常见问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Faith Sinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
 </body>
 </html>
