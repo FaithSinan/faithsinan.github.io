@@ -221,6 +221,17 @@ html, body, #fullpage{
   height: 50px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .3)
 }
+#header::after{
+  content: "阅读有风险 参考需谨慎";
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  color: #666;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0; 
+}
 
 .head-box {
 }
@@ -274,6 +285,7 @@ html, body, #fullpage{
 #main {
   width: 75%;
   overflow: hidden;
+  margin-left: 20px;
   margin-right: 20px;
 }
 #sidebar {
@@ -283,7 +295,6 @@ html, body, #fullpage{
 #middlecontent.sidebar-left #main{
   order: 1;
   margin-right: 0;
-  margin-left: 20px;
 }
 #middlecontent.sidebar-false #main{
   width: 100%;
@@ -724,6 +735,7 @@ html, body, #fullpage{
   }
   #main, #sidebar{
     width: 100%;
+    margin-left: 0;
   }
   #sidebar {
     padding-left: 0;
