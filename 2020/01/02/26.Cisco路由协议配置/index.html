@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="FaithSinan-Web安全架构路上的探索者、追梦人">
 <meta property="og:description" content="环境 Cisco">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-03T06:38:21.000Z">
+<meta property="og:updated_time" content="2020-01-03T06:46:45.038Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="FaithSinan-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
@@ -117,7 +117,7 @@
 <li>单向性：静态路由是具有单向性的，也就是它仅为数据提供沿着下一跳的方向进行路由，不提供反向路由，回程的路由需要单独配置。</li>
 </ul>
 <p>静态路由配置命令<br>例如：</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ip route 目标网络、子网掩码、下一跳IP地址/接口</span><br><span class="line">R1(config)<span class="comment"># ip route 30.0.0.1 255.255.255.0 20.0.0.2</span></span><br><span class="line">R1(config)<span class="comment"># ip route 10.0.0.1 255.255.255.0 20.0.0.1</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ip route 目标网络、子网掩码、下一跳IP地址/接口</span><br><span class="line">R1(config)# ip route 30.0.0.1 255.255.255.0 20.0.0.2</span><br><span class="line">R1(config)# ip route 10.0.0.1 255.255.255.0 20.0.0.1</span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -125,7 +125,7 @@
 
 <h4 id="默认路由"><a href="#默认路由" class="headerlink" title="默认路由"></a>默认路由</h4><p>0.0.0.0/0 可以匹配所有的IP地址，属于最不精确的匹配。默认路由可以看作是静态路由的一种特殊情况。当所有已知路由信息都查不到数据包如何转发时，按默认路由信息进行转发。</p>
 <p>默认路由配置命令<br>例如：</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip route 0.0.0.0 0.0.0.0 下一跳IP地址/接口</span><br><span class="line">R1(config)<span class="comment"># ip route 0.0.0.0 0.0.0.0 192.168.2.2</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ip route 0.0.0.0 0.0.0.0 下一跳IP地址/接口</span><br><span class="line">R1(config)# ip route 0.0.0.0 0.0.0.0 192.168.2.2</span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -140,7 +140,7 @@
 <li>每30s广播一次消息</li>
 </ul>
 <p>RIP 配置命令<br>例如：</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">R1(config) <span class="comment">#router rip   // 开启RIP路由协议进程</span></span><br><span class="line">R1(config) <span class="comment">#version 2   // 指定RIP协议的版本</span></span><br><span class="line">R1(config) <span class="comment">#network 192.168.1.0    // 通告直连网段</span></span><br><span class="line">R1(config) <span class="comment">#no auto-summary		// 在RIPv2版本中关闭自动汇总</span></span><br><span class="line">R1(config) <span class="comment">#show ip protocols	// 验证RIP的配置</span></span><br><span class="line">R1(config) <span class="comment">#show ip route		// 显示路由信息</span></span><br><span class="line">R1(config) <span class="comment">#clear ip route		// 清除IP路由表的记录</span></span><br><span class="line">R1(config) <span class="comment">#debug ip rip		// 在控制台显示RIP的工作状态</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">R1(config) #router rip   // 开启RIP路由协议进程</span><br><span class="line">R1(config) #version 2   // 指定RIP协议的版本</span><br><span class="line">R1(config) #network 192.168.1.0    // 通告直连网段</span><br><span class="line">R1(config) #no auto-summary		// 在RIPv2版本中关闭自动汇总</span><br><span class="line">R1(config) #show ip protocols	// 验证RIP的配置</span><br><span class="line">R1(config) #show ip route		// 显示路由信息</span><br><span class="line">R1(config) #clear ip route		// 清除IP路由表的记录</span><br><span class="line">R1(config) #debug ip rip		// 在控制台显示RIP的工作状态</span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -152,7 +152,7 @@
 <li>路由表：列出通过 SPF（Shortest Path Tree）最短路径优先算法；计算出到达每个相连网络的最佳路径。</li>
 </ul>
 <p>OSPF 配置命令<br>例如：</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">R1(config) <span class="comment">#router ospf 1		// 1是标识进程号，其值范围1~65535</span></span><br><span class="line">R1(config-router) <span class="comment">#network 直连网络号 子网掩码 area 0	  // area 0 是区域号， 对路由器进行分组，区分骨干网络。</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">R1(config) #router ospf 1		// 1是标识进程号，其值范围1~65535</span><br><span class="line">R1(config-router) #network 直连网络号 子网掩码 area 0	  // area 0 是区域号， 对路由器进行分组，区分骨干网络。</span><br></pre></td></tr></table></figure></div>
 
 
 
@@ -169,7 +169,7 @@
 </ul>
 <p>EIGRP协议运行需要三张表：邻居表（Neighbor Table）、拓扑表（Topology Table）和路由表（Routing Table）。</p>
 <p>EIGRP 配置命令<br>例如：</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">R1(config) <span class="comment">#router eigrp 100                //开启EIGRP 100进程，其中100为AS号，可以理解为EIGRP的同一区域。 </span></span><br><span class="line">R1(config-router) <span class="comment">#network 直连网络号        //通告直连的网段，反掩码可以省略</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">R1(config) #router eigrp 100                //开启EIGRP 100进程，其中100为AS号，可以理解为EIGRP的同一区域。 </span><br><span class="line">R1(config-router) #network 直连网络号        //通告直连的网段，反掩码可以省略</span><br></pre></td></tr></table></figure></div>
 
 
 
