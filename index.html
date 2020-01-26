@@ -5,19 +5,22 @@
   
 
   
-  <title>FaithSinan-Web安全架构路上的探索者、追梦人</title>
+  <title>司南道长-Web安全架构路上的探索者、追梦人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FaithSinan-Web安全架构路上的探索者、追梦人">
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发" />
+  
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发">
+<meta property="og:type" content="website">
+<meta property="og:title" content="司南道长-Web安全架构路上的探索者、追梦人">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
-<meta property="og:site_name" content="FaithSinan-Web安全架构路上的探索者、追梦人">
+<meta property="og:site_name" content="司南道长-Web安全架构路上的探索者、追梦人">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="FaithSinan-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="司南道长-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
   
   
     <link rel="icon" href="/images/avatar.png">
@@ -53,6 +56,168 @@
 </header>
       <div id="middlecontent" title class="global-width sidebar-left">
         <section id="main">
+  
+    <article id="post-29.JDBC事务处理" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/">JDBC事务处理</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/" class="article-date">
+  <time datetime="2020-01-22T17:05:43.000Z" itemprop="datePublished">2020-01-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="JDBC-事务处理"><a href="#JDBC-事务处理" class="headerlink" title="JDBC 事务处理"></a>JDBC 事务处理</h4><p>事务由一组 SQL 语句组成。所谓事务处理，是指应用程序保证事务处理中的 SQL 语句要么全部都执行，要么一个都不执行。<br>事务处理是保证数据库中数据完整性与一致性的重要机制。</p>
+<p>例如，银行的转账，需要两条 SQL 语句。<br>A 转账到 B 账户100元，就需要一条 SQL 语句对 A 的金额字段 -100元，另一条 SQL语句 对 B 的金额字段 +100元，如果 A 的 SQL 语句执行了，B 的没有执行，就破坏了数据的完整性和一致性。应用程序必须保证这两条要么全都执行，要么都不执行，这就是事务。</p>
+<p>JDBC 的事务处理步骤：</p>
+<ul>
+<li>用 setAutoCommit(booean b)方法关闭自动提交模式</li>
+<li>用 commit()方法处理事务</li>
+<li>用 rollback()方法处理事务失败</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-28.JDBC与MySQL数据库" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">JDBC与MySQL数据库</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
+  <time datetime="2020-01-21T18:09:27.000Z" itemprop="datePublished">2020-01-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="JDBC-概述"><a href="#JDBC-概述" class="headerlink" title="JDBC 概述"></a>JDBC 概述</h4><p>为了使 Java 编写的程序不依赖于具体的数据库，Java 提供了专门用于操作数据库的API，即JDBC（Java Data Base Connectivity）。使用 JDBC 的应用程序一旦和数据库建立连接，就可以使用 JDBC 提供的API操作数据库。</p>
+<p>JDBC 的生命周期如下：</p>
+<ul>
+<li>加载数据库驱动</li>
+<li>与指定数据库建立连接</li>
+<li>向已连接的数据库发送 SQL 语句</li>
+<li>处理 SQL 语句返回的结果</li>
+<li>关闭数据库连接</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-27.基于Servlet的动态Web实例" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/">基于Servlet的动态Web实例</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/" class="article-date">
+  <time datetime="2020-01-10T10:24:30.000Z" itemprop="datePublished">2020-01-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/" rel="tag">Servlet</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="Servlet概述"><a href="#Servlet概述" class="headerlink" title="Servlet概述"></a>Servlet概述</h4><p>Servlet是Java提供的web程序开发API，用于交互式地浏览和修改数据，生成动态Web内容。运行Servlet程序，<strong>需配置Tomcat</strong>，经由Tomcat返回到前端。本文将重点讲解它的实现原理，运行机制是什么。<br><strong>工作原理图：</strong></p>
+<p><img src="https://gitee.com/faithsinan/blogimgbed/raw/master/2019-12/20191227210018.jpg" alt="Servlet工作原理图"></p>
+<p>Servlet可以对客户端发出的请求做出响应，其主要功能有：</p>
+<ul>
+<li>读取客户端发来的显式信息（表单数据）</li>
+<li>读取客户端发来的隐式信息（请求头信息）</li>
+<li>处理数据并生成结果</li>
+<li>发送显式信息给客户端（HTML）</li>
+<li>发送隐式信息给客户端（状态码和响应头信息）</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
   
     <article id="post-26.Cisco路由协议配置" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
@@ -396,149 +561,6 @@
 </article>
 
   
-    <article id="post-19.PHP中的特殊函数形式" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/">PHP中的特殊函数形式</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="article-date">
-  <time datetime="2019-08-24T15:59:00.000Z" itemprop="datePublished">2019-08-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="可变函数的使用"><a href="#可变函数的使用" class="headerlink" title="可变函数的使用"></a><strong>可变函数的使用</strong></h4><p>在PHP中如果将”函数名称”赋予字符串类型的变量，但是在使用该变量时，如果带有小括号，那么PHP引擎将解析为函数，可变函数需要自己封装之后实现。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//封装一个函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($s)</span></span>&#123;</span><br><span class="line">    var_dump($s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$funcName=<span class="string">'test'</span>;  <span class="comment">//将函数名赋给变量</span></span><br><span class="line"><span class="comment">//函数名=&gt;变量名，以变量名调用</span></span><br><span class="line">$funcName(<span class="string">'吃饭了'</span>);  <span class="comment">//输出吃饭了</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-18.使用SSH登陆Linux常见问题" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">使用SSH登陆Linux常见问题</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2019-08-18T09:20:04.000Z" itemprop="datePublished">2019-08-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a><strong>环境</strong></h4><p>centos 7 minimal</p>
-<h4 id="Root登陆被禁止"><a href="#Root登陆被禁止" class="headerlink" title="Root登陆被禁止"></a><strong>Root登陆被禁止</strong></h4><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h5><p>首次使用ssh登陆一个刚装的Centos minimal版系统时，使用root账户登陆连续提示：权限被拒绝，请再次输入密码</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-17.PHP中的数据库操作扩展" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/">PHP中的数据库操作扩展</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="article-date">
-  <time datetime="2019-08-17T14:27:00.000Z" itemprop="datePublished">2019-08-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="PHP数据库扩展"><a href="#PHP数据库扩展" class="headerlink" title="PHP数据库扩展"></a><strong>PHP数据库扩展</strong></h4><p>PHP通过安装相应的扩展来实现数据库操作，PHP中一个数据库可能有一个或者多个扩展，其中既有官方的，也有第三方提供的。像Mysql常用的扩展有原生的mysql库，也可以使用增强版的mysqli扩展，还可以使用PDO进行连接与操作。</p>
-<p>不同的扩展提供基本相近的操作方法，不同的是可能具备一些新特性，以及操作性能可能会有所不同。</p>
-<p>mysql扩展进行数据库连接的方法：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$link = mysql_connect(<span class="string">'mysql_host'</span>, <span class="string">'mysql_user'</span>, <span class="string">'mysql_password'</span>);</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -580,7 +602,7 @@
   <div class="widget-box">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 15px;">思科数通</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 15px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 15px;">思科数通</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
     </div>
   </div>
 
@@ -601,23 +623,23 @@
       <ul>
         
           <li>
+            <a href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/">JDBC事务处理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">JDBC与MySQL数据库</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/">基于Servlet的动态Web实例</a>
+          </li>
+        
+          <li>
             <a href="/2020/01/02/26.Cisco%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">Cisco路由协议配置</a>
           </li>
         
           <li>
             <a href="/2019/12/24/25.Cisco%E5%9F%BA%E4%BA%8E%E7%AB%AF%E5%8F%A3%E5%88%92%E5%88%86VLAN/">Cisco基于端口划分VLAN</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/17/24.JavaGUI%E5%BC%80%E5%8F%91%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4/">JavaGUI开发主要步骤</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/08/23.Git-Push%E4%B8%8A%E4%BC%A0Hexo%E6%BA%90%E4%BB%A3%E7%A0%81themes%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E7%A9%BA/">Git-Push上传Hexo源代码themes文件夹为空</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/01/22.MySQL%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E3%80%81%E5%B9%B6%E5%88%86%E9%85%8D%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/">MySQL创建新用户、并分配访问权限</a>
           </li>
         
       </ul>

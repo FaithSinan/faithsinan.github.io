@@ -5,19 +5,22 @@
   
 
   
-  <title>FaithSinan-Web安全架构路上的探索者、追梦人</title>
+  <title>司南道长-Web安全架构路上的探索者、追梦人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="FaithSinan-Web安全架构路上的探索者、追梦人">
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发" />
+  
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发">
+<meta property="og:type" content="website">
+<meta property="og:title" content="司南道长-Web安全架构路上的探索者、追梦人">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
-<meta property="og:site_name" content="FaithSinan-Web安全架构路上的探索者、追梦人">
+<meta property="og:site_name" content="司南道长-Web安全架构路上的探索者、追梦人">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="FaithSinan-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="司南道长-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
   
   
     <link rel="icon" href="/images/avatar.png">
@@ -53,6 +56,149 @@
 </header>
       <div id="middlecontent" title class="global-width sidebar-left">
         <section id="main">
+  
+    <article id="post-19.PHP中的特殊函数形式" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/">PHP中的特殊函数形式</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/" class="article-date">
+  <time datetime="2019-08-24T15:59:00.000Z" itemprop="datePublished">2019-08-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="可变函数的使用"><a href="#可变函数的使用" class="headerlink" title="可变函数的使用"></a><strong>可变函数的使用</strong></h4><p>在PHP中如果将”函数名称”赋予字符串类型的变量，但是在使用该变量时，如果带有小括号，那么PHP引擎将解析为函数，可变函数需要自己封装之后实现。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//封装一个函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($s)</span></span>&#123;</span><br><span class="line">    var_dump($s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$funcName=<span class="string">'test'</span>;  <span class="comment">//将函数名赋给变量</span></span><br><span class="line"><span class="comment">//函数名=&gt;变量名，以变量名调用</span></span><br><span class="line">$funcName(<span class="string">'吃饭了'</span>);  <span class="comment">//输出吃饭了</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/24/19.PHP%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%BC%8F/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-18.使用SSH登陆Linux常见问题" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">使用SSH登陆Linux常见问题</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2019-08-18T09:20:04.000Z" itemprop="datePublished">2019-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a><strong>环境</strong></h4><p>centos 7 minimal</p>
+<h4 id="Root登陆被禁止"><a href="#Root登陆被禁止" class="headerlink" title="Root登陆被禁止"></a><strong>Root登陆被禁止</strong></h4><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h5><p>首次使用ssh登陆一个刚装的Centos minimal版系统时，使用root账户登陆连续提示：权限被拒绝，请再次输入密码</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/18/18.%E4%BD%BF%E7%94%A8SSH%E7%99%BB%E9%99%86Linux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-17.PHP中的数据库操作扩展" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/">PHP中的数据库操作扩展</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/" class="article-date">
+  <time datetime="2019-08-17T14:27:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="PHP数据库扩展"><a href="#PHP数据库扩展" class="headerlink" title="PHP数据库扩展"></a><strong>PHP数据库扩展</strong></h4><p>PHP通过安装相应的扩展来实现数据库操作，PHP中一个数据库可能有一个或者多个扩展，其中既有官方的，也有第三方提供的。像Mysql常用的扩展有原生的mysql库，也可以使用增强版的mysqli扩展，还可以使用PDO进行连接与操作。</p>
+<p>不同的扩展提供基本相近的操作方法，不同的是可能具备一些新特性，以及操作性能可能会有所不同。</p>
+<p>mysql扩展进行数据库连接的方法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$link = mysql_connect(<span class="string">'mysql_host'</span>, <span class="string">'mysql_user'</span>, <span class="string">'mysql_password'</span>);</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/08/17/17.PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%89%A9%E5%B1%95/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
   
     <article id="post-16.PHP中的异常处理机制" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
@@ -417,152 +563,6 @@
 </article>
 
   
-    <article id="post-9.《白帽子讲WEB安全》-读书笔记（一）" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/21/9.%E3%80%8A%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2WEB%E5%AE%89%E5%85%A8%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">《白帽子讲WEB安全》-读书笔记(一)</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/07/21/9.%E3%80%8A%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2WEB%E5%AE%89%E5%85%A8%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-date">
-  <time datetime="2019-07-21T15:45:43.000Z" itemprop="datePublished">2019-07-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h4><p>最近看了一本不错的互联网安全类的书籍，觉得应该留下些什么。《白帽子讲Web安全》为阿里的首席安全专家吴翰清所著。</p>
-<p>此书结合了吴翰清在阿里多年的工作经验，对Web安全领域的众多典型案例，站在白帽子的视角，讲述Web安全的方方面面，虽然也剖析攻击原理，但更重要的是如何防范这些问题。</p>
-<p>本书对当前WEB应用常见的攻击手法进行了较为全面的概括，本篇文章将就此书所阐述的安全观进行浅显的总结。</p>
-<h4 id="对于互联网安全的思考"><a href="#对于互联网安全的思考" class="headerlink" title="对于互联网安全的思考"></a><strong>对于互联网安全的思考</strong></h4><p>要以正确的思路去看待安全问题：安全工程师的核心竞争力不在于他能拥有多少个0day，掌握多少种安全技术，而是在于他对安全理解的深度，以及由此引申的看待安全问题的角度和高度。</p>
-<p>我们不是要做一个能够解决问题的方案，而是要做一个能够“漂亮地”解决问题的方案。这应该是每一名优秀的安全工程师所应有的追求。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/07/21/9.%E3%80%8A%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2WEB%E5%AE%89%E5%85%A8%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-8.AJAX异步交互技术之核心对象分析" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/04/8.AJAX%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90/">AJAX异步交互技术之核心对象分析</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/06/04/8.AJAX%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90/" class="article-date">
-  <time datetime="2019-06-04T11:13:43.000Z" itemprop="datePublished">2019-06-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="概述AJAX"><a href="#概述AJAX" class="headerlink" title="概述AJAX"></a><strong>概述AJAX</strong></h4><p>AJAX为”Asynchronous Javascript And XML”的缩写，即异步的JavaScript和XML。这是一种实现网页异步交互的动态开发技术，即在不重载整个页面的情况下，与服务器交互更新部分网页。这种技术避免了由于频繁的网页请求而造成的多余负载，更提升了用户体验。</p>
-<h4 id="概述XMLHttpRequest"><a href="#概述XMLHttpRequest" class="headerlink" title="概述XMLHttpRequest"></a><strong>概述XMLHttpRequest</strong></h4><p>关于ajax异步交互技术，其最重要的核心就是XMLHttpRequest对象。XMLHttpRequest对象分属于XML DOM（XML文档对象模型），此对象能够实现网页交互中的：<br>1、在不重新加载页面的情况下更新网页<br>2、在页面已加载后从服务器请求数据<br>3、在页面已加载后从服务器接收数据<br>4、在页面已加载后从服务器接收数据</p>
-<p>Ajax是一种异步更新网页的技术，而XMLHttpRequest就提供了浏览器到服务端之间的异步收发控制功能。<br>所以，XMLHttpRequest是Ajax技术及其重要的组成部分。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/06/04/8.AJAX%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-7.JavaScript-BOM窗口对象三板斧" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/28/7.JavaScript-BOM%E7%AA%97%E5%8F%A3%E5%AF%B9%E8%B1%A1%E4%B8%89%E6%9D%BF%E6%96%A7/">JavaScript-BOM窗口对象三板斧</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/05/28/7.JavaScript-BOM%E7%AA%97%E5%8F%A3%E5%AF%B9%E8%B1%A1%E4%B8%89%E6%9D%BF%E6%96%A7/" class="article-date">
-  <time datetime="2019-05-28T15:06:43.000Z" itemprop="datePublished">2019-05-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h4><p>Window对象表示浏览器中打开的窗口。</p>
-<p>如果文档包含框架（frame 或 iframe 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。</p>
-<p>浏览器实现的前进后退功能、打开关闭新标签功能，均是在window对象的基础上实现的，而在前端开发中还是利用window对象开发各式各样的验证提示对话框。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/28/7.JavaScript-BOM%E7%AA%97%E5%8F%A3%E5%AF%B9%E8%B1%A1%E4%B8%89%E6%9D%BF%E6%96%A7/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -604,7 +604,7 @@
   <div class="widget-box">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 15px;">思科数通</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 15px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 15px;">思科数通</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
     </div>
   </div>
 
@@ -625,23 +625,23 @@
       <ul>
         
           <li>
+            <a href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/">JDBC事务处理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">JDBC与MySQL数据库</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/">基于Servlet的动态Web实例</a>
+          </li>
+        
+          <li>
             <a href="/2020/01/02/26.Cisco%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">Cisco路由协议配置</a>
           </li>
         
           <li>
             <a href="/2019/12/24/25.Cisco%E5%9F%BA%E4%BA%8E%E7%AB%AF%E5%8F%A3%E5%88%92%E5%88%86VLAN/">Cisco基于端口划分VLAN</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/17/24.JavaGUI%E5%BC%80%E5%8F%91%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4/">JavaGUI开发主要步骤</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/08/23.Git-Push%E4%B8%8A%E4%BC%A0Hexo%E6%BA%90%E4%BB%A3%E7%A0%81themes%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E7%A9%BA/">Git-Push上传Hexo源代码themes文件夹为空</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/01/22.MySQL%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E3%80%81%E5%B9%B6%E5%88%86%E9%85%8D%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/">MySQL创建新用户、并分配访问权限</a>
           </li>
         
       </ul>
