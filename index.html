@@ -12,12 +12,15 @@
   
   <meta name="keywords" content="司南道长,FaithSinan,Web开发" />
   
-  <meta name="keywords" content="司南道长,FaithSinan,Web开发">
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="司南道长-Web安全架构路上的探索者、追梦人">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="司南道长-Web安全架构路上的探索者、追梦人">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="FaithSinan">
+<meta property="article:tag" content="司南道长">
+<meta property="article:tag" content="FaithSinan">
+<meta property="article:tag" content="Web开发">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="司南道长-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
@@ -28,9 +31,13 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/highlight.css">
-</head>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
   <div id="fullpage" class="mobile-nav-right">
@@ -57,21 +64,21 @@
       <div id="middlecontent" title class="global-width sidebar-left">
         <section id="main">
   
-    <article id="post-29.JDBC事务处理" class="article global-container article-type-post" itemscope itemprop="blogPost">
+    <article id="post-039.JAVA Socket网络编程概要" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/">JDBC事务处理</a>
+      <a class="article-title" href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/">039.JAVA Socket网络编程概要</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/" class="article-date">
-  <time datetime="2020-01-22T17:05:43.000Z" itemprop="datePublished">2020-01-23</time>
+    <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/" class="article-date">
+  <time datetime="2020-10-27T10:24:30.000Z" itemprop="datePublished">2020-10-27</time>
 </a>
     
   <div class="article-category">
@@ -79,7 +86,7 @@
   </div>
 
     
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Socket/" rel="tag">Socket</a></li></ul>
 
   </div>
   
@@ -88,17 +95,16 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h4 id="JDBC-事务处理"><a href="#JDBC-事务处理" class="headerlink" title="JDBC 事务处理"></a>JDBC 事务处理</h4><p>事务由一组 SQL 语句组成。所谓事务处理，是指应用程序保证事务处理中的 SQL 语句要么全部都执行，要么一个都不执行。<br>事务处理是保证数据库中数据完整性与一致性的重要机制。</p>
-<p>例如，银行的转账，需要两条 SQL 语句。<br>A 转账到 B 账户100元，就需要一条 SQL 语句对 A 的金额字段 -100元，另一条 SQL语句 对 B 的金额字段 +100元，如果 A 的 SQL 语句执行了，B 的没有执行，就破坏了数据的完整性和一致性。应用程序必须保证这两条要么全都执行，要么都不执行，这就是事务。</p>
-<p>JDBC 的事务处理步骤：</p>
+        <h4 id="JAVA中的网络支持"><a href="#JAVA中的网络支持" class="headerlink" title="JAVA中的网络支持"></a>JAVA中的网络支持</h4><p>针对网络通信的不同层次，JAVA提供的网络功能有四大类：</p>
 <ul>
-<li>用 setAutoCommit(booean b)方法关闭自动提交模式</li>
-<li>用 commit()方法处理事务</li>
-<li>用 rollback()方法处理事务失败</li>
+<li>InetAddress：用于标识网络上的硬件资源。</li>
+<li>URL：统一资源定位符，通过URL可以直接读取或写入网络上的数据。</li>
+<li>Sockets：使用TCP协议实现网络通信的Socket相关的类。</li>
+<li>Datagram：使用UDP协议，将数据保存在数据报中，通过网络进行通信。</li>
 </ul>
         
           <p class="article-more-link">
-            <a href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/#more">阅读全文</a>
+            <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/#more">阅读全文</a>
           </p>
         
       
@@ -110,29 +116,29 @@
 </article>
 
   
-    <article id="post-28.JDBC与MySQL数据库" class="article global-container article-type-post" itemscope itemprop="blogPost">
+    <article id="post-038.MySQL运维知识梳理" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">JDBC与MySQL数据库</a>
+      <a class="article-title" href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">038.MySQL运维知识梳理</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" class="article-date">
-  <time datetime="2020-01-21T18:09:27.000Z" itemprop="datePublished">2020-01-22</time>
+    <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/" class="article-date">
+  <time datetime="2020-08-19T14:15:21.000Z" itemprop="datePublished">2020-08-19</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a>
   </div>
 
     
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
 
   </div>
   
@@ -141,316 +147,18 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h4 id="JDBC-概述"><a href="#JDBC-概述" class="headerlink" title="JDBC 概述"></a>JDBC 概述</h4><p>为了使 Java 编写的程序不依赖于具体的数据库，Java 提供了专门用于操作数据库的API，即JDBC（Java Data Base Connectivity）。使用 JDBC 的应用程序一旦和数据库建立连接，就可以使用 JDBC 提供的API操作数据库。</p>
-<p>JDBC 的生命周期如下：</p>
-<ul>
-<li>加载数据库驱动</li>
-<li>与指定数据库建立连接</li>
-<li>向已连接的数据库发送 SQL 语句</li>
-<li>处理 SQL 语句返回的结果</li>
-<li>关闭数据库连接</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-27.基于Servlet的动态Web实例" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/">基于Servlet的动态Web实例</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/" class="article-date">
-  <time datetime="2020-01-10T10:24:30.000Z" itemprop="datePublished">2020-01-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/" rel="tag">Servlet</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="Servlet概述"><a href="#Servlet概述" class="headerlink" title="Servlet概述"></a>Servlet概述</h4><p>Servlet是Java提供的web程序开发API，用于交互式地浏览和修改数据，生成动态Web内容。运行Servlet程序，<strong>需配置Tomcat</strong>，经由Tomcat返回到前端。本文将重点讲解它的实现原理，运行机制是什么。<br><strong>工作原理图：</strong></p>
-<p><img src="https://gitee.com/faithsinan/blogimgbed/raw/master/2019-12/20191227210018.jpg" alt="Servlet工作原理图"></p>
-<p>Servlet可以对客户端发出的请求做出响应，其主要功能有：</p>
-<ul>
-<li>读取客户端发来的显式信息（表单数据）</li>
-<li>读取客户端发来的隐式信息（请求头信息）</li>
-<li>处理数据并生成结果</li>
-<li>发送显式信息给客户端（HTML）</li>
-<li>发送隐式信息给客户端（状态码和响应头信息）</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-26.Cisco路由协议配置" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/02/26.Cisco%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">Cisco路由协议配置</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2020/01/02/26.Cisco%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/" class="article-date">
-  <time datetime="2020-01-01T17:01:58.000Z" itemprop="datePublished">2020-01-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" rel="tag">思科数通</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><ul>
-<li>Cisco</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2020/01/02/26.Cisco%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-25.Cisco基于端口划分VLAN" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/24/25.Cisco%E5%9F%BA%E4%BA%8E%E7%AB%AF%E5%8F%A3%E5%88%92%E5%88%86VLAN/">Cisco基于端口划分VLAN</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/12/24/25.Cisco%E5%9F%BA%E4%BA%8E%E7%AB%AF%E5%8F%A3%E5%88%92%E5%88%86VLAN/" class="article-date">
-  <time datetime="2019-12-24T09:10:33.000Z" itemprop="datePublished">2019-12-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" rel="tag">思科数通</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h4><p>× Cisco</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Switch(config)# show running-config	// 显示运行过的配置</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2019/12/24/25.Cisco%E5%9F%BA%E4%BA%8E%E7%AB%AF%E5%8F%A3%E5%88%92%E5%88%86VLAN/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-24.JavaGUI开发主要步骤" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/17/24.JavaGUI%E5%BC%80%E5%8F%91%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4/">JavaGUI开发主要步骤</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/12/17/24.JavaGUI%E5%BC%80%E5%8F%91%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4/" class="article-date">
-  <time datetime="2019-12-17T11:18:19.000Z" itemprop="datePublished">2019-12-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaGUI/" rel="tag">JavaGUI</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>虽然Java的优势是网络应用方面，但Java也提供了强大的用于开发桌面程序的API，这些API在javax.swing包中。这个包中的许多设计思想（特别是事件处理），对掌握面向对象编程是很有用的。</p>
-<p>开发一个GUI程序的大致步骤为：继承JFrame类-&gt;设置窗口布局-&gt;添加窗口组件-&gt;绑定组件事件</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/12/17/24.JavaGUI%E5%BC%80%E5%8F%91%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-23.Git-Push上传Hexo源代码themes文件夹为空" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/08/23.Git-Push%E4%B8%8A%E4%BC%A0Hexo%E6%BA%90%E4%BB%A3%E7%A0%81themes%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E7%A9%BA/">Git-Push上传Hexo源代码themes文件夹为空</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/12/08/23.Git-Push%E4%B8%8A%E4%BC%A0Hexo%E6%BA%90%E4%BB%A3%E7%A0%81themes%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E7%A9%BA/" class="article-date">
-  <time datetime="2019-12-08T14:37:06.000Z" itemprop="datePublished">2019-12-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a>►<a class="article-category-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" rel="tag">故障排除</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>使用git push推送hexo源代码到gitee时，发现themes文件夹为空，配置的主题文件没有提交上去。</p>
-<h4 id="故障分析"><a href="#故障分析" class="headerlink" title="故障分析"></a>故障分析</h4><p>通过ls -a查看隐藏文件时，发现目录下存在.git和.gitignore，证明该目录已被其他git控制，导致git push出现了空文件夹。<br>原因是因为该主题引用的是其他博主开发的主题模板，该主题作者提交到github开源时需构建Git仓库，所以带了隐藏的.git和.gitignore文件夹</p>
-<h4 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h4><ol>
-<li><p>删除.git和.gitignore这两文件夹</p>
-</li>
-<li><p>使用下面命令清除目标文件夹的git push记录（暂存区缓存）</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached themes/antiquity/</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>从新push推送，解决上传文件夹空问题。</p>
-</li>
+        <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>MySQL运维知识可划分为六个模块：</p>
+<ol>
+<li>体系结构</li>
+<li>备份恢复</li>
+<li>数据复制</li>
+<li>集群架构</li>
+<li>性能优化</li>
+<li>状态监控</li>
 </ol>
-<blockquote>
-<p>转载请注明出处，阅读有风险，参考需谨慎！</p>
-</blockquote>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-22.MySQL创建新用户、并分配访问权限" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/01/22.MySQL%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E3%80%81%E5%B9%B6%E5%88%86%E9%85%8D%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/">MySQL创建新用户、并分配访问权限</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/11/01/22.MySQL%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E3%80%81%E5%B9%B6%E5%88%86%E9%85%8D%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/" class="article-date">
-  <time datetime="2019-11-01T14:58:00.000Z" itemprop="datePublished">2019-11-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h4 id="1-远程连接命令"><a href="#1-远程连接命令" class="headerlink" title="1.远程连接命令"></a>1.远程连接命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-p 后加密码是明文输入，-p后不加密码直接回车，则是密文输入</span></span><br><span class="line">mysql -h 数据库地址 -P 3306 -u 用户名 -p 密码</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2019/11/01/22.MySQL%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7%E3%80%81%E5%B9%B6%E5%88%86%E9%85%8D%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/#more">阅读全文</a>
+            <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/#more">阅读全文</a>
           </p>
         
       
@@ -462,29 +170,29 @@
 </article>
 
   
-    <article id="post-21.MySQL增删改查" class="article global-container article-type-post" itemscope itemprop="blogPost">
+    <article id="post-037.RIP与OSPF动态路由协议配置" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/12/21.MySQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">MySQL增删改查</a>
+      <a class="article-title" href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">037.RIP与OSPF动态路由协议配置</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/10/12/21.MySQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" class="article-date">
-  <time datetime="2019-10-12T14:58:00.000Z" itemprop="datePublished">2019-10-12</time>
+    <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time datetime="2020-06-12T11:15:21.000Z" itemprop="datePublished">2020-06-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a>
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a>
   </div>
 
     
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" rel="tag">路由配置</a></li></ul>
 
   </div>
   
@@ -493,10 +201,11 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h4 id="DDL数据库与表的增删改查"><a href="#DDL数据库与表的增删改查" class="headerlink" title="DDL数据库与表的增删改查"></a><strong>DDL数据库与表的增删改查</strong></h4><h5 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a><strong>数据库操作</strong></h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p;  <span class="comment">/*回车输入密码，登录mysql*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;  <span class="comment">/*显示所有的数据库*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> 数据库名 <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;  <span class="comment">/*创建数据库*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> 数据库名;  <span class="comment">/*删除数据库*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> 数据库名;  <span class="comment">/*选择指定数据库*/</span></span><br></pre></td></tr></table></figure>
+        <h4 id="IP-转发原理"><a href="#IP-转发原理" class="headerlink" title="IP 转发原理"></a>IP 转发原理</h4><p>​        路由器工作在 OSI 模型中的第三层，也就是网络层。路由器通过逻辑的地址（IP 地址）来划分区别不同的网络，实现网络之间的互联和隔离，并且路由器不转发广播消息，把广播消息限制在各自区域的网络中，发送到其他网络的数据先被发送到路由器，再由路由器转发出去。</p>
+<p>​        路由器的核心是全局路由表，通过路由器的所有数据转发都要经过全局路由表来实现。路由是指导 IP 报文发送的路径信息，是报文从源端到目的端的整条传输路径。</p>
         
           <p class="article-more-link">
-            <a href="/2019/10/12/21.MySQL%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/#more">阅读全文</a>
+            <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/#more">阅读全文</a>
           </p>
         
       
@@ -508,21 +217,319 @@
 </article>
 
   
-    <article id="post-20.PHP中的字符串处理" class="article global-container article-type-post" itemscope itemprop="blogPost">
+    <article id="post-036.基于三层交换机实现VLAN间路由" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/27/20.PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">PHP中的字符串处理</a>
+      <a class="article-title" href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/">036.基于三层交换机实现VLAN间路由</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/08/27/20.PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" class="article-date">
-  <time datetime="2019-08-27T14:58:00.000Z" itemprop="datePublished">2019-08-27</time>
+    <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/" class="article-date">
+  <time datetime="2020-06-05T10:15:21.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VLAN/" rel="tag">VLAN</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="VLAN-间路由概述"><a href="#VLAN-间路由概述" class="headerlink" title="VLAN 间路由概述"></a>VLAN 间路由概述</h4><p>​        路由技术可以完成处于不同广播域的数据转发决策，而一个 VLAN 就是一个逻辑的广播域、逻辑子网。</p>
+<p>VLAN 间通信的技术有：</p>
+<ul>
+<li><p>多臂路由实现 VLAN 间通信</p>
+</li>
+<li><p>单臂路由实现 VLAN 间通信</p>
+</li>
+<li><p>三层交换机实现 VLAN 间通信</p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-035.VLAN虚拟局域网配置" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/">035.VLAN虚拟局域网配置</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time datetime="2020-06-01T08:15:21.000Z" itemprop="datePublished">2020-06-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VLAN/" rel="tag">VLAN</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="VLAN-概述"><a href="#VLAN-概述" class="headerlink" title="VLAN 概述"></a>VLAN 概述</h4><p>​        VLAN（Virtual Local Area Network，虚拟局域网）技术可以将一个物理局域网在逻辑上划分成多个广播域的。通过在交换机上配置 VLAN，可以实现在同一个 VLAN 内的用户进行二层互访，而不同 VLAN 间的用户被二层隔离。这样既能够隔离广播域，又能够提升网络的安全性。</p>
+<p>​        而不同的 VLAN 间如果需要互访，则需要通过三层设备的转发。</p>
+<p>​        VLAN 的工作原理实际是对 MAC 地址表进行划分，每个 VLAN 对应一张 MAC 地址表，实现广播域（MAC 地址表）的隔离。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-034.配置Telnet远程管理网络设备" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/30/034.%E9%85%8D%E7%BD%AETelnet%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/">034.配置Telnet远程管理网络设备</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/05/30/034.%E9%85%8D%E7%BD%AETelnet%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/" class="article-date">
+  <time datetime="2020-05-30T07:15:21.000Z" itemprop="datePublished">2020-05-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Telnet/" rel="tag">Telnet</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="Telnet-概述"><a href="#Telnet-概述" class="headerlink" title="Telnet 概述"></a>Telnet 概述</h4><p>​        Telnet 是TCP/IP 协议族中的一种远程登陆协议，在数通设备中 Telnet 服务是默认开启的。在数通设备中开启 Telnet 服务并进行必要的配置后，就可以远程登陆到路由器或者交换机管理该设备。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/05/30/034.%E9%85%8D%E7%BD%AETelnet%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-033.SpringBoot开发概要" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/20/033.SpringBoot%E5%BC%80%E5%8F%91%E6%A6%82%E8%A6%81/">033.SpringBoot开发概要</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/05/20/033.SpringBoot%E5%BC%80%E5%8F%91%E6%A6%82%E8%A6%81/" class="article-date">
+  <time datetime="2020-05-20T07:15:21.000Z" itemprop="datePublished">2020-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/" rel="tag">SpringBoot</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="Spring-Boot-概述"><a href="#Spring-Boot-概述" class="headerlink" title="Spring Boot 概述"></a>Spring Boot 概述</h4><p>​    Spring Boot(英文中是“引导”的意思)，是用来简化Spring应用的搭建到开发的过程。应用开箱即用，只要通过 “just  run”（可能是 java -jar 或 tomcat 或 maven插件run 或 shell脚本），就可以启动项目。二者，Spring  Boot 只要很少的Spring配置文件（例如那些xml，property）。</p>
+<p>​    因为“习惯优先于配置”的原则，使得Spring Boot在快速开发应用和微服务架构实践中得到广泛应用。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/05/20/033.SpringBoot%E5%BC%80%E5%8F%91%E6%A6%82%E8%A6%81/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-032.Sping概述与简要配置" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/02/032.Sping%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%AE%80%E8%A6%81%E9%85%8D%E7%BD%AE/">032.Sping概述与简要配置</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/05/02/032.Sping%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%AE%80%E8%A6%81%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time datetime="2020-05-02T14:15:21.000Z" itemprop="datePublished">2020-05-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="使用Spring简化-JAVA-开发"><a href="#使用Spring简化-JAVA-开发" class="headerlink" title="使用Spring简化 JAVA 开发"></a>使用Spring简化 JAVA 开发</h4><p>为了降低 Java 开发的复杂性，Spring 采取了以下 4 种关键策略：</p>
+<ul>
+<li>基于 POJO (Plain Old Java Object) 的轻量级和最小侵入性编程；</li>
+<li>通过依赖注入和面向接口实现松耦合；</li>
+<li>基于切面和惯例进行声明式编程；</li>
+<li>通过切面和模板减少样板式代码；</li>
+</ul>
+<p>而IOC（控制反转）和AOP（面向切面编程）是整个Spring框架的核心。</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/05/02/032.Sping%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%AE%80%E8%A6%81%E9%85%8D%E7%BD%AE/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-031.Mybatis概要与Springboot整合" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/25/031.Mybatis%E6%A6%82%E8%A6%81%E4%B8%8ESpringboot%E6%95%B4%E5%90%88/">031.Mybatis概要与Springboot整合</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/04/25/031.Mybatis%E6%A6%82%E8%A6%81%E4%B8%8ESpringboot%E6%95%B4%E5%90%88/" class="article-date">
+  <time datetime="2020-04-25T13:15:21.000Z" itemprop="datePublished">2020-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="Mybatis简介"><a href="#Mybatis简介" class="headerlink" title="Mybatis简介"></a>Mybatis简介</h4><p>Mybatis是基于JDBC的持久层框架，主要用于数据的持久化处理。</p>
+<p>所谓持久化：就是把数据存放到数据库中。</p>
+<p>ORM：Object-relational-mode，即对象关系映射模型框架。</p>
+<p>目前市场上流行的ORM框架有：HIbernate，Mybatis……</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/04/25/031.Mybatis%E6%A6%82%E8%A6%81%E4%B8%8ESpringboot%E6%95%B4%E5%90%88/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-030.PHP模拟HTTP接口请求" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/18/030.PHP%E6%A8%A1%E6%8B%9FHTTP%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/">030.PHP模拟HTTP接口请求</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/03/18/030.PHP%E6%A8%A1%E6%8B%9FHTTP%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" class="article-date">
+  <time datetime="2020-03-18T03:05:41.000Z" itemprop="datePublished">2020-03-18</time>
 </a>
     
   <div class="article-category">
@@ -530,7 +537,7 @@
   </div>
 
     
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" rel="tag">接口请求</a></li></ul>
 
   </div>
   
@@ -539,17 +546,10 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h4 id="字符串简介"><a href="#字符串简介" class="headerlink" title="字符串简介"></a><strong>字符串简介</strong></h4><p>字符串是PHP中重要的数据类型之一，属于标准变量类型。一个字符串(string)就是由一些列字符组成，每个字符等同于一个字节，字符串需要书写到定界符中。</p>
-<h4 id="定界符的使用"><a href="#定界符的使用" class="headerlink" title="定界符的使用"></a><strong>定界符的使用</strong></h4><p>常用定界符：</p>
-<ul>
-<li>单引号</li>
-<li>双引号</li>
-<li>heredoc结构</li>
-<li>nowdoc结构</li>
-</ul>
+        <h4 id="模拟-HTML-表单提交"><a href="#模拟-HTML-表单提交" class="headerlink" title="模拟 HTML 表单提交"></a>模拟 HTML 表单提交</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟 POST 请求</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">httpRequstPost</span><span class="params">($url,$data)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!is_array($data))&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">"无法识别$data的数据类型"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    $FormString = <span class="string">"&lt;body onLoad=\"document.actform.submit()\"&gt;正在处理，请稍候.....................&lt;form  id=\"actform\" name=\"actform\" method=\"post\" action=\""</span> . $url . <span class="string">"\"&gt;"</span>;</span><br><span class="line">    <span class="keyword">foreach</span>($data <span class="keyword">as</span> $key =&gt; $value)&#123;</span><br><span class="line">        $FormString .=<span class="string">"&lt;input name=\""</span> . $key . <span class="string">"\" type=\"hidden\" value='"</span> . $value . <span class="string">"'&gt;\r\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $FormString .=<span class="string">"&lt;/form&gt;&lt;/body&gt;"</span>;</span><br><span class="line">    <span class="keyword">return</span> $FormString;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模拟get请求</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHtml</span><span class="params">($url, $data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!is_array($data)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">"无法识别的数据类型【PostArry】"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    $FormString = <span class="string">"&lt;body onLoad=\"document.actform.submit()\"&gt;正在处理，请稍候.....................&lt;form  id=\"actform\" name=\"actform\" method=\"get\" action=\""</span> . $url . <span class="string">"\"&gt;"</span>;</span><br><span class="line">    <span class="keyword">foreach</span> ($data <span class="keyword">as</span> $key =&gt; $value) &#123;</span><br><span class="line">        $FormString .= <span class="string">"&lt;input name=\""</span> . $key . <span class="string">"\" type=\"hidden\" value='"</span> . $value . <span class="string">"'&gt;\r\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    $FormString .= <span class="string">"&lt;/form&gt;&lt;/body&gt;"</span>;</span><br><span class="line">    <span class="keyword">return</span> $FormString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2019/08/27/20.PHP%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/#more">阅读全文</a>
+            <a href="/2020/03/18/030.PHP%E6%A8%A1%E6%8B%9FHTTP%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/#more">阅读全文</a>
           </p>
         
       
@@ -565,7 +565,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 »</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 »</a>
   </nav>
 
 
@@ -592,7 +592,7 @@
   <div class="widget-box">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -602,7 +602,7 @@
   <div class="widget-box">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 15px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 15px;">思科数通</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 13.33px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 13.33px;">VLAN</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 13.33px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a>
     </div>
   </div>
 
@@ -611,7 +611,7 @@
   <div class="widget-box">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
     </div>
   </div>
 
@@ -623,23 +623,23 @@
       <ul>
         
           <li>
-            <a href="/2020/01/23/29.JDBC%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/">JDBC事务处理</a>
+            <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/">039.JAVA Socket网络编程概要</a>
           </li>
         
           <li>
-            <a href="/2020/01/22/28.JDBC%E4%B8%8EMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">JDBC与MySQL数据库</a>
+            <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">038.MySQL运维知识梳理</a>
           </li>
         
           <li>
-            <a href="/2020/01/10/27.%E5%9F%BA%E4%BA%8EServlet%E7%9A%84%E5%8A%A8%E6%80%81Web%E5%AE%9E%E4%BE%8B/">基于Servlet的动态Web实例</a>
+            <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">037.RIP与OSPF动态路由协议配置</a>
           </li>
         
           <li>
-            <a href="/2020/01/02/26.Cisco%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">Cisco路由协议配置</a>
+            <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/">036.基于三层交换机实现VLAN间路由</a>
           </li>
         
           <li>
-            <a href="/2019/12/24/25.Cisco%E5%9F%BA%E4%BA%8E%E7%AB%AF%E5%8F%A3%E5%88%92%E5%88%86VLAN/">Cisco基于端口划分VLAN</a>
+            <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/">035.VLAN虚拟局域网配置</a>
           </li>
         
       </ul>
@@ -679,11 +679,17 @@ document.body.write(script);
 }
 </script>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/js/script.js"></script>
+
 
 
 

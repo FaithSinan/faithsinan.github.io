@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>031.Mybatis概要与Springboot整合 | 司南道长-Web安全架构路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发" />
+  
+  <meta name="description" content="Mybatis简介Mybatis是基于JDBC的持久层框架，主要用于数据的持久化处理。 所谓持久化：就是把数据存放到数据库中。 ORM：Object-relational-mode，即对象关系映射模型框架。 目前市场上流行的ORM框架有：HIbernate，Mybatis……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="031.Mybatis概要与Springboot整合">
+<meta property="og:url" content="http://yoursite.com/2020/04/25/031.Mybatis%E6%A6%82%E8%A6%81%E4%B8%8ESpringboot%E6%95%B4%E5%90%88/index.html">
+<meta property="og:site_name" content="司南道长-Web安全架构路上的探索者、追梦人">
+<meta property="og:description" content="Mybatis简介Mybatis是基于JDBC的持久层框架，主要用于数据的持久化处理。 所谓持久化：就是把数据存放到数据库中。 ORM：Object-relational-mode，即对象关系映射模型框架。 目前市场上流行的ORM框架有：HIbernate，Mybatis……">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-25T13:15:21.000Z">
+<meta property="article:modified_time" content="2020-10-30T07:28:41.507Z">
+<meta property="article:author" content="FaithSinan">
+<meta property="article:tag" content="MyBatis">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="司南道长-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-left">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main"><article id="post-031.Mybatis概要与Springboot整合" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      031.Mybatis概要与Springboot整合
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/04/25/031.Mybatis%E6%A6%82%E8%A6%81%E4%B8%8ESpringboot%E6%95%B4%E5%90%88/" class="article-date">
+  <time datetime="2020-04-25T13:15:21.000Z" itemprop="datePublished">2020-04-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="Mybatis简介"><a href="#Mybatis简介" class="headerlink" title="Mybatis简介"></a>Mybatis简介</h4><p>Mybatis是基于JDBC的持久层框架，主要用于数据的持久化处理。</p>
+<p>所谓持久化：就是把数据存放到数据库中。</p>
+<p>ORM：Object-relational-mode，即对象关系映射模型框架。</p>
+<p>目前市场上流行的ORM框架有：HIbernate，Mybatis……</p>
+<a id="more"></a>
+
+<h4 id="为什么要使用Mybatis框架"><a href="#为什么要使用Mybatis框架" class="headerlink" title="为什么要使用Mybatis框架"></a>为什么要使用Mybatis框架</h4><p>​    因为原生的 JDBC 有着一些不可避免的缺陷：样式代码较多，开发效率较低。而Mybatis框架对 JDBC进行了封装，简化了开发流程，减少了样式代码，一定程度上提升了开发效率。</p>
+<p>JDBC 缺陷：</p>
+<p>​    1、在开发工程中把SQL语句卸载 JAVA代码中，不利于SQL语句的修改。</p>
+<p>​    2、JDBC操作数据库，过程较为繁琐，步骤较多，需：</p>
+<p>​        2.1、加载驱动。</p>
+<p>​        2.2、创建连接数据库的对象Connection。</p>
+<p>​        2.3、创建执行SQL语句的对象Statement或者Preparedstatement.</p>
+<p>​        2.4、创建执行结果对象ResultSet。</p>
+<p>​        2.5、编写数据库操作代码。</p>
+<p>​        2.6、执行SQL语句对象，获取执行结果。</p>
+<p>​        2.7、遍历处理结果。</p>
+<p>​        2.8、释放资源，关闭以上创建的对象。</p>
+<p>​    3,、更换数据源较为麻烦，如Mysql，Oracle，SQLserver。</p>
+<p>​    4、频繁的创建和关闭数据库连接，影响系统性能。</p>
+<p>Mybatis框架，恰恰能够较好的解决这些问题。</p>
+<p>​    而Hibernate框架，是面向对象的数据处理框架。使用的是HQL语句，在项目运行中，再把HQL语句转换成SQL语句执行。处理复杂的SQL语句非常麻烦。</p>
+<p>​    而Mybatis把SQL语句解放了出来，开发者可以直接编写SQL语句进行数据处理。</p>
+<p>Mybatis框架：</p>
+<p>​    是轻量级的，易于学习使用的框架，上手快，使用简单。</p>
+<p>​    支持直接在xml文件中编写SQL语句，便于优化，维护。</p>
+<p>​    提供对象关系映射标签，完成对象关系的映射。</p>
+<p>​    支持动态的SQL语句编写。</p>
+<h4 id="怎么使用Mybatis框架："><a href="#怎么使用Mybatis框架：" class="headerlink" title="怎么使用Mybatis框架："></a>怎么使用Mybatis框架：</h4><p>1、创建一个java/web项目。</p>
+<p>2、导入需要使用的jar包。</p>
+<p>3、创建一个mybatis-config.xml：Mybatis的核心配置文件。</p>
+<p>4、创建实体类对象和对象关系映射文件。</p>
+<p>5、创建测试文件进行测试：</p>
+<p>​    5.1、加载核心配置文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">InputStream in = 类名.class.getResourceAsStream("/mybatis-config.xml");</span><br></pre></td></tr></table></figure>
+<p>​    5.2、创建SqlSessionfactory的构建器</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br></pre></td></tr></table></figure></div>
+<p>​    5.3、创建SqlSessionFactory对象</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SqlSessionFactory factory = builder.build(in);</span><br></pre></td></tr></table></figure></div>
+<p>​    5.4、创建SqlSession对象</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SqlSession session = factory.openSession();</span><br></pre></td></tr></table></figure></div>
+<p>​    5.5、调用session接口的查询方法</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.selectOne(<span class="string">"namesapce.id"</span>,传参值);	<span class="comment">// namesapce.id是XML映射文件的mapper标签namesapce名+SQL标签id</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h4 id="Mybatis日志"><a href="#Mybatis日志" class="headerlink" title="Mybatis日志"></a>Mybatis日志</h4><p>slf4j：日志框架</p>
+<p>log4j：日志框架的实现</p>
+<p>1、添加日志的jar包</p>
+<p>2、添加日志的配置文件log4j.properties</p>
+<h4 id="Junit单元测试"><a href="#Junit单元测试" class="headerlink" title="Junit单元测试"></a>Junit单元测试</h4><p>1、在项目中导入junit包。</p>
+<p>2、创建一个类，定义一个测试方法，在方法上面加@Test注解。</p>
+<p>3、点击方法名，右键run as junit test</p>
+<p>4、Junit状态栏，读条变绿的情况下，测试通过，绿以外的情况是不通过。</p>
+<p>@Test：该注解表示该方法是用于单元测试的方法。</p>
+<p>@Before：在@Test注解之前运行对的方法。</p>
+<p>@After：在@Test注解之后运行对的方法。</p>
+<h4 id="Mybatis快速安装配置"><a href="#Mybatis快速安装配置" class="headerlink" title="Mybatis快速安装配置"></a>Mybatis快速安装配置</h4><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><p>要使用 MyBatis， 只需将       <a href="https://github.com/mybatis/mybatis-3/releases" target="_blank" rel="noopener">mybatis-x.x.x.jar</a>       文件置于类路径（classpath）中即可。</p>
+<h5 id="Mybatis的几种构建方式"><a href="#Mybatis的几种构建方式" class="headerlink" title="Mybatis的几种构建方式"></a>Mybatis的几种构建方式</h5><p>1、 使用Maven 构建项目</p>
+<p>如果使用 Maven 来构建项目，则需将下面的依赖代码置于 pom.xml 文件中：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>x.x.x<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>2、使用XML映射构建</p>
+<p>​    从 XML 文件中构建 SqlSessionFactory 的实例非常简单，建议使用类路径下的资源文件进行配置。 但也可以使用任意的输入流（InputStream）实例，比如用文件路径字符串或 file:// URL 构造的输入流。MyBatis 包含一个名叫 Resources 的工具类，它包含一些实用方法，使得从类路径或其它位置加载资源文件更加容易。 </p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String resource = <span class="string">"org/mybatis/example/mybatis-config.xml"</span>;</span><br><span class="line">InputStream inputStream = Resources.getResourceAsStream(resource);</span><br><span class="line">SqlSessionFactory sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(inputStream);</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>​    XML 配置文件中包含了对 MyBatis 系统的核心设置，包括获取数据库连接实例的数据源（DataSource）以及决定事务作用域和控制方式的事务管理器（TransactionManager）。后面会再探讨 XML 配置文件的详细内容，这里先给出一个简单的mybatis-config示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">  <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD Config 3.0//EN"</span></span></span><br><span class="line"><span class="meta">  <span class="meta-string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"development"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"development"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$&#123;driver&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;url&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;password&#125;"</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"org/mybatis/example/BlogMapper.xml"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<p>​     当然，还有很多可以在 XML 文件中配置的选项，上面的示例仅罗列了最关键的部分。 注意 XML 头部的声明，它用来验证 XML 文档的正确性。environment 元素体中包含了事务管理和连接池的配置。</p>
+<ul>
+<li>development：开发模式</li>
+<li>work：工作模式</li>
+</ul>
+<p>mappers 元素则包含了一组映射器（mapper），这些映射器的 XML 映射文件包含了 SQL 代码和映射定义信息。 </p>
+<p>3、使用Java代码创建你自己的配置建造器</p>
+<p>​    如果你更愿意直接从 Java 代码而不是 XML 文件中创建配置，或者想要创建你自己的配置建造器，MyBatis 也提供了完整的配置类，提供了所有与 XML 文件等价的配置项。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DataSource dataSource = BlogDataSourceFactory.getBlogDataSource();</span><br><span class="line">TransactionFactory transactionFactory = <span class="keyword">new</span> JdbcTransactionFactory();</span><br><span class="line">Environment environment = <span class="keyword">new</span> Environment(<span class="string">"development"</span>, transactionFactory, dataSource);</span><br><span class="line">Configuration configuration = <span class="keyword">new</span> Configuration(environment);</span><br><span class="line">configuration.addMapper(BlogMapper<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">SqlSessionFactory sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(configuration);</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="从-SqlSessionFactory-中获取-SqlSession"><a href="#从-SqlSessionFactory-中获取-SqlSession" class="headerlink" title="从 SqlSessionFactory 中获取 SqlSession"></a>从 SqlSessionFactory 中获取 SqlSession</h5><p>​    既然有了 SqlSessionFactory，顾名思义，我们可以从中获得 SqlSession 的实例。SqlSession 提供了在数据库执行 SQL 命令所需的所有方法。你可以通过 SqlSession 实例来直接执行已映射的 SQL 语句。例如： </p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (SqlSession session = sqlSessionFactory.openSession()) &#123;</span><br><span class="line">  Blog blog = (Blog) session.selectOne(<span class="string">"org.mybatis.example.BlogMapper.selectBlog"</span>, <span class="number">101</span>);	<span class="comment">// 调用映射SQL语句，101为查询条件的传入参数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>​    诚然，这种方式能够正常工作，对使用旧版本 MyBatis 的用户来说也比较熟悉。但现在有了一种更简洁的方式——使用和指定语句的参数和返回值相匹配的接口（比如 BlogMapper.class），现在你的代码不仅更清晰，更加类型安全，还不用担心可能出错的字符串字面值以及强制类型转换。</p>
+<p>例如：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> (SqlSession session = sqlSessionFactory.openSession()) &#123;</span><br><span class="line">  BlogMapper mapper = session.getMapper(BlogMapper<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  Blog blog = mapper.selectBlog(<span class="number">101</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="XML映射SQL语句"><a href="#XML映射SQL语句" class="headerlink" title="XML映射SQL语句"></a>XML映射SQL语句</h5><p>​    在上面提到的例子中，一个语句既可以通过 XML 定义，也可以通过注解定义。MyBatis 提供的所有特性都可以利用基于 XML 的映射语言来实现，这里给出一个基于 XML 映射语句的示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span></span></span><br><span class="line"><span class="meta">  <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD Mapper 3.0//EN"</span></span></span><br><span class="line"><span class="meta">  <span class="meta-string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"org.mybatis.example.BlogMapper"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">resultType</span>=<span class="string">"Blog"</span>&gt;</span></span><br><span class="line">    select * from Blog where id = #&#123;id&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>它在命名空间 “org.mybatis.example.BlogMapper” 中定义了一个名为 “selectBlog” 的映射语句，这样你就可以用全限定名 “org.mybatis.example.BlogMapper.selectBlog” 来调用映射语句了，就像上面例子中那样。</p>
+<h5 id="通过-Java-注解定义"><a href="#通过-Java-注解定义" class="headerlink" title="通过 Java 注解定义"></a>通过 Java 注解定义</h5><p>​         对于像 BlogMapper 这样的映射器类来说，还有另一种方法来完成语句映射。         它们映射的语句可以不用 XML 来配置，而可以使用 Java 注解来配置。比如，上面的 XML         示例可以被替换成如下的配置：       </p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.mybatis.example;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BlogMapper</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Select</span>(<span class="string">"SELECT * FROM blog WHERE id = #&#123;id&#125;"</span>)</span><br><span class="line">  <span class="function">Blog <span class="title">selectBlog</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>​         使用注解来映射简单语句会使代码显得更加简洁，但对于稍微复杂一点的语句，Java注解不仅力不从心，还会让你本就复杂的 SQL 语句更加混乱不堪。因此，如果你需要做一些很复杂的操作，最好用 XML 来映射语句。       </p>
+<p>​         选择何种方式来配置映射，以及认为是否应该要统一映射语句定义的形式，完全取决于你和你的团队。         换句话说，永远不要拘泥于一种方式，你可以很轻松的在基于注解和 XML 的语句映射方式间自由移植和切换。 </p>
+<h4 id="Spring-Boot整合Mybatis"><a href="#Spring-Boot整合Mybatis" class="headerlink" title="Spring Boot整合Mybatis"></a>Spring Boot整合Mybatis</h4><p>导入依赖：mybatis-spring-boot-starter</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>x.x.x<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>com包下建立了项目，常建立的包有：</p>
+<ol>
+<li>entity 实体类，通常定义在model层里面，相当于MVC的M层，属于数据模型层，命名Xxx</li>
+<li>mapper 数据存储对象，相当于DAO层，mapper层直接与数据库打交道（执行SQL语句），接口提供给service层。</li>
+<li>dao 描写数据库的抽象类interface，用作编写数据库的接口，具体到对某个表得增删改查，命名XxxDao</li>
+<li>service 编写逻辑代码的具体实现方法，要做这一层的话，要先设计接口，再实现类。命名XxxService</li>
+<li>controller 控制器，用作http请求的的参数传递，负责请求转发，命名XxxController</li>
+</ol>
+<p>其他：</p>
+<ol start="5">
+<li><p>util包，比较麻烦的逻辑代码，可以封装成工具类，存放在 util 包</p>
+</li>
+<li><p>mapper，存放sql的xml文件</p>
+</li>
+</ol>
+<p>统一头部：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Mapper 3.0&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot; &gt;</span><br></pre></td></tr></table></figure></div>
+
+<ol start="7">
+<li>使用application.yml 文件配置</li>
+</ol>
+<p>统一内容:</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#配置mysql数据源</span><br><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;数据库名字?.......</span><br><span class="line">    username: ....</span><br><span class="line">    password: ....</span><br><span class="line">    driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">#定位Mybatis的SQL映射配置文件</span><br><span class="line">mybatis:</span><br><span class="line">  mapper-locations: classpath*:mapper&#x2F;*.xml</span><br></pre></td></tr></table></figure></div>
+
+<p>注：classpath 指向根目录的 resources静态资源目录。</p>
+<h4 id="SpringBoot整合Mybatis实例"><a href="#SpringBoot整合Mybatis实例" class="headerlink" title="SpringBoot整合Mybatis实例"></a>SpringBoot整合Mybatis实例</h4><ol>
+<li><p>在 entity 包新建与数据表对应的实体类:</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.wxshopsmallapp.entity;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实体类变量名必须和数据表的字段名一致</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GoodsInfo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> goods_id;</span><br><span class="line">    <span class="keyword">private</span> String goods_name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> goods_price;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> goods_stoke;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGoods_id</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> goods_id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGoods_id</span><span class="params">(<span class="keyword">int</span> goods_id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.goods_id = goods_id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getGoods_name</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> goods_name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGoods_name</span><span class="params">(String goods_name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.goods_name = goods_name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGoods_price</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> goods_price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGoods_price</span><span class="params">(<span class="keyword">int</span> goods_price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.goods_price = goods_price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getGoods_stoke</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> goods_stoke;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGoods_stoke</span><span class="params">(<span class="keyword">int</span> goods_stoke)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.goods_stoke = goods_stoke;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>在 mapper 包新建访问数据表的 SQL 映射方法</p>
+   <div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.wxshopsmallapp.mapper;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.example.wxshopsmallapp.entity.GoodsInfo;</span><br><span class="line"></span><br><span class="line"><span class="comment">//接口名要与Mybatis的.xml映射文件名一致</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GoodsInfoMapper</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> GoodsInfo <span class="title">selectAllRecord</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>在resources 目录新建mybatisSQL映射文件</p>
+</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="meta-string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.example.wxshopsmallapp.mapper.GoodsInfoMapper"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- id要与接口GoodsInfoMapper的映射方法同名</span></span><br><span class="line"><span class="comment">     数据返回格式为JSON，需设置resultType为对应实体类并定位其位置。</span></span><br><span class="line"><span class="comment">     可选：parameterType设置传参</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectAllRecord"</span> <span class="attr">resultType</span>=<span class="string">"com.example.wxshopsmallapp.entity.GoodsInfo"</span>&gt;</span></span><br><span class="line">        SELECT  * FROM goods_info</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="4">
+<li>在service包新建服务类处理业务逻辑</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.wxshopsmallapp.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.example.wxshopsmallapp.entity.GoodsInfo;</span><br><span class="line"><span class="keyword">import</span> com.example.wxshopsmallapp.mapper.GoodsInfoMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GoodsInfoService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> GoodsInfoMapper goodsInfoMapper = <span class="keyword">null</span>; <span class="comment">//注入接口</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> GoodsInfo <span class="title">selectAllRecord</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> goodsInfoMapper.selectAllRecord();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ol start="5">
+<li>在control包新建控制类，将所请求数据返回浏览器</li>
+</ol>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.wxshopsmallapp.control;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.example.wxshopsmallapp.entity.GoodsInfo;</span><br><span class="line"><span class="keyword">import</span> com.example.wxshopsmallapp.service.GoodsInfoService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span>         <span class="comment">//@RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GoodsInfoControl</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> GoodsInfoService goodsInfoService = <span class="keyword">null</span>;   <span class="comment">//注入service类</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/selectAllRecord"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> GoodsInfo <span class="title">selectAllRecord</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"被调用了\n"</span>);</span><br><span class="line"><span class="comment">//        System.out.println("数据库查询结果为"+goodsInfoService.selectAllRecord());</span></span><br><span class="line">        <span class="keyword">return</span> goodsInfoService.selectAllRecord();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<blockquote>
+<p>2020年4月25日 完结</p>
+</blockquote>
+<hr>
+<p>摘录：<a href="https://mybatis.org/mybatis-3/zh/getting-started.html" target="_blank" rel="noopener">部分内容摘录自 Mybatis 官方文档</a></p>
+<p>以上内容，仅供参考，转载请注明出处。</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2020/05/02/032.Sping%E6%A6%82%E8%BF%B0%E4%B8%8E%E7%AE%80%E8%A6%81%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            032.Sping概述与简要配置
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2020/03/18/030.PHP%E6%A8%A1%E6%8B%9FHTTP%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">030.PHP模拟HTTP接口请求</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        司南道长
+      
+    </h3>
+    <p class="avatar-slogan">
+      修道者，首重修心；当如天之道，利而不害；人之道，为而不争！所谓技术，不过是熟练度的问题。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 13.33px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 13.33px;">VLAN</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 13.33px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/">039.JAVA Socket网络编程概要</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">038.MySQL运维知识梳理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">037.RIP与OSPF动态路由协议配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/">036.基于三层交换机实现VLAN间路由</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/">035.VLAN虚拟局域网配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2020 FaithSinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;基于 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

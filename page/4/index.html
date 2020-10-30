@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>司南道长-Web安全架构路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发" />
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="司南道长-Web安全架构路上的探索者、追梦人">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="司南道长-Web安全架构路上的探索者、追梦人">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="FaithSinan">
+<meta property="article:tag" content="司南道长">
+<meta property="article:tag" content="FaithSinan">
+<meta property="article:tag" content="Web开发">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="司南道长-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-left">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main">
+  
+    <article id="post-009.《白帽子讲WEB安全》-读书笔记（一）" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/21/009.%E3%80%8A%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2WEB%E5%AE%89%E5%85%A8%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">009.《白帽子讲WEB安全》-读书笔记(一)</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/21/009.%E3%80%8A%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2WEB%E5%AE%89%E5%85%A8%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-date">
+  <time datetime="2019-07-21T15:45:43.000Z" itemprop="datePublished">2019-07-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h4><p>最近看了一本不错的互联网安全类的书籍，觉得应该留下些什么。《白帽子讲Web安全》为阿里的首席安全专家吴翰清所著。</p>
+<p>此书结合了吴翰清在阿里多年的工作经验，对Web安全领域的众多典型案例，站在白帽子的视角，讲述Web安全的方方面面，虽然也剖析攻击原理，但更重要的是如何防范这些问题。</p>
+<p>本书对当前WEB应用常见的攻击手法进行了较为全面的概括，本篇文章将就此书所阐述的安全观进行浅显的总结。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/07/21/009.%E3%80%8A%E7%99%BD%E5%B8%BD%E5%AD%90%E8%AE%B2WEB%E5%AE%89%E5%85%A8%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-008.AJAX异步交互技术之核心对象分析" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/04/008.AJAX%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90/">008.AJAX异步交互技术之核心对象分析</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/06/04/008.AJAX%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90/" class="article-date">
+  <time datetime="2019-06-04T11:13:43.000Z" itemprop="datePublished">2019-06-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="概述AJAX"><a href="#概述AJAX" class="headerlink" title="概述AJAX"></a><strong>概述AJAX</strong></h4><p>AJAX为”Asynchronous Javascript And XML”的缩写，即异步的JavaScript和XML。这是一种实现网页异步交互的动态开发技术，即在不重载整个页面的情况下，与服务器交互更新部分网页。这种技术避免了由于频繁的网页请求而造成的多余负载，更提升了用户体验。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/06/04/008.AJAX%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92%E6%8A%80%E6%9C%AF%E4%B9%8B%E6%A0%B8%E5%BF%83%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-007.JavaScript-BOM窗口对象三板斧" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/28/007.JavaScript-BOM%E7%AA%97%E5%8F%A3%E5%AF%B9%E8%B1%A1%E4%B8%89%E6%9D%BF%E6%96%A7/">007.JavaScript-BOM窗口对象三板斧</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/05/28/007.JavaScript-BOM%E7%AA%97%E5%8F%A3%E5%AF%B9%E8%B1%A1%E4%B8%89%E6%9D%BF%E6%96%A7/" class="article-date">
+  <time datetime="2019-05-28T15:06:43.000Z" itemprop="datePublished">2019-05-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a><strong>概述</strong></h4><p>Window对象表示浏览器中打开的窗口。</p>
+<p>如果文档包含框架（frame 或 iframe 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。</p>
+<p>浏览器实现的前进后退功能、打开关闭新标签功能，均是在window对象的基础上实现的，而在前端开发中还是利用window对象开发各式各样的验证提示对话框。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/05/28/007.JavaScript-BOM%E7%AA%97%E5%8F%A3%E5%AF%B9%E8%B1%A1%E4%B8%89%E6%9D%BF%E6%96%A7/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-006.JavaScript-BOM对象之location" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/006.JavaScript-BOM%E5%AF%B9%E8%B1%A1%E4%B9%8Blocation/">006.JavaScript-BOM对象之location</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/05/20/006.JavaScript-BOM%E5%AF%B9%E8%B1%A1%E4%B9%8Blocation/" class="article-date">
+  <time datetime="2019-05-20T15:06:43.000Z" itemprop="datePublished">2019-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="Location对象方法"><a href="#Location对象方法" class="headerlink" title="Location对象方法"></a><strong>Location对象方法</strong></h4><p>简介：<br>Location是一个URL操作方法，这对象中包含了有关当前URL的信息。Location对象是Window对象的一部分，可以通过window.location属性来访问。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/05/20/006.JavaScript-BOM%E5%AF%B9%E8%B1%A1%E4%B9%8Blocation/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-005.公网下VBox虚拟机配置双网卡互通" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/14/005.%E5%85%AC%E7%BD%91%E4%B8%8BVBox%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E5%8F%8C%E7%BD%91%E5%8D%A1%E4%BA%92%E9%80%9A/">005.校园网下VBox虚拟机配置双网卡互通</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/05/14/005.%E5%85%AC%E7%BD%91%E4%B8%8BVBox%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E5%8F%8C%E7%BD%91%E5%8D%A1%E4%BA%92%E9%80%9A/" class="article-date">
+  <time datetime="2019-05-14T14:17:25.000Z" itemprop="datePublished">2019-05-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h4><p>有些新手在第一次使用VirtualBox搭建linux实验平台初期，总会碰到一些稀奇古怪的上网问题，若是校园网（公用网络）类的认证上网环境，则坑会更多，双网卡配置是个不错的解决方法。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/05/14/005.%E5%85%AC%E7%BD%91%E4%B8%8BVBox%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE%E5%8F%8C%E7%BD%91%E5%8D%A1%E4%BA%92%E9%80%9A/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-004.配置Firewall防火墙服务常用命令" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/08/004.%E9%85%8D%E7%BD%AEFirewall%E9%98%B2%E7%81%AB%E5%A2%99%E6%9C%8D%E5%8A%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">004.配置Firewall防火墙服务常用命令</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/05/08/004.%E9%85%8D%E7%BD%AEFirewall%E9%98%B2%E7%81%AB%E5%A2%99%E6%9C%8D%E5%8A%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2019-05-08T09:29:16.000Z" itemprop="datePublished">2019-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" rel="tag">端口配置</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h4><p>在Linux环境中的防火墙设置、端口开放关闭，都是由firewalld服务进行管理的，<br>firewalld的firewalld-cmd就是用来修改配置防火墙的命令行客户端，类似于windows中的cmd一样。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/05/08/004.%E9%85%8D%E7%BD%AEFirewall%E9%98%B2%E7%81%AB%E5%A2%99%E6%9C%8D%E5%8A%A1%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-003.Git本地项目版本管理及推送至远程" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/003.Git%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%8F%8A%E6%8E%A8%E9%80%81%E8%87%B3%E8%BF%9C%E7%A8%8B/">003.git本地项目版本管理及推送至远程仓库</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/26/003.Git%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%8F%8A%E6%8E%A8%E9%80%81%E8%87%B3%E8%BF%9C%E7%A8%8B/" class="article-date">
+  <time datetime="2019-04-26T08:37:06.000Z" itemprop="datePublished">2019-04-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a>►<a class="article-category-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" rel="tag">使用指南</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a><strong>环境</strong></h4><p>centos 7</p>
+<h4 id="本地仓库操作"><a href="#本地仓库操作" class="headerlink" title="本地仓库操作"></a><strong>本地仓库操作</strong></h4><p>1、Github上新建一个远程仓库。</p>
+<p>2、切换至项目根目录下。</p>
+<p>3、创建本地仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init	<span class="comment">#生成.git目录，授权git本地仓库。</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/26/003.Git%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%8F%8A%E6%8E%A8%E9%80%81%E8%87%B3%E8%BF%9C%E7%A8%8B/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-002.linux笔记本配置wifi连接-笔记" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/13/002.linux%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AEwifi%E8%BF%9E%E6%8E%A5-%E7%AC%94%E8%AE%B0/">002.linux笔记本配置wifi连接</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/13/002.linux%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AEwifi%E8%BF%9E%E6%8E%A5-%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2019-04-13T15:42:04.000Z" itemprop="datePublished">2019-04-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A0%E7%BA%BFWiFi/" rel="tag">无线WiFi</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a><strong>环境</strong></h4><p>Debian 9 </p>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a><strong>步骤</strong></h4><p>1、添加光盘安装源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-cdrom add	  <span class="comment">#插入光盘或启动盘，以光盘为源安装</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/13/002.linux%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AEwifi%E8%BF%9E%E6%8E%A5-%E7%AC%94%E8%AE%B0/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-001.搭建hexo静态博客流程" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/12/001.%E6%90%AD%E5%BB%BAhexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/">001.搭建Hexo静态博客笔记</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/12/001.%E6%90%AD%E5%BB%BAhexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/" class="article-date">
+  <time datetime="2019-04-12T08:40:11.000Z" itemprop="datePublished">2019-04-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="环境"><a href="#环境" class="headerlink" title="环境"></a><strong>环境</strong></h4><p>Debian 9<br>依赖：Node.js、Hexo</p>
+<h4 id="搭建Hexo"><a href="#搭建Hexo" class="headerlink" title="搭建Hexo"></a><strong>搭建Hexo</strong></h4><p>1、安装Node.js<br>2、安装cnpm:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/12/001.%E6%90%AD%E5%BB%BAhexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%B5%81%E7%A8%8B/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">« 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
+
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        司南道长
+      
+    </h3>
+    <p class="avatar-slogan">
+      修道者，首重修心；当如天之道，利而不害；人之道，为而不争！所谓技术，不过是熟练度的问题。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 13.33px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 13.33px;">VLAN</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 13.33px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/">039.JAVA Socket网络编程概要</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">038.MySQL运维知识梳理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">037.RIP与OSPF动态路由协议配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/">036.基于三层交换机实现VLAN间路由</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/">035.VLAN虚拟局域网配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2020 FaithSinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;基于 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

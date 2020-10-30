@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>012.PHP中的变量与函数特性 | 司南道长-Web安全架构路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发" />
+  
+  <meta name="description" content="PHP中的两种变量定义方法定义一个变量有两种方法：$这个符号在定义初始化，或者使用的时候都是必须要有的。 示例： 12345678910$name &#x3D; &quot;php&quot;;  &#x2F;&#x2F;一般变量的定义class Phpgood&amp;#123;var $talk &#x3D; &quot;真好&quot;;   &#x2F;&#x2F;只能在类里用&amp;#125;$phpgood &#x3D; new Phpgood();echo $name;echo $phpgood-&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="012.PHP中的变量与函数特性">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/012.PHP%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:site_name" content="司南道长-Web安全架构路上的探索者、追梦人">
+<meta property="og:description" content="PHP中的两种变量定义方法定义一个变量有两种方法：$这个符号在定义初始化，或者使用的时候都是必须要有的。 示例： 12345678910$name &#x3D; &quot;php&quot;;  &#x2F;&#x2F;一般变量的定义class Phpgood&amp;#123;var $talk &#x3D; &quot;真好&quot;;   &#x2F;&#x2F;只能在类里用&amp;#125;$phpgood &#x3D; new Phpgood();echo $name;echo $phpgood-&gt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-17T14:01:00.000Z">
+<meta property="article:modified_time" content="2020-10-30T07:34:20.619Z">
+<meta property="article:author" content="FaithSinan">
+<meta property="article:tag" content="学习指南">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="司南道长-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-left">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main"><article id="post-012.PHP中的变量与函数特性" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      012.PHP中的变量与函数特性
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/17/012.PHP%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E7%89%B9%E6%80%A7/" class="article-date">
+  <time datetime="2019-08-17T14:01:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a>►<a class="article-category-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" rel="tag">学习指南</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="PHP中的两种变量定义方法"><a href="#PHP中的两种变量定义方法" class="headerlink" title="PHP中的两种变量定义方法"></a><strong>PHP中的两种变量定义方法</strong></h4><p>定义一个变量有两种方法：$这个符号在定义初始化，或者使用的时候都是必须要有的。</p>
+<p>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$name = <span class="string">"php"</span>;  <span class="comment">//一般变量的定义</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Phpgood</span></span>&#123;</span><br><span class="line"><span class="keyword">var</span> $talk = <span class="string">"真好"</span>;   <span class="comment">//只能在类里用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$phpgood = <span class="keyword">new</span> Phpgood();</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $name;</span><br><span class="line"><span class="keyword">echo</span> $phpgood-&gt;talk;</span><br></pre></td></tr></table></figure></div>
+
+<a id="more"></a>
+
+<p>第一种方法，可以定义一般变量和类的属性变量，在类里定义属性变量时，需加访问控制关键字，不携带默认访问权限。</p>
+<p>第二种方法，只能定义类的属性变量，用var定义，在类里定义属性变量的时，可以不加访问控制关键字，默认携带”公有”访问权限，不常用的写法。</p>
+<h4 id="PHP中的函数"><a href="#PHP中的函数" class="headerlink" title="PHP中的函数"></a><strong>PHP中的函数</strong></h4><p>PHP中的函数就是用于完成某些功能的代码段，分为系统函数和自定义函数。</p>
+<p>系统函数是指PHP中原生内置的函数，无需开发者封装，使用函数名调用即可。例如：echo、var_dump。<br>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">"你好"</span>;  <span class="comment">//echo加不加括号都可以。</span></span><br><span class="line"></span><br><span class="line">var_dump(<span class="string">"PHP"</span>);</span><br></pre></td></tr></table></figure></div>
+
+<p>自定义函数是指按照具体需求，由开发者封装的函数。<br>示例：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outPut</span><span class="params">()</span></span>&#123;</span><br><span class="line">    var_dump(<span class="string">"我是函数输出的内容"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outPut();</span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="函数的传值与传引用"><a href="#函数的传值与传引用" class="headerlink" title="函数的传值与传引用"></a><strong>函数的传值与传引用</strong></h4><p>传值:默认情况下，函数参数通过值传递，所以即使在函数内部改变参数的值也不会改变函数外部的值。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($i)</span></span>&#123;</span><br><span class="line">    $i+=<span class="number">10</span>;</span><br><span class="line">    var_dump($i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$i=<span class="number">2</span>;</span><br><span class="line">test($i);  <span class="comment">//传值进去，输出12</span></span><br><span class="line">var_dump($i);  <span class="comment">//输出2</span></span><br></pre></td></tr></table></figure></div>
+
+<p>传引用：可以通过在参数前添加取地址符&amp;，代表通过引用传递参数，在函数内部对其所做操作影响其本身。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PHP"><figure class="iseeu highlight /php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">(&amp;$i)</span></span>&#123;</span><br><span class="line">    $i+=<span class="number">10</span>;</span><br><span class="line">    var_dump($i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$m=<span class="number">2</span>;</span><br><span class="line">test($m);  <span class="comment">//传变量地址进去，输出12</span></span><br><span class="line">var_dump($m);  <span class="comment">//输出12</span></span><br></pre></td></tr></table></figure></div>
+
+
+<h4 id="PHP中echo与var-dump函数的区别"><a href="#PHP中echo与var-dump函数的区别" class="headerlink" title="PHP中echo与var_dump函数的区别"></a><strong>PHP中echo与var_dump函数的区别</strong></h4><p>echo与var_dump的核心功能同样是没有区别的，皆为“输出变量的值”，echo只能输出变量的值，var_dump能将变量的值与类型同时输出。</p>
+<p>var_dump对于变量、数组、类的输出，有着很好的表现，通过var_dump能够轻易地观察出变量、数组、类此时的值为多少。而echo则报错成狗，当然，在普通网页的输出，我们也不希望软件产品客户看到var_dump输出的信息，所以echo还是最基础的东西。</p>
+<p>echo偏向于产品，给客户看的，调试人员、编程人员更适合使用var_dump来输出变量，</p>
+<h4 id="函数or方法有什么区别"><a href="#函数or方法有什么区别" class="headerlink" title="函数or方法有什么区别"></a><strong>函数or方法有什么区别</strong></h4><ul>
+<li>function函数：函数，是一个面向过程的算法的实现，是独立存在的，也就是指全局作用域里的函数，可以在任何地方调用。</li>
+<li>function方法：方法，是一个面向对象的业务逻辑的实现，对象里依赖于类存在的，即类的方法。</li>
+</ul>
+<hr>
+<p>源自：本篇文章为慕课网PHP入门教程的知识总结<br>声明：以上内容如有不足之处，欢迎联系指正，转载请注明出处！</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/17/013.PHP%E4%B8%AD%E7%9A%84%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            013.PHP中的类与对象特性
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/08/13/011.PHP%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">011.PHP基本介绍及知识体系</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        司南道长
+      
+    </h3>
+    <p class="avatar-slogan">
+      修道者，首重修心；当如天之道，利而不害；人之道，为而不争！所谓技术，不过是熟练度的问题。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 13.33px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 13.33px;">VLAN</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 13.33px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/">039.JAVA Socket网络编程概要</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">038.MySQL运维知识梳理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">037.RIP与OSPF动态路由协议配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/">036.基于三层交换机实现VLAN间路由</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/">035.VLAN虚拟局域网配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2020 FaithSinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;基于 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

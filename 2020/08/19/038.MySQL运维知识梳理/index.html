@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>038.MySQL运维知识梳理 | 司南道长-Web安全架构路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发" />
+  
+  <meta name="description" content="概述MySQL运维知识可划分为六个模块：  体系结构 备份恢复 数据复制 集群架构 性能优化 状态监控">
+<meta property="og:type" content="article">
+<meta property="og:title" content="038.MySQL运维知识梳理">
+<meta property="og:url" content="http://yoursite.com/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/index.html">
+<meta property="og:site_name" content="司南道长-Web安全架构路上的探索者、追梦人">
+<meta property="og:description" content="概述MySQL运维知识可划分为六个模块：  体系结构 备份恢复 数据复制 集群架构 性能优化 状态监控">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815005240.png">
+<meta property="og:image" content="http://yoursite.com/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815175930.png">
+<meta property="og:image" content="http://yoursite.com/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815180010.png">
+<meta property="article:published_time" content="2020-08-19T14:15:21.000Z">
+<meta property="article:modified_time" content="2020-10-30T07:29:20.343Z">
+<meta property="article:author" content="FaithSinan">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815005240.png">
+  
+    <link rel="alternate" href="/atom.xml" title="司南道长-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-left">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main"><article id="post-038.MySQL运维知识梳理" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      038.MySQL运维知识梳理
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/" class="article-date">
+  <time datetime="2020-08-19T14:15:21.000Z" itemprop="datePublished">2020-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>MySQL运维知识可划分为六个模块：</p>
+<ol>
+<li>体系结构</li>
+<li>备份恢复</li>
+<li>数据复制</li>
+<li>集群架构</li>
+<li>性能优化</li>
+<li>状态监控</li>
+</ol>
+<a id="more"></a>
+
+<h4 id="体系结构概述"><a href="#体系结构概述" class="headerlink" title="体系结构概述"></a>体系结构概述</h4><p>​        MySQL的体系结构可以分为两层，MySQL Server层和存储引擎层。在MySQL Server层中又包括连接层和SQL层。应用程序通过接口（如ODBC、JDBC）来连接MySQL。最先连接处理的是连接层，连接层包括通信协议、线程处理、用户名密码认证三个部分。</p>
+<ul>
+<li><p>通信协议负责检测客户端版本是否兼容MySQL服务端。</p>
+</li>
+<li><p>线程处理是指每一个连接请求都会分配一个对应的线程，相当于一条SQL就对应一个线程，一个线程就对应一个逻辑CPU，并会在多个逻辑CPU之间进行切换。</p>
+</li>
+<li><p>用户名密码认证验证创建的账号和密码，以及Host主机授权是否可以连接到MySQL服务器。</p>
+</li>
+</ul>
+<p><img src="/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815005240.png" alt=""></p>
+<h4 id="主要的存储引擎介绍"><a href="#主要的存储引擎介绍" class="headerlink" title="主要的存储引擎介绍"></a>主要的存储引擎介绍</h4><p>InnoDB</p>
+<p>​        特点：支持事务、行锁，支持MVCC多版本并发控制，并发性高。</p>
+<p>​        应用场景：应用于OLTP业务系统。</p>
+<p>MyISAM</p>
+<p>​        特点：不支持事务、表锁，MySQL8.0之后废弃了，并发很低，资源利用率也很低。</p>
+<p>​        应用场景：应用于OLAP业务系统，建议在生产环境尽量少使用 MyISAM 存储引擎。</p>
+<p>Memory</p>
+<p>​        特点：表中的数据都在内存中存放，不落地。支持Hash和Btree索引，数据安全性不高，读取速度快。</p>
+<p>​        应用场景：应用于对数据安全性要求不高的环境下。</p>
+<p>TokuDB</p>
+<p>​        特点：归 Percona 公司所有。支持事务，支持压缩功能，高速写入功能（比 InnoDB 快 9 倍），在线Online DDL，不产生索引碎片。</p>
+<p>​        应用场景：应用于海量数据的存储场景下。</p>
+<p>MariaDB columnstore</p>
+<p>​        特点：列式存储引擎，高压缩功能。</p>
+<p>​        应用场景：数据仓库，OLAP业务系统。</p>
+<p>Blackhole</p>
+<p>​        特点：并不存储数据，数据写入时只写 binlog</p>
+<p>​        应用场景：blackhole常用来做binlog转储或测试。</p>
+<h4 id="MySQL-备份恢复"><a href="#MySQL-备份恢复" class="headerlink" title="MySQL 备份恢复"></a>MySQL 备份恢复</h4><p>数据库备份恢复按运行状态可分为：冷备和热备。热备，又分为逻辑备份和裸文件备份。</p>
+<ul>
+<li>冷备：必须在数据库关闭的状态下进行备份，能够更好的保证数据库的完整性。</li>
+<li>热备：能够在数据库处于正常运行的情况下备份，能够更高的保证服务的可用性。</li>
+<li>逻辑备份：根据SQL，对数据库的逻辑组件（数据库、表、数据对象）进行备份；备份工具有mysqldump、select…into outfile、mydumper.</li>
+<li>裸文件备份：对数据库操作系统的物理文件（数据文件、日志文件）等的备份；备份工具有xtrabackup.</li>
+</ul>
+<p>后续备份，又有：</p>
+<ul>
+<li><p>完全备份：将数据进行完整的备份，包含完整的库、表、索引、视图等，需要花费更长的时间</p>
+</li>
+<li><p>差异备份：备份自上次完全备份到现在发生改变的数据库内容，备份的文件比完整备份的文件小，备份的速度更快；</p>
+</li>
+<li><p>增量备份：备份至上次完全备份或增量备份后被修改的数据库内容；</p>
+</li>
+</ul>
+<h4 id="MySQL数据复制"><a href="#MySQL数据复制" class="headerlink" title="MySQL数据复制"></a>MySQL数据复制</h4><p>一、半同步复制</p>
+<p>​        MySQL5.5版本之后引入了半同步复制功能，主从服务器必须同时安装半同步复制插件，才能开启该复制功能。</p>
+<p>​        在该功能下，确保从库接受完主库传递过来的 binlog 内容已经写入到自己的 relay log 里面了，才会通知主库上面的等待进程，该操作完毕。</p>
+<p>​        如果等待超时，超过 rpl_semi_sync_master_timeout 参数设置的时间，则关闭半同步复制，并自动转换为异步复制模式，直到至少有一台从库通知主库已经接受到 binlog信息了为止。</p>
+<p><img src="/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815175930.png" alt=""></p>
+<p>二、多源复制</p>
+<p>​        所谓多源复制，就是把多台主库的数据同步到一台从库服务器上，从库会创建通往每个主库的管道。</p>
+<p>​        在MySQL5.7之前的版本中，只要实现一主一从、一主多从或多主多从的复制架构，如果想要实现多主一从的复制，只能使用 MariaDB。MySQL5.7版本已经可以实现多主一从的复制。</p>
+<p><img src="/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815180010.png" alt=""></p>
+<p>多源复制的优势：</p>
+<p>（1）可以集中备份，在从库上备份，不会影响线上的数据库正常运行。</p>
+<p>（2）节约了购买从库服务器的成本，只需要一个服务器即可。</p>
+<p>（3）数据都汇总在一起，方便后期做数据统计。</p>
+<p>三、GTID复制</p>
+<p>​        GTID又叫全局事务ID（Global Transaction ID ），是一个已提交事务的编号，并且是一个全局唯一的编号。        MySQL5.6版本之后在主从复制类型上新增了GTID复制。GTID是由 server_uuid 和事务 id 组成的，即 GTID = server_uuid:transaction_id。server_uuid是在数据库启动过程中自动生成的，每台机器的server_uuid不一样。uuid存放在数据目录的 auto.cnf 文件下。而 transaction_id 就是事务提交时由系统顺序分配的一个不会重复的序列号。</p>
+<p>GTID存在的价值：</p>
+<p>（1）GTID使用master_auto_position=1代替了基于binlog和position号的主从复制搭建方式，更便于主从复制的搭建。</p>
+<p>（2）GTID可以知道事务在最开始是在哪个实例上提交的。</p>
+<p>（3）GTID方便实现主从之间的 failover，再也不用不断地去找 position 和 binlog 了。</p>
+<p>GTID复制限制条件：</p>
+<p>（1）不能使用 CREATE TABLE table_name SELECT * FROM table_name。</p>
+<p>（2）在一个事务中既包含事务表的操作又包含非事务表。</p>
+<p>（3）不支持 CREATE TEMPORARY TABLE or DROP TEMPORARY TABLE 语句操作。</p>
+<p>（4）使用 GTID 复制从库跳过错误时，不支持执行该 sql_slave_skip_counter 参数的语法。</p>
+<h5 id="复制的一致性校验"><a href="#复制的一致性校验" class="headerlink" title="复制的一致性校验"></a>复制的一致性校验</h5><p>背景：</p>
+<p>​        在工作中接触和处理的最多问题就是MySQL的主从同步了，有时发生主库宕机，我们就面临着主从切换的问题，要把从库提升为主库。但主从库之间的数据一致性不能保证，所以就会利用 percona-toolkit 工具集中的 pt-table-checksum 工具来检查主从数据的一致性，然后再通过 pt-table-sync工具来修复不一致的数据信息。</p>
+<p>pt-table-checksum工具介绍：</p>
+<p>​        该工具的原理就是针对某张表中的所有字段，进行 hash 函数运算，在主库上运算后，把得到的值记录为master_crc、master_cnt。在从库上运算后，把得到的值记录为 this_crc、this_cnt。</p>
+<p>​        最后，通过比较从库 this 的值和主库 master 的值来判断主从之间的数据一致性。</p>
+<h4 id="MySQL集群架构"><a href="#MySQL集群架构" class="headerlink" title="MySQL集群架构"></a>MySQL集群架构</h4><p>MySQL的集群架构有：MHA、MM、PXC、Proxy、MGR……</p>
+<p>一、MHA</p>
+<p>​        MHA（Master High Availability）目前在 MySQL 高可用方面是一个相对成熟的解决方案，它由日本 DeNA 公司的  youshimaton（现就职于 Facebook 公司）开发，是一套优秀的作为 MySQL 高可用性环境下故障切换和主从提升的高可用软件。</p>
+<p>​        MHA的目的在于维持MySQL Replication 中master库的高可用性，其最大特点是可以修复多个slave之间的差异日志，最终使所有slave保持数据一致，然后从中选择一个充当新的master，并将其他slave指向它。</p>
+<p>​        当master出现故障时，可以通过对比slave之间 I/O thread 读取主库 binlog的position号，选取最接近的slave作为备选主库。其他的从库可以通过与备选主库对比生成差异的中继日志。在备选主库上应用从原来master保存的binlog，同时将备选主库提升为master。最后在其他slave上应用相应的差异中继日志，并从新的master开始复制。</p>
+<p>MHA优缺点：</p>
+<ol>
+<li><p>优点</p>
+<p>（1）故障切换时，可以自行判断哪个从库与主库的数据最接近，然后切换到上面，可以减少数据的丢失，保证数据的一致性。</p>
+<p>（2）支持binlog server，可提高binlog的传送效率，进一步减少数据丢失的风险。</p>
+<p>（3）结合MySQL5.7的增强半同步功能，确保故障切换时数据不丢失。</p>
+</li>
+<li><p>缺点</p>
+<p>（1）自动切换的脚本比较简单，而且比较老旧，后期需要逐步完善。</p>
+<p>（2）搭建MHA架构，需要开启Linux系统互信协议，所以对于系统安全性来说是个不小的考验。</p>
+</li>
+</ol>
+<p>二、MM+keepalived</p>
+<p>​        Keepalived 是基于VRRP协议的，Keepalived利用VRRP协议可以去实现MySQL高可用集群方案，避免单点故障。</p>
+<p>​        两台互为主备的MySQL服务器运行Keepalived，master会向backup节点发送广播信号，当backup节点接收不到master发送的VRRP包时，会认为master宕机，这时会根据VRRP的优先级来选举出一个backup来充当master，则这个master就会持有vip（vip是对外应用连接的IP地址），从而保证了线上现有业务的正常运行，高可用性完美地展现出来。</p>
+<p>注：在云平台环境下，此架构不能搭建。因为VRRP协议会被禁用。</p>
+<p>三、PXC</p>
+<p>​        PXC是基于Galera协议集成了Galera插件的MySQL高可用集群架构。具有高可用性，方便扩展，并且可以实现多个MySQL节点间的数据同步复制与读写，可保障数据库的服务高可用及数据强一致性。</p>
+<p>​        基于Galera的高可用方案主要有MaridDB Galera Cluster和Percona XtraDB Cluster，简称PXC。目前PXC架构在生产环境中用得更多且更成熟一些。</p>
+<p>​        PXC属于一套近乎完美的MySQL高可用集群解决方案，相比那些比较传统的基于主从复制模式的集群架构，如MHA、MM。该集群最突出的特点就是解决了诟病已久的数据复制延迟问题，基本上可以达到实时同步。而且节点间相互关系是对等的。本身该架构也是一种多主架构。</p>
+<p>PXC架构优缺点</p>
+<p>优点：</p>
+<ol>
+<li>实现MySQL数据库集群架构的高可用性和数据的强一致性。</li>
+<li>完成了真正的多节点读写的集群方案。</li>
+<li>改善了传统意义上的主从复制延迟的问题，基本上达到了实时同步。</li>
+<li>新加入的节点可以自动部署，无须提供手动备份，维护起来很方便。</li>
+<li>由于是多节点写入，所以数据库故障切换很容易。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>新加入的节点开销大，需要复制完整的数据。采用SST传输开销大。</li>
+<li>任何更新事务都需要全局验证通过，才会在每个节点库上执行。集群性能受限于性能最差的节点，也就是经常说的短板效应。</li>
+<li>因为需要保证数据的一致性，所以在多节点并发写时，锁冲突问题比较严重。</li>
+<li>存在写扩大问题，所有的节点上都会发生写操作。</li>
+<li>只支持InnoDB存储引擎表。</li>
+<li>没有表级别的锁定，执行DDL语句操作会把整个集群锁住，而且也“kill”不了（注：建议使用OSC操作）。</li>
+<li>所有的表必须含有主键，不然操作数据时会报错。</li>
+</ol>
+<p>四、Proxy</p>
+<p>​        ProxySQL是MySQL的一款中间件产品，是灵活强大的MySQL代理层。可以实现读写分离，支持Query路由功能，支持动态指定某个SQL进行cache，支持动态加载配置、故障切换和一些SQL的过滤功能。同类产品有DBproxy、MyCAT、OneProxy等，综合考量，ProxySQL性能更好。</p>
+<h4 id="MySQL优化"><a href="#MySQL优化" class="headerlink" title="MySQL优化"></a>MySQL优化</h4><p>MySQL的性能由多方面因素决定，优化也要从整体来优化：</p>
+<ul>
+<li>程序设计：数据库、表设计，SQL语句的正确书写。</li>
+<li>Linux操作系统：IO调度，Linux内核参数。</li>
+<li>MySQL数据库：配置参数，数据库架构</li>
+<li>硬件设备：服务器CPU、内存、IO、BIOS、RAID级别。</li>
+</ul>
+<h4 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h4><p>​        利用市面上的数据库监控系统，对数据库进行全面监控，查看各种实时性能指标，并且对监控数据进行统计分析。在数据库出现故障或者潜在性能问题时，根据用户设置及时将数据库的异常进行报警，通知相应数据库管理员进行处理和优化，及时发现性能和瓶颈，避免由数据库潜在问题造成直接经济损失。</p>
+<blockquote>
+<p>2020年8月19日 完结</p>
+</blockquote>
+<hr>
+<p>该笔记参考：51CTO学院—&gt;《MySQL晋级之路》张甦</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            039.JAVA Socket网络编程概要
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">037.RIP与OSPF动态路由协议配置</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        司南道长
+      
+    </h3>
+    <p class="avatar-slogan">
+      修道者，首重修心；当如天之道，利而不害；人之道，为而不争！所谓技术，不过是熟练度的问题。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 13.33px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 13.33px;">VLAN</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 13.33px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/">039.JAVA Socket网络编程概要</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">038.MySQL运维知识梳理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">037.RIP与OSPF动态路由协议配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/">036.基于三层交换机实现VLAN间路由</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/">035.VLAN虚拟局域网配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2020 FaithSinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;基于 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>

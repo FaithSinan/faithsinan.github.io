@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>036.基于三层交换机实现VLAN间路由 | 司南道长-Web安全架构路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="keywords" content="司南道长,FaithSinan,Web开发" />
+  
+  <meta name="description" content="VLAN 间路由概述​        路由技术可以完成处于不同广播域的数据转发决策，而一个 VLAN 就是一个逻辑的广播域、逻辑子网。 VLAN 间通信的技术有：  多臂路由实现 VLAN 间通信  单臂路由实现 VLAN 间通信  三层交换机实现 VLAN 间通信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="036.基于三层交换机实现VLAN间路由">
+<meta property="og:url" content="http://yoursite.com/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/index.html">
+<meta property="og:site_name" content="司南道长-Web安全架构路上的探索者、追梦人">
+<meta property="og:description" content="VLAN 间路由概述​        路由技术可以完成处于不同广播域的数据转发决策，而一个 VLAN 就是一个逻辑的广播域、逻辑子网。 VLAN 间通信的技术有：  多臂路由实现 VLAN 间通信  单臂路由实现 VLAN 间通信  三层交换机实现 VLAN 间通信">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/imgs/036-20200605114631.png">
+<meta property="article:published_time" content="2020-06-05T10:15:21.000Z">
+<meta property="article:modified_time" content="2020-10-30T07:29:01.140Z">
+<meta property="article:author" content="FaithSinan">
+<meta property="article:tag" content="VLAN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/imgs/036-20200605114631.png">
+  
+    <link rel="alternate" href="/atom.xml" title="司南道长-Web安全架构路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-left">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main"><article id="post-036.基于三层交换机实现VLAN间路由" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      036.基于三层交换机实现VLAN间路由
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/" class="article-date">
+  <time datetime="2020-06-05T10:15:21.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a>►<a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a>
+  </div>
+
+    
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VLAN/" rel="tag">VLAN</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h4 id="VLAN-间路由概述"><a href="#VLAN-间路由概述" class="headerlink" title="VLAN 间路由概述"></a>VLAN 间路由概述</h4><p>​        路由技术可以完成处于不同广播域的数据转发决策，而一个 VLAN 就是一个逻辑的广播域、逻辑子网。</p>
+<p>VLAN 间通信的技术有：</p>
+<ul>
+<li><p>多臂路由实现 VLAN 间通信</p>
+</li>
+<li><p>单臂路由实现 VLAN 间通信</p>
+</li>
+<li><p>三层交换机实现 VLAN 间通信</p>
+</li>
+</ul>
+<a id="more"></a>
+
+<p>​        其中，多臂路由是利用路由器的直连转发功能，实现的 VLAN 间路由，但由于扩展性的匮乏现在很少用，虽配置简单，却过于浪费路由器的端口资源。</p>
+<p>​        单臂路由也是利用路由器的直连转发功能，但通过虚拟化的子接口，只需一个物理接口连接到二层交换机，就可实现 VLAN 间路由，是一种相对节约设备的解决方案，而它的弱点就是在于转发性能不够强大。</p>
+<p>​        最后一种三层交换机的实现方案是 VLANIF 技术，使用交换机做三层路由的优势在与能满足局域网数据频繁交换的特点，现在应用是较为广泛的。</p>
+<h4 id="三层交换机与路由器的区别"><a href="#三层交换机与路由器的区别" class="headerlink" title="三层交换机与路由器的区别"></a>三层交换机与路由器的区别</h4><p>​        三层交换机与路由器的区别，最根本就是三层交换机也具有“路由”功能，与传统路由器的路由功能总体上是一致的。但是，三层交换机与路由器仍然存在相当大的本质区别。</p>
+<ol>
+<li>主要功能不同<ul>
+<li>交换机的主要功能是数据交换功能，只不过它还具备了一些基本的路由交换功能。</li>
+<li>路由器的主要功能是路由功能，其他功能不过是其附加功能，目的是使其适用面更广，更加实用。</li>
+</ul>
+</li>
+<li>适用环境不一样<ul>
+<li>交换机的路由功能通常比较简单，其面对的是简单的局域网连接。它因能提供快速的数据交换功能，刚好满足局域网需频繁交换数据的应用特点。</li>
+<li>路由器的路由功能更多体现在不同类型，不同协议网络之间的互联上。它最主要的功能就是路由转发，优势在于选择最佳路由、负载分担、链路备份以及和其他网络进行路由信息交换等。适合设置在一些重要的网络节点或作边界路由。</li>
+</ul>
+</li>
+<li>性能体现不一样<ul>
+<li>交换机通过硬件执行数据包交换，三层交换机的路由查找是针对数据流的，它利用缓存技术，很容易利用 ASIC 技术实现。可以大大节约成本，并实现快速转发。</li>
+<li>路由器一般由基于微处理器的软件路由引擎执行数据包交换，转发采用最长匹配的方式，实现复杂，且通常使用软件来实现，转发效率较低。</li>
+</ul>
+</li>
+<li>内网三层交换机相比路由器所具有的优势<ul>
+<li>子网间传输带宽可任意分配</li>
+<li>合理配置信息资源</li>
+<li>降低成本</li>
+<li>交换机之间连接灵活</li>
+</ul>
+</li>
+</ol>
+<p>下面就搭建一个简单的网络实例，基于三层交换机实现 VLAN 间路由。</p>
+<h4 id="实例：基于三层交换机实现-VLAN-间路由"><a href="#实例：基于三层交换机实现-VLAN-间路由" class="headerlink" title="实例：基于三层交换机实现 VLAN 间路由"></a>实例：基于三层交换机实现 VLAN 间路由</h4><p><img src="imgs/036-20200605114631.png" alt=""></p>
+<p>LSW1:</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[LSW1]vlan batch 10 20		#批处理创建 VLAN10 和 VLAN20</span><br><span class="line">[LSW1]interface Ethernet 0/0/1		#进入百兆接口1配置端口</span><br><span class="line">[LSW1-Ethernet0/0/1]port link-type access		#修改端口类型为access</span><br><span class="line">[LSW1-Ethernet0/0/1]port default vlan 10		#将该端口加入到 VALN10</span><br><span class="line">[LSW1-Ethernet0/0/1]interface Ethernet 0/0/2	#切换到百兆接口2</span><br><span class="line">[LSW1-Ethernet0/0/2]port link-type access		#修改端口类型为access</span><br><span class="line">[LSW1-Ethernet0/0/2]port default vlan 20		#将该端口加入到 VALN20</span><br><span class="line"></span><br><span class="line">[LSW1]interface GigabitEthernet 0/0/1			#切换到千兆接口1</span><br><span class="line">[LSW1-GigabitEthernet0/0/1]port link-type trunk 	#修改端口类型为trunk</span><br><span class="line">[LSW1-GigabitEthernet0/0/1]port trunk allow-pass  vlan 10 20	#允许VLAN10和VLAN20数据流通过</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>LSW2：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[LSW2]vlan batch 10 20		#批处理在LSW2中创建VLAN10和VLAN20</span><br><span class="line">[LSW2]int g 0/0/1			#进入g0/0/1接口配置端口</span><br><span class="line">[LSW2-GigabitEthernet0/0/1]port link-type trunk 	#修改端口类型为trunk</span><br><span class="line">[LSW2-GigabitEthernet0/0/1]port trunk allow-pass vlan 10 20		#允许VLAN10和VLAN20数据流通过</span><br><span class="line"></span><br><span class="line">[LSW2-GigabitEthernet0/0/1]int vlanif 10	#进入VLANIF 10 虚拟接口，VLANIF ID最好和 VLAN ID 对应</span><br><span class="line">[LSW2-Vlanif10]ip address 192.168.1.1 24	#使用VLANIF 10 虚拟接口作网关，设.2网段的网关地址</span><br><span class="line">[LSW2-Vlanif10]int vlanif 20		#进入VLANIF 20 虚拟接口</span><br><span class="line">[LSW2-Vlanif20]ip address 192.168.2.1 24	#设.2网段的网关地址</span><br><span class="line"></span><br><span class="line">[LSW2-Vlanif20]dis ip routing-table 	#显示路由表，检查.1和.2网段路由，是否已生成路由</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>PC1～PC2：</p>
+<p>设PC1 的 IP为：192.168.1.2，掩码：255.255.255.0，网关：192.168.1.1 </p>
+<p>设PC2 的 IP为：192.168.2.2，掩码：255.255.255.0，网关：192.168.2.1 </p>
+<p>配置完成后，PC1与PC2互ping，测试是否能实现 VLAN 间互访。</p>
+<blockquote>
+<p>2020年6月5日 完结</p>
+</blockquote>
+<hr>
+<p>参考：《华为HCNA认证详解与学习指南》周亚军 等编著。</p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            037.RIP与OSPF动态路由协议配置
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">035.VLAN虚拟局域网配置</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        司南道长
+      
+    </h3>
+    <p class="avatar-slogan">
+      修道者，首重修心；当如天之道，利而不害；人之道，为而不争！所谓技术，不过是熟练度的问题。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/SQL/">SQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 13.33px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 13.33px;">VLAN</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 13.33px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/27/039.JAVA%20Socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A6%82%E8%A6%81/">039.JAVA Socket网络编程概要</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/19/038.MySQL%E8%BF%90%E7%BB%B4%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">038.MySQL运维知识梳理</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/12/037.RIP%E4%B8%8EOSPF%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E9%85%8D%E7%BD%AE/">037.RIP与OSPF动态路由协议配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/036.%E5%9F%BA%E4%BA%8E%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AE%9E%E7%8E%B0VLAN%E9%97%B4%E8%B7%AF%E7%94%B1/">036.基于三层交换机实现VLAN间路由</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/01/035.VLAN%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E9%85%8D%E7%BD%AE/">035.VLAN虚拟局域网配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2020 FaithSinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;基于 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
