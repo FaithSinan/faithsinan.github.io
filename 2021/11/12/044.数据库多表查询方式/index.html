@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>044.数据库多表查询方式 | 牧野-全栈开发路上的探索者、追梦人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="keywords" content="司南,FaithSinan,全栈开发" />
+  
+  <meta name="description" content="title: 044.数据库多表查询方式date: 2021-11-12 23:05:21tags: [多表查询]toc: truecategories: [数据库,MySQL]thumbnail:  一、子查询子查询，又称之为内查询，是一种嵌套在其他 Sql 查询的 Where 子句中的查询。  子查询必须包含在圆括号内，并且不能使用 ORDER BY 进行排序。  实例 1 ： 1SELECT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="044.数据库多表查询方式">
+<meta property="og:url" content="http://yoursite.com/2021/11/12/044.%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:site_name" content="牧野-全栈开发路上的探索者、追梦人">
+<meta property="og:description" content="title: 044.数据库多表查询方式date: 2021-11-12 23:05:21tags: [多表查询]toc: truecategories: [数据库,MySQL]thumbnail:  一、子查询子查询，又称之为内查询，是一种嵌套在其他 Sql 查询的 Where 子句中的查询。  子查询必须包含在圆括号内，并且不能使用 ORDER BY 进行排序。  实例 1 ： 1SELECT">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-12T15:02:09.355Z">
+<meta property="article:modified_time" content="2021-11-12T15:08:50.565Z">
+<meta property="article:author" content="FaithSinan">
+<meta property="article:tag" content="司南">
+<meta property="article:tag" content="FaithSinan">
+<meta property="article:tag" content="全栈开发">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="牧野-全栈开发路上的探索者、追梦人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/avatar.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/highlight.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-left">
+      
+        <a class="nav-item" href="/" title
+        
+        >首页</a>
+      
+        <a class="nav-item" href="/archives" title
+        
+        >归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-left">
+        <section id="main"><article id="post-044.数据库多表查询方式" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      044.数据库多表查询方式
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2021/11/12/044.%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F/" class="article-date">
+  <time datetime="2021-11-12T15:02:09.355Z" itemprop="datePublished">2021-11-12</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>title: 044.数据库多表查询方式<br>date: 2021-11-12 23:05:21<br>tags: [多表查询]<br>toc: true<br>categories: [数据库,MySQL]<br>thumbnail: </p>
+<h3 id="一、子查询"><a href="#一、子查询" class="headerlink" title="一、子查询"></a>一、子查询</h3><p>子查询，又称之为内查询，是一种嵌套在其他 Sql 查询的 Where 子句中的查询。</p>
+<ul>
+<li>子查询必须包含在圆括号内，并且不能使用 ORDER BY 进行排序。</li>
+</ul>
+<p><strong>实例 1</strong> ：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a <span class="keyword">WHERE</span> <span class="keyword">id</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> a_id <span class="keyword">FROM</span> b);</span><br></pre></td></tr></table></figure></div>
+
+<p>只能查询到 a 表内容，以子查询结果作为查询条件。</p>
+<a id="more"></a>
+
+<p><strong>实例 2</strong> ：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a, (<span class="keyword">SELECT</span> a_id,remark <span class="keyword">FROM</span> b)b <span class="keyword">WHERE</span> a.id = b.a_id ;</span><br></pre></td></tr></table></figure></div>
+
+<p>这种子查询格式是基于笛卡尔积，所以两表数据都可以查询到，但子查询结果中必须包含关联字段，且子查询表需要设置别名。最后要加上过滤条件过滤查询结果才能得到理想数据。</p>
+<p>因为子查询结果可以控制第二个表乘积后的大小，相对于上面两个表直接乘积查询速度会快一点。</p>
+<h3 id="二、笛卡尔积查询"><a href="#二、笛卡尔积查询" class="headerlink" title="二、笛卡尔积查询"></a>二、笛卡尔积查询</h3><p>笛卡尔乘积是指在数学中，两个集合<em>X</em>和<em>Y</em>的笛卡尔积（Cartesian product），又称直积，表示为<em>X</em> × <em>Y</em>。</p>
+<p>笛卡尔积在数据库查询中的应用：</p>
+<ol>
+<li>先确定数据要用到哪些表。</li>
+<li>将多个表先通过笛卡尔积生成一个查询结果集。</li>
+<li>然后去除不符合逻辑的数据（根据两个表的关系去掉）。</li>
+<li>最后当做是一个虚拟表一样来加上过滤条件得出查询数据。</li>
+</ol>
+<p><strong>实例 1</strong>：不使用查询条件过滤结果</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a,b</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><strong>实例 2</strong>：使用查询条件过滤结果</p>
+<blockquote>
+<p>a 表的字段 id 与 b 表的字段 a_id 互为关联字段</p>
+</blockquote>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a,b <span class="keyword">WHERE</span> a.id = b.a_id</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>这种查询方式简单粗暴，它会先乘积生成两张表的查询结果集，然后再通过限制条件去过滤；因此，在数据量大的时候，查询速度会很慢</p>
+<h3 id="三、JOIN-连接查询（join-on）"><a href="#三、JOIN-连接查询（join-on）" class="headerlink" title="三、JOIN 连接查询（join on）"></a>三、JOIN 连接查询（join on）</h3><p>JOIN 连接用于把来自两个或多个表的行结合起来。</p>
+<ul>
+<li>其连接方式又分<strong>交叉连接</strong>、<strong>外连接</strong>和<strong>内连接</strong>。</li>
+</ul>
+<h4 id="1、交叉连接（cross-join）"><a href="#1、交叉连接（cross-join）" class="headerlink" title="1、交叉连接（cross join）"></a>1、交叉连接（cross join）</h4><p>和笛卡尔积查询相似，交叉连接是基于笛卡尔积的连接方式，它实际上是把两个表乘起来，所以又称为笛卡尔积连接。交叉连接不能使用连接条件，但可以使用查询条件。</p>
+<p><strong>实例</strong>1：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a <span class="keyword">CROSS</span> <span class="keyword">JOIN</span> b</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>实例 2</strong>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ELECT * FROM a CROSS JOIN b WHERE a.id = b.student_id</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="2、外连接（）"><a href="#2、外连接（）" class="headerlink" title="2、外连接（）"></a>2、外连接（）</h4><p>外连接分为两种，一种是左连接（left join）和右连接（right join）。</p>
+<h5 id="2-1、左外连接（left-join）"><a href="#2-1、左外连接（left-join）" class="headerlink" title="2.1、左外连接（left join）"></a>2.1、左外连接（left join）</h5><p>左连接全称为左外连接，是外连接的一种。是以左表为基础，根据ON后给出的两表的条件将两表连接起来。结果会将左表所有的查询信息列出，而右表只返回 ON 后条件与左表满足的部分，右表不存在的字段数据用 null 代替。</p>
+<ul>
+<li>关键词为 LEFT JOIN 或 LEFT OUTER JOIN</li>
+</ul>
+<p><strong>实例</strong>：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> b <span class="keyword">ON</span> a.id = b.a_id ;</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>a_id</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>张三</td>
+<td>1</td>
+<td>少年</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李四</td>
+<td>2</td>
+<td>青年</td>
+</tr>
+<tr>
+<td>3</td>
+<td>王五</td>
+<td>null</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<h5 id="2-2、右外连接（right-join）"><a href="#2-2、右外连接（right-join）" class="headerlink" title="2.2、右外连接（right join）"></a>2.2、右外连接（right join）</h5><p>右连接全称为右外连接，是外连接的一种。是以右表为基础，根据ON后给出的两表的条件将两表连接起来。结果会将右表所有的查询信息列出，而左表只列出 ON 后条件与右表满足的部分，左表不存在的字段数据用null代替。</p>
+<ul>
+<li>关键词为 RIGHT JOIN 或 RIGHT OUTER JOIN</li>
+</ul>
+<p><strong>实例</strong>：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a <span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> b <span class="keyword">ON</span> a.id = b.a_id ;</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>a_id</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>张三</td>
+<td>1</td>
+<td>少年</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李四</td>
+<td>2</td>
+<td>青年</td>
+</tr>
+<tr>
+<td>null</td>
+<td>null</td>
+<td>3</td>
+<td>老年</td>
+</tr>
+</tbody></table>
+<h4 id="3、内连接"><a href="#3、内连接" class="headerlink" title="3、内连接"></a>3、内连接</h4><p>指同时将两表作为参考对象，根据ON后给出的两表的条件将两表连接起来。结果则是两表同时满足ON后的条件的部分才会列出。</p>
+<p><strong>实例</strong>：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a <span class="keyword">INNER</span> <span class="keyword">JOIN</span> b <span class="keyword">ON</span> a.id = b.a_id ;</span><br></pre></td></tr></table></figure></div>
+
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>a_id</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>张三</td>
+<td>1</td>
+<td>少年</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李四</td>
+<td>2</td>
+<td>青年</td>
+</tr>
+</tbody></table>
+<h4 id="4、完全连接"><a href="#4、完全连接" class="headerlink" title="4、完全连接"></a>4、完全连接</h4><p> 全连接其实是左连接和右连接的一个合集，也就是说他会查询出左表和右表的全部数据，匹配不上的会显示为null。</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> a <span class="keyword">FULL</span> <span class="keyword">JOIN</span> b <span class="keyword">on</span> a.id=b.a_id;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><strong>注意 ：MySql 数据库不支持完全连接，可以使用左连接 + union + 右连接的方式去模拟完全连接。</strong></p>
+<h3 id="四、联合查询（union）"><a href="#四、联合查询（union）" class="headerlink" title="四、联合查询（union）"></a>四、联合查询（union）</h3><p>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
+<p>请注意：</p>
+<ul>
+<li>UNION 内部的 SELECT 语句必须拥有相同数量的列。</li>
+<li>列也必须拥有相似的数据类型。</li>
+<li>同时，每条 SELECT 语句中的列的顺序必须相同。</li>
+</ul>
+<p>联合查询有两种方式，分别是 union 和 union all。</p>
+<p><strong>union 实例</strong>：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> a <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> b;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>union all 实例</strong>：</p>
+<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SQL"><figure class="iseeu highlight /sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> a <span class="keyword">UNION</span> <span class="keyword">ALL</span> <span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> b;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<p>union all 命令和 union 命令几乎是等效的，不过 union all 命令会列出所有的值而 union 命令的值唯一。</p>
+<h3 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h3><p>通常情况下，以上查询方式内连接查询会用的比较多，而基于笛卡尔积的查询查询会比较慢。</p>
+<p>相比单表查询，多表查询可以覆盖更多业务场景，实际工作中，需要根据业务需求选择性的去使用。</p>
+<hr>
+<blockquote>
+<p>2021年11月12日 稿</p>
+</blockquote>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2021/11/03/043.Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%A6%81/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">043.Java 多线程概要</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    <link rel="stylesheet" href="/css/gitment.css"> 
+<script src="/js/gitment.js"></script>
+
+<div id="gitmentContainer"></div>
+
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.png" title="图片来自网络"></img>
+    <h3 class="avatar-name">
+      
+        牧野
+      
+    </h3>
+    <p class="avatar-slogan">
+      所谓技术，不过是熟练度的问题。探索未知领域，追逐科技前沿。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/">Web全栈架构</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84/PHP/">PHP</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/">MySQL</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/">综合技术栈</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%BC%E5%90%88%E6%8A%80%E6%9C%AF%E6%A0%88/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/">运维技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">Linux系统运维</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/Web%E5%AE%89%E5%85%A8/">Web安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E6%95%B0%E9%80%9A/">数通</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BF%90%E7%BB%B4%E6%8A%80%E6%9C%AF/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 15px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 15px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 15px;">VLAN</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" style="font-size: 10px;">增删改查</a> <a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 10px;">备份</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 15px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">权限控制</a> <a href="/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">监控</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a> <a href="/tags/%E9%9B%86%E7%BE%A4/" style="font-size: 10px;">集群</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/11/12/044.%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F/">044.数据库多表查询方式</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/03/043.Java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A6%82%E8%A6%81/">043.Java 多线程概要</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/31/042.SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0/">042.SpringCloud 微服务实现</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/08/041.SpringBoot+Mybaits%E6%95%B4%E5%90%88%E5%BC%80%E5%8F%91%E5%AE%9E%E4%BE%8B/">041.SpringBoot+Mybaits 整合开发实例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/29/040.Docker%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">040.Docker 使用指南</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target='_blank'
+        >一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2021 FaithSinan &nbsp;&nbsp;
+    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;基于 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
