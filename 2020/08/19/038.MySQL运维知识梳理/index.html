@@ -19,18 +19,18 @@
 <meta property="og:site_name" content="牧野-全栈开发路上的探索者、追梦人">
 <meta property="og:description" content="概述MySQL运维知识可划分为六个模块：  体系结构 备份恢复 数据复制 集群架构 性能优化 状态监控">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815005240.png">
-<meta property="og:image" content="http://yoursite.com/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815175930.png">
-<meta property="og:image" content="http://yoursite.com/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815180010.png">
+<meta property="og:image" content="http://yoursite.com/image/038/038-20200815005240.png">
+<meta property="og:image" content="http://yoursite.com/image/038/038-20200815175930.png">
+<meta property="og:image" content="http://yoursite.com/image/038/038-20200815180010.png">
 <meta property="article:published_time" content="2020-08-19T14:15:21.000Z">
-<meta property="article:modified_time" content="2021-11-12T15:06:57.500Z">
+<meta property="article:modified_time" content="2021-11-13T07:44:42.609Z">
 <meta property="article:author" content="FaithSinan">
 <meta property="article:tag" content="备份">
 <meta property="article:tag" content="集群">
 <meta property="article:tag" content="优化">
 <meta property="article:tag" content="监控">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815005240.png">
+<meta name="twitter:image" content="http://yoursite.com/image/038/038-20200815005240.png">
   
     <link rel="alternate" href="/atom.xml" title="牧野-全栈开发路上的探索者、追梦人" type="application/atom+xml">
   
@@ -126,7 +126,7 @@
 <li><p>用户名密码认证验证创建的账号和密码，以及Host主机授权是否可以连接到MySQL服务器。</p>
 </li>
 </ul>
-<p><img src="/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815005240.png" alt=""></p>
+<p><img src="/image/038/038-20200815005240.png" alt=""></p>
 <h4 id="主要的存储引擎介绍"><a href="#主要的存储引擎介绍" class="headerlink" title="主要的存储引擎介绍"></a>主要的存储引擎介绍</h4><p>InnoDB</p>
 <p>​        特点：支持事务、行锁，支持MVCC多版本并发控制，并发性高。</p>
 <p>​        应用场景：应用于OLTP业务系统。</p>
@@ -165,11 +165,11 @@
 <p>​        MySQL5.5版本之后引入了半同步复制功能，主从服务器必须同时安装半同步复制插件，才能开启该复制功能。</p>
 <p>​        在该功能下，确保从库接受完主库传递过来的 binlog 内容已经写入到自己的 relay log 里面了，才会通知主库上面的等待进程，该操作完毕。</p>
 <p>​        如果等待超时，超过 rpl_semi_sync_master_timeout 参数设置的时间，则关闭半同步复制，并自动转换为异步复制模式，直到至少有一台从库通知主库已经接受到 binlog信息了为止。</p>
-<p><img src="/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815175930.png" alt=""></p>
+<p><img src="/image/038/038-20200815175930.png" alt=""></p>
 <p>二、多源复制</p>
 <p>​        所谓多源复制，就是把多台主库的数据同步到一台从库服务器上，从库会创建通往每个主库的管道。</p>
 <p>​        在MySQL5.7之前的版本中，只要实现一主一从、一主多从或多主多从的复制架构，如果想要实现多主一从的复制，只能使用 MariaDB。MySQL5.7版本已经可以实现多主一从的复制。</p>
-<p><img src="/home/faith/md%E6%96%87%E6%A1%A3/imgs/038-20200815180010.png" alt=""></p>
+<p><img src="/image/038/038-20200815180010.png" alt=""></p>
 <p>多源复制的优势：</p>
 <p>（1）可以集中备份，在从库上备份，不会影响线上的数据库正常运行。</p>
 <p>（2）节约了购买从库服务器的成本，只需要一个服务器即可。</p>
@@ -336,7 +336,7 @@ gitment.render('gitmentContainer')
   <div class="widget-box">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 15px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 15px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 15px;">VLAN</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" style="font-size: 10px;">增删改查</a> <a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 10px;">备份</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" style="font-size: 10px;">多表查询</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 15px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">权限控制</a> <a href="/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">监控</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a> <a href="/tags/%E9%9B%86%E7%BE%A4/" style="font-size: 10px;">集群</a>
+      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JDBC/" style="font-size: 15px;">JDBC</a> <a href="/tags/JavaGUI/" style="font-size: 10px;">JavaGUI</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Servlet/" style="font-size: 10px;">Servlet</a> <a href="/tags/Socket/" style="font-size: 10px;">Socket</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 15px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/Telnet/" style="font-size: 10px;">Telnet</a> <a href="/tags/VLAN/" style="font-size: 15px;">VLAN</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 10px;">优化</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" style="font-size: 10px;">使用指南</a> <a href="/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/" style="font-size: 10px;">协议分析</a> <a href="/tags/%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" style="font-size: 10px;">增删改查</a> <a href="/tags/%E5%A4%87%E4%BB%BD/" style="font-size: 10px;">备份</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/tags/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" style="font-size: 10px;">多表查询</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/" style="font-size: 20px;">学习指南</a> <a href="/tags/%E6%80%9D%E7%A7%91%E6%95%B0%E9%80%9A/" style="font-size: 15px;">思科数通</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E8%AF%B7%E6%B1%82/" style="font-size: 10px;">接口请求</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/" style="font-size: 10px;">故障排除</a> <a href="/tags/%E6%97%A0%E7%BA%BFWiFi/" style="font-size: 10px;">无线WiFi</a> <a href="/tags/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" style="font-size: 10px;">权限控制</a> <a href="/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">监控</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">端口配置</a> <a href="/tags/%E7%B4%A2%E5%BC%95/" style="font-size: 10px;">索引</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a> <a href="/tags/%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">路由配置</a> <a href="/tags/%E9%9B%86%E7%BE%A4/" style="font-size: 10px;">集群</a>
     </div>
   </div>
 
@@ -357,6 +357,10 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2021/11/15/045.%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">045.数据库索引知识梳理</a>
+          </li>
+        
+          <li>
             <a href="/2021/11/12/044.%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F/">044.数据库多表查询方式</a>
           </li>
         
@@ -370,10 +374,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2020/12/08/041.SpringBoot+Mybaits%E6%95%B4%E5%90%88%E5%BC%80%E5%8F%91%E5%AE%9E%E4%BE%8B/">041.SpringBoot+Mybaits 整合开发实例</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/29/040.Docker%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">040.Docker 使用指南</a>
           </li>
         
       </ul>
